@@ -14,5 +14,15 @@ getprop | grep -E "ro.build|ro.product|ro.system|ro.vendor"
 # 1.3 android api level sdk (tested)
 getprop ro.build.version.sdk
 
-# 1.4 security patch level
+# 1.4 security patch level (tested)
 getprop ro.build.version.security_patch
+
+# 1.5 codename & incremental build (tested)
+getprop ro.build.version.codename
+getprop ro.build.version.incremental
+
+# 1.6 build fingerprint (tested)
+getprop ro.build.fingerprint
+
+# 1.7 build description (tested)
+getprop ro.build.description
