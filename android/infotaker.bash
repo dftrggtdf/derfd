@@ -26,3 +26,8 @@ getprop ro.build.fingerprint
 
 # 1.7 build description (tested)
 getprop ro.build.description
+
+# 1.8 build date & time (tested)
+getprop ro.build.date.utc
+getprop ro.build.date
+
