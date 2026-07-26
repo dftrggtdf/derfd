@@ -31,3 +31,6 @@ getprop ro.build.description
 getprop ro.build.date.utc
 getprop ro.build.date
 
+# 1.9 build type
+getprop ro.build.type
+
