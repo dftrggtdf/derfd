@@ -6,3 +6,4 @@ volumeicon &
 dunst &
 mate-power-manager &
 xcape -e 'Super_L=Alt_L|F3' &
+copyq &
