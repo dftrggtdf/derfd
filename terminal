@@ -1,159 +1,35 @@
+ssuvj@7ui87ui8:~$ nano ~/.var/app/org.vinegarhq.Vinegar/config/vinegar/config.toml
+ssuvj@7ui87ui8:~$ mkdir -p ~/.var/app/org.vinegarhq.Vinegar/config/vinegar && nano ~/.var/app/org.vinegarhq.Vinegar/config/vinegar/config.toml
+ssuvj@7ui87ui8:~$ cat ~/.var/app/org.vinegarhq.Vinegar/config/vinegar/config.toml
+[studio]
+renderer = "OpenGL"
 ssuvj@7ui87ui8:~$ DISPLAY=:0 flatpak run org.vinegarhq.Vinegar
-15:08:09 INF Logging to file path=/home/ssuvj/.var/app/org.vinegarhq.Vinegar/cache/vinegar/logs/2026-07-28T15:07:23+03:00.log
-15:08:09 INF System information cpu="Intel(R) Core(TM) 3 100U" mem="7.5 GB" distro="Debian GNU/Linux 13 (trixie) 13" display=" (tty)"
-15:08:09 INF DRM Devices cards="[Intel Corporation Raptor Lake-U [Intel Graphics]]"
-15:08:09 INF Acquiring user authentication
-15:08:09 WRN Retrieving authenticated user failed err="no current user"
-15:08:09 INF Checking for updates
-15:08:10 INF Using Deployment guid=version-14d8b191232f4ddd channel=LIVE
-15:08:10 INF Up to date guid=version-14d8b191232f4ddd
-15:08:10 INF Applying FFlags
-15:08:10 INF Setting up Wine first-time=false
-15:08:10 WIN 002c:err:wineboot:process_run_key Error running cmd L"C:\\windows\\system32\\winemenubuilder.exe -a -r" (126).
-15:08:10 WIN 00a4:err:ntoskrnl:ZwLoadDriver failed to create driver L"\\Registry\\Machine\\System\\CurrentControlSet\\Services\\winebth": c00000e5
-15:08:10 INF Checking WebView against=144.0.3719.92
-15:08:10 INF Checking DXVK against=2.7.1
-15:08:10 INF Launching Studio cmd="/home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/kombucha/bin/wine /home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/versions/version-14d8b191232f4ddd/RobloxStudioBeta.exe"
-15:08:11 WIN 00f0:err:winediag:wined3d_dll_init Using the Vulkan renderer.
-15:08:12 WIN warn:  D3D11DXGIDevice::QueryInterface: Unknown interface query
-15:08:12 WIN warn:  0ec870a6-5d7e-4c22-8cfc-5baae07616ed
-15:08:12 WIN warn:  DXGI: MakeWindowAssociation: Ignoring flags
-15:08:13 INF RecursiveDirectoryCreate( Z:\\home\\ssuvj\\.var\\app\\org.vinegarhq.Vinegar\\data\\vinegar\\appdata\\Roblox\\RobloxStudio\\WebView2\\EBWebView directory exists )\n
-15:08:13 WIN 0274:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:08:13 WIN 0274:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"browser") stub
-15:08:13 WIN 0274:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:08:13 WIN 0274:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:08:13 WIN 0274:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:08:13 WIN 0294:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:08:13 WIN 0294:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"crashpad-handler") stub
-15:08:13 WIN 0294:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:08:13 WIN 0294:fixme:seh:WerRegisterCustomMetadata (L"MetricsClientIdHash", L"5658648482531446273") stub
-15:08:13 WIN 0294:fixme:seh:WerRegisterCustomMetadata (L"MetricsSessionId", L"15") stub
-15:08:13 WIN 0294:fixme:seh:WerRegisterCustomMetadata (L"VariationsSeedETag", L"") stub
-15:08:13 WIN 0294:fixme:seh:WerRegisterCustomMetadata (L"RuntimeVariationsSeedETag", L"\"JHaGKqYIj1q/zMvgOLYKnwxYIg8QAAYadtakLEVvKWY=\"") stub
-15:08:13 WIN 0294:fixme:seh:WerRegisterCustomMetadata (L"UXConfigCorrelationId", L"") stub
-15:08:13 WIN 0294:fixme:seh:WerRegisterCustomMetadata (L"is_cp", L"0") stub
-15:08:13 WIN 0274:fixme:seh:WerRegisterCustomMetadata (L"MetricsClientIdHash", L"5658648482531446273") stub
-15:08:13 WIN 0274:fixme:seh:WerRegisterCustomMetadata (L"MetricsSessionId", L"16") stub
-15:08:13 WIN 0274:fixme:seh:WerRegisterCustomMetadata (L"is_cp", L"0") stub
-15:08:13 WIN 032c:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:08:13 WIN 032c:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"utility") stub
-15:08:13 WIN 032c:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:08:13 WIN 032c:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:08:13 WIN 032c:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:08:13 WIN 0324:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:08:13 WIN 0324:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"gpu-process") stub
-15:08:13 WIN 0324:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:08:13 WIN 0324:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:08:13 WIN 0324:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:08:13 WIN 0350:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:08:13 WIN 0350:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"utility") stub
-15:08:13 WIN 0350:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:08:13 WIN 0350:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:08:13 WIN 0350:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:08:13 WIN 032c:fixme:seh:WerRegisterCustomMetadata (L"MetricsClientIdHash", L"5658648482531446273") stub
-15:08:13 WIN 032c:fixme:seh:WerRegisterCustomMetadata (L"MetricsSessionId", L"16") stub
-15:08:13 WIN 0324:err:winediag:wined3d_dll_init Using the Vulkan renderer.
-15:08:14 WIN 0324:err:winediag:wined3d_dll_init Using the Vulkan renderer.
-15:08:14 WIN 0324:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_FOGENABLE) (0x1c) should have a representative.
-15:08:14 WIN 0324:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_SPECULARENABLE) (0x1d) should have a representative.
-15:08:14 WIN 0324:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_COLORKEYENABLE) (0x29) should have a representative.
-15:08:14 WIN 0324:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_RANGEFOGENABLE) (0x30) should have a representative.
-15:08:14 WIN 0324:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_LIGHTING) (0x89) should have a representative.
-15:08:14 WIN 0324:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_COLORVERTEX) (0x8d) should have a representative.
-15:08:14 WIN 0324:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_LOCALVIEWER) (0x8e) should have a representative.
-15:08:14 WIN 0324:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_NORMALIZENORMALS) (0x8f) should have a representative.
-15:08:14 WIN 0324:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_DIFFUSEMATERIALSOURCE) (0x91) should have a representative.
-15:08:14 WIN 0324:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_SPECULARMATERIALSOURCE) (0x92) should have a representative.
-15:08:14 WIN 0324:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_AMBIENTMATERIALSOURCE) (0x93) should have a representative.
-15:08:14 WIN 0324:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_EMISSIVEMATERIALSOURCE) (0x94) should have a representative.
-15:08:14 WIN 0324:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_VERTEXBLEND) (0x97) should have a representative.
-15:08:14 WIN 03cc:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:08:14 WIN 03cc:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"renderer") stub
-15:08:14 WIN 03cc:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:08:14 WIN 03cc:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:08:14 WIN 03cc:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:08:14 WIN 0274:fixme:seh:WerRegisterCustomMetadata (L"is_cp", L"0") stub
-15:08:14 WIN 0434:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:08:14 WIN 0434:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"renderer") stub
-15:08:14 WIN 0434:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:08:14 WIN 0434:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:08:14 WIN 0434:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:08:14 WIN 047c:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:08:14 WIN 047c:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"renderer") stub
-15:08:14 WIN 047c:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:08:14 WIN 047c:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:08:14 WIN 047c:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:08:35 ERR Failed to register with GameMode err="dbus: Gtk reported an error with message: 'Timeout was reached', domain: '205' and code: '24'"
-15:12:27 INF RecursiveDirectoryCreate( Z:\\home\\ssuvj\\.var\\app\\org.vinegarhq.Vinegar\\data\\vinegar\\appdata\\Roblox\\RobloxStudio\\WebView2\\EBWebView directory exists )\n
-15:12:27 WIN 0504:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:12:27 WIN 0504:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"browser") stub
-15:12:27 WIN 0504:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:12:27 WIN 0504:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:12:27 WIN 0504:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:12:27 WIN 0510:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:12:27 WIN 0510:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"crashpad-handler") stub
-15:12:27 WIN 0510:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:12:27 WIN 0510:fixme:seh:WerRegisterCustomMetadata (L"MetricsClientIdHash", L"5658648482531446273") stub
-15:12:27 WIN 0510:fixme:seh:WerRegisterCustomMetadata (L"MetricsSessionId", L"16") stub
-15:12:27 WIN 0510:fixme:seh:WerRegisterCustomMetadata (L"VariationsSeedETag", L"\"gLnMeOEdXWYecaUNo7gCMaFmP2b3TNAdqp1ESrxcVWo=\"") stub
-15:12:27 WIN 0510:fixme:seh:WerRegisterCustomMetadata (L"RuntimeVariationsSeedETag", L"\"JHaGKqYIj1q/zMvgOLYKnwxYIg8QAAYadtakLEVvKWY=\"") stub
-15:12:27 WIN 0510:fixme:seh:WerRegisterCustomMetadata (L"UXConfigCorrelationId", L"") stub
-15:12:27 WIN 0510:fixme:seh:WerRegisterCustomMetadata (L"is_cp", L"0") stub
-15:12:28 WIN 0504:fixme:seh:WerRegisterCustomMetadata (L"MetricsClientIdHash", L"5658648482531446273") stub
-15:12:28 WIN 0504:fixme:seh:WerRegisterCustomMetadata (L"MetricsSessionId", L"17") stub
-15:12:28 WIN 05ac:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:12:28 WIN 05ac:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"utility") stub
-15:12:28 WIN 05ac:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:12:28 WIN 05ac:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:12:28 WIN 05ac:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:12:28 WIN 0504:fixme:seh:WerRegisterCustomMetadata (L"is_cp", L"0") stub
-15:12:28 WIN 05a4:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:12:28 WIN 05a4:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"gpu-process") stub
-15:12:28 WIN 05a4:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:12:28 WIN 05a4:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:12:28 WIN 05a4:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:12:28 WIN 05c0:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:12:28 WIN 05c0:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"utility") stub
-15:12:28 WIN 05c0:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:12:28 WIN 05c0:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:12:28 WIN 05c0:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:12:28 WIN 0610:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:12:28 WIN 0610:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"renderer") stub
-15:12:28 WIN 0610:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:12:28 WIN 0610:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:12:28 WIN 0610:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:12:28 WIN 05ac:fixme:seh:WerRegisterCustomMetadata (L"MetricsClientIdHash", L"5658648482531446273") stub
-15:12:28 WIN 05ac:fixme:seh:WerRegisterCustomMetadata (L"MetricsSessionId", L"17") stub
-15:12:28 WIN 05a4:fixme:seh:WerRegisterCustomMetadata (L"MetricsClientIdHash", L"5658648482531446273") stub
-15:12:28 WIN 05a4:fixme:seh:WerRegisterCustomMetadata (L"MetricsSessionId", L"17") stub
-15:12:28 WIN 05a4:err:winediag:wined3d_dll_init Using the Vulkan renderer.
-15:12:28 WIN 0504:fixme:seh:WerRegisterCustomMetadata (L"is_cp", L"0") stub
-15:12:28 WIN 05a4:err:winediag:wined3d_dll_init Using the Vulkan renderer.
-15:12:28 WIN 068c:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:12:28 WIN 068c:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"renderer") stub
-15:12:28 WIN 068c:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:12:28 WIN 068c:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:12:28 WIN 068c:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:12:29 WIN 05a4:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_FOGENABLE) (0x1c) should have a representative.
-15:12:29 WIN 05a4:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_SPECULARENABLE) (0x1d) should have a representative.
-15:12:29 WIN 05a4:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_COLORKEYENABLE) (0x29) should have a representative.
-15:12:29 WIN 05a4:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_RANGEFOGENABLE) (0x30) should have a representative.
-15:12:29 WIN 05a4:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_LIGHTING) (0x89) should have a representative.
-15:12:29 WIN 05a4:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_COLORVERTEX) (0x8d) should have a representative.
-15:12:29 WIN 05a4:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_LOCALVIEWER) (0x8e) should have a representative.
-15:12:29 WIN 05a4:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_NORMALIZENORMALS) (0x8f) should have a representative.
-15:12:29 WIN 05a4:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_DIFFUSEMATERIALSOURCE) (0x91) should have a representative.
-15:12:29 WIN 05a4:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_SPECULARMATERIALSOURCE) (0x92) should have a representative.
-15:12:29 WIN 05a4:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_AMBIENTMATERIALSOURCE) (0x93) should have a representative.
-15:12:29 WIN 05a4:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_EMISSIVEMATERIALSOURCE) (0x94) should have a representative.
-15:12:29 WIN 05a4:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_VERTEXBLEND) (0x97) should have a representative.
-15:12:29 WIN 06f8:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:12:29 WIN 06f8:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"renderer") stub
-15:12:29 WIN 06f8:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:12:29 WIN 06f8:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:12:29 WIN 06f8:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-^C
-15:12:52 WRN Received signal signal=interrupt
-ssuvj@7ui87ui8:~$ 
+15:15:56 INF Logging to file path=/home/ssuvj/.var/app/org.vinegarhq.Vinegar/cache/vinegar/logs/2026-07-28T15:15:10+03:00.log
+15:15:56 INF System information cpu="Intel(R) Core(TM) 3 100U" mem="7.5 GB" distro="Debian GNU/Linux 13 (trixie) 13" display=" (tty)"
+15:15:56 INF DRM Devices cards="[Intel Corporation Raptor Lake-U [Intel Graphics]]"
+15:15:56 ERR Error! err="config error: toml: line 1 (last key \"studio\"): renderer must be one of [D3D11 D3D11FL10 DXVK DXVK-Sarek Vulkan]"
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal SIGSEGV: segmentation violation code=0x1 addr=0x48 pc=0x7a393a]
 
+goroutine 1 [running]:
+github.com/sewnie/wine.(*Prefix).Running(0x1?)
+	/run/build/vinegar/vendor/github.com/sewnie/wine/prefix.go:74 +0x1a
+main.(*bootstrapper).backupSettings(0x3f0d102b7ea0)
+	/run/build/vinegar/cmd/vinegar/bootstrapper.go:107 +0x26
+main.(*app).shutdown(0x3f0d103ac820, {{0x0?}})
+	/run/build/vinegar/cmd/vinegar/app.go:211 +0x25
+codeberg.org/puregotk/puregotk/v4/gio.(*Application).ConnectShutdown.func1(0x0?)
+	/run/build/vinegar/vendor/codeberg.org/puregotk/puregotk/v4/gio/gapplication.go:1625 +0x1a
+reflect.Value.call({0x95d380?, 0x3f0d0f944550?, 0x3f0d0f24b280?}, {0xabac0d, 0x4}, {0x3f0d0f24b340, 0x1, 0x991d20?})
+	/usr/lib/sdk/golang/src/reflect/value.go:586 +0xf0c
+reflect.Value.Call({0x95d380?, 0x3f0d0f944550?, 0x0?}, {0x3f0d0f24b340?, 0x3f0d0fd87330?, 0x47e65c?})
+	/usr/lib/sdk/golang/src/reflect/value.go:369 +0xb9
+codeberg.org/puregotk/purego.callbackWrap(0x7ffd5d8fcbd8)
+	/run/build/vinegar/vendor/codeberg.org/puregotk/purego/syscall_sysv.go:277 +0x429
+codeberg.org/puregotk/purego.RegisterFunc.func1({0x3f0d103ac870, 0x3, 0x3})
+	/run/build/vinegar/vendor/codeberg.org/puregotk/purego/func.go:334 +0x76e
+codeberg.org/puregotk/puregotk/v4/gio.(*Application).Run(...)
+	/run/build/vinegar/vendor/codeberg.org/puregotk/puregotk/v4/gio/gapplication.go:1146
+main.main()
+	/run/build/vinegar/cmd/vinegar/main.go:33 +0x25f
+ssuvj@7ui87ui8:~$ 
