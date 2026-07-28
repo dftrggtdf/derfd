@@ -130,3 +130,7 @@ sudo apt install ffmpeg -y
 # 32. qdirstat
 sudo apt update -y
 sudo apt install qdirstat -y
+
+# 33. pluma (text editor)
+sudo apt update -y
+sudo apt install pluma -y
