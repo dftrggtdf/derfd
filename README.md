@@ -1,5 +1,6 @@
+# my configurations and other things
  - penguin watur
- - configuration files
- - encrypted projects
+ - uhh someone took my name
+ - -# encrypted projects
  - long logs that wont fit in pastebin
  - whatever
