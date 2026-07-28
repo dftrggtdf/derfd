@@ -1,210 +1,564 @@
+ssuvj@7ui87ui8:~$ rm -rf ~/.var/app/org.vinegarhq.Vinegar
+ssuvj@7ui87ui8:~$ DISPLAY=:0 flatpak run org.vinegarhq.Vinegar -firstrun studio run
+15:35:18 INF Logging to file path=/home/ssuvj/.var/app/org.vinegarhq.Vinegar/cache/vinegar/logs/2026-07-28T15:34:28+03:00.log
+15:35:18 INF System information cpu="Intel(R) Core(TM) 3 100U" mem="7.5 GB" distro="Debian GNU/Linux 13 (trixie) 13" display=" (tty)"
+15:35:18 INF DRM Devices cards="[Intel Corporation Raptor Lake-U [Intel Graphics]]"
+15:35:38 INF Saving configuration!
+15:36:23 INF Saving configuration!
+15:36:35 INF Saving configuration!
+15:37:47 INF Goodbye!
 ssuvj@7ui87ui8:~$ DISPLAY=:0 flatpak run org.vinegarhq.Vinegar
-15:29:07 INF Logging to file path=/home/ssuvj/.var/app/org.vinegarhq.Vinegar/cache/vinegar/logs/2026-07-28T15:28:17+03:00.log
-15:29:07 INF System information cpu="Intel(R) Core(TM) 3 100U" mem="7.5 GB" distro="Debian GNU/Linux 13 (trixie) 13" display=" (tty)"
-15:29:07 INF DRM Devices cards="[Intel Corporation Raptor Lake-U [Intel Graphics]]"
-15:29:07 INF Acquiring user authentication
-15:29:07 WRN Retrieving authenticated user failed err="no current user"
-15:29:07 INF Checking for updates
-15:29:07 INF Using Deployment guid=version-14d8b191232f4ddd channel=LIVE
-15:29:07 INF Up to date guid=version-14d8b191232f4ddd
-15:29:07 INF Applying FFlags
-15:29:07 INF Setting up Wine first-time=false
-15:29:07 WIN 002c:err:wineboot:process_run_key Error running cmd L"C:\\windows\\system32\\winemenubuilder.exe -a -r" (126).
-15:29:08 WIN 00a4:err:ntoskrnl:ZwLoadDriver failed to create driver L"\\Registry\\Machine\\System\\CurrentControlSet\\Services\\winebth": c00000e5
-15:29:08 INF Checking WebView against=144.0.3719.92
-15:29:08 INF Checking DXVK against=2.7.1
-15:29:08 INF Launching Studio cmd="/home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/kombucha/bin/wine /home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/versions/version-14d8b191232f4ddd/RobloxStudioBeta.exe"
-15:29:08 WIN 00f0:err:winediag:wined3d_dll_init Using the Vulkan renderer.
-15:29:09 WIN warn:  D3D11DXGIDevice::QueryInterface: Unknown interface query
-15:29:09 WIN warn:  0ec870a6-5d7e-4c22-8cfc-5baae07616ed
-15:29:09 WIN warn:  DXGI: MakeWindowAssociation: Ignoring flags
-15:29:10 INF RecursiveDirectoryCreate( Z:\\home\\ssuvj\\.var\\app\\org.vinegarhq.Vinegar\\data\\vinegar\\appdata\\Roblox\\RobloxStudio\\WebView2\\EBWebView directory exists )\n
-15:29:10 WIN 0274:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:29:10 WIN 0274:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"browser") stub
-15:29:10 WIN 0274:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:29:10 WIN 0274:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:29:10 WIN 0274:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:29:10 WIN 0298:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:29:10 WIN 0298:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"crashpad-handler") stub
-15:29:10 WIN 0298:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:29:10 WIN 0298:fixme:seh:WerRegisterCustomMetadata (L"MetricsClientIdHash", L"5658648482531446273") stub
-15:29:10 WIN 0298:fixme:seh:WerRegisterCustomMetadata (L"MetricsSessionId", L"17") stub
-15:29:10 WIN 0298:fixme:seh:WerRegisterCustomMetadata (L"VariationsSeedETag", L"\"gLnMeOEdXWYecaUNo7gCMaFmP2b3TNAdqp1ESrxcVWo=\"") stub
-15:29:10 WIN 0298:fixme:seh:WerRegisterCustomMetadata (L"RuntimeVariationsSeedETag", L"\"JHaGKqYIj1q/zMvgOLYKnwxYIg8QAAYadtakLEVvKWY=\"") stub
-15:29:10 WIN 0298:fixme:seh:WerRegisterCustomMetadata (L"UXConfigCorrelationId", L"") stub
-15:29:10 WIN 0298:fixme:seh:WerRegisterCustomMetadata (L"is_cp", L"0") stub
-15:29:11 WIN 0274:fixme:seh:WerRegisterCustomMetadata (L"MetricsClientIdHash", L"5658648482531446273") stub
-15:29:11 WIN 0274:fixme:seh:WerRegisterCustomMetadata (L"MetricsSessionId", L"18") stub
-15:29:11 WIN 0274:fixme:seh:WerRegisterCustomMetadata (L"is_cp", L"0") stub
-15:29:11 WIN 0330:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:29:11 WIN 0330:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"utility") stub
-15:29:11 WIN 0330:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:29:11 WIN 0330:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:29:11 WIN 0330:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:29:11 WIN 0338:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:29:11 WIN 0338:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"gpu-process") stub
-15:29:11 WIN 0338:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:29:11 WIN 0338:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:29:11 WIN 0338:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:29:11 WIN 0344:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:29:11 WIN 0344:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"utility") stub
-15:29:11 WIN 0344:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:29:11 WIN 0344:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:29:11 WIN 0344:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:29:11 WIN 0330:fixme:seh:WerRegisterCustomMetadata (L"MetricsClientIdHash", L"5658648482531446273") stub
-15:29:11 WIN 0330:fixme:seh:WerRegisterCustomMetadata (L"MetricsSessionId", L"18") stub
-15:29:11 WIN 0338:fixme:seh:WerRegisterCustomMetadata (L"MetricsClientIdHash", L"5658648482531446273") stub
-15:29:11 WIN 0338:fixme:seh:WerRegisterCustomMetadata (L"MetricsSessionId", L"18") stub
-15:29:11 WIN 0338:err:winediag:wined3d_dll_init Using the Vulkan renderer.
-15:29:11 WIN 039c:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:29:11 WIN 039c:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"renderer") stub
-15:29:11 WIN 039c:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:29:11 WIN 039c:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:29:11 WIN 039c:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:29:11 WIN 0338:err:winediag:wined3d_dll_init Using the Vulkan renderer.
-15:29:11 WIN 0338:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_FOGENABLE) (0x1c) should have a representative.
-15:29:11 WIN 0338:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_SPECULARENABLE) (0x1d) should have a representative.
-15:29:11 WIN 0338:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_COLORKEYENABLE) (0x29) should have a representative.
-15:29:11 WIN 0338:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_RANGEFOGENABLE) (0x30) should have a representative.
-15:29:11 WIN 0338:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_LIGHTING) (0x89) should have a representative.
-15:29:11 WIN 0338:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_COLORVERTEX) (0x8d) should have a representative.
-15:29:11 WIN 0338:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_LOCALVIEWER) (0x8e) should have a representative.
-15:29:11 WIN 0338:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_NORMALIZENORMALS) (0x8f) should have a representative.
-15:29:11 WIN 0338:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_DIFFUSEMATERIALSOURCE) (0x91) should have a representative.
-15:29:11 WIN 0338:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_SPECULARMATERIALSOURCE) (0x92) should have a representative.
-15:29:11 WIN 0338:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_AMBIENTMATERIALSOURCE) (0x93) should have a representative.
-15:29:11 WIN 0338:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_EMISSIVEMATERIALSOURCE) (0x94) should have a representative.
-15:29:11 WIN 0338:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_VERTEXBLEND) (0x97) should have a representative.
-15:29:12 WIN 0274:fixme:seh:WerRegisterCustomMetadata (L"is_cp", L"0") stub
-15:29:12 WIN 043c:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:29:12 WIN 043c:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"renderer") stub
-15:29:12 WIN 043c:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:29:12 WIN 043c:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:29:12 WIN 043c:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:29:13 WIN 0484:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:29:13 WIN 0484:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"renderer") stub
-15:29:13 WIN 0484:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:29:13 WIN 0484:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:29:13 WIN 0484:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:29:14 WIN 02e8:err:ole:StdMarshalImpl_MarshalInterface Failed to create ifstub, hr 0x80004002
-15:29:14 WIN 02e8:err:ole:CoMarshalInterface Failed to marshal the interface {c17f100e-3a46-4a78-8013-769dc9b97390}, hr 0x80004002
-15:29:14 WIN 02e8:err:ole:StdMarshalImpl_MarshalInterface Failed to create ifstub, hr 0x80004002
-15:29:14 WIN 02e8:err:ole:CoMarshalInterface Failed to marshal the interface {c17f100e-3a46-4a78-8013-769dc9b97390}, hr 0x80004002
-15:29:30 WIN 02d4:err:ole:create_server class {daa52b27-8897-50af-ada5-c6c71bb64e17} not registered
-15:29:30 WIN 02d4:err:ole:com_get_class_object no class object {daa52b27-8897-50af-ada5-c6c71bb64e17} could be created for context 0x4
-15:29:30 WIN 02d4:err:ole:create_server class {daa52b27-8897-50af-ada5-c6c71bb64e17} not registered
-15:29:30 WIN 02d4:err:ole:com_get_class_object no class object {daa52b27-8897-50af-ada5-c6c71bb64e17} could be created for context 0x4
-15:29:30 WIN 02d4:err:ole:create_server class {daa52b27-8897-50af-ada5-c6c71bb64e17} not registered
-15:29:30 WIN 02d4:err:ole:com_get_class_object no class object {daa52b27-8897-50af-ada5-c6c71bb64e17} could be created for context 0x4
-15:29:33 ERR Failed to register with GameMode err="dbus: Gtk reported an error with message: 'Timeout was reached', domain: '205' and code: '24'"
-15:29:54 INF RecursiveDirectoryCreate( Z:\\home\\ssuvj\\.var\\app\\org.vinegarhq.Vinegar\\data\\vinegar\\appdata\\Roblox\\RobloxStudio\\WebView2\\EBWebView directory exists )\n
-15:29:54 WIN 050c:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:29:54 WIN 050c:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"browser") stub
-15:29:54 WIN 050c:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:29:54 WIN 050c:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:29:54 WIN 050c:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:29:54 WIN 0518:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:29:54 WIN 0518:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"crashpad-handler") stub
-15:29:54 WIN 0518:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:29:54 WIN 0518:fixme:seh:WerRegisterCustomMetadata (L"MetricsClientIdHash", L"5658648482531446273") stub
-15:29:54 WIN 0518:fixme:seh:WerRegisterCustomMetadata (L"MetricsSessionId", L"18") stub
-15:29:54 WIN 0518:fixme:seh:WerRegisterCustomMetadata (L"VariationsSeedETag", L"\"gLnMeOEdXWYecaUNo7gCMaFmP2b3TNAdqp1ESrxcVWo=\"") stub
-15:29:54 WIN 0518:fixme:seh:WerRegisterCustomMetadata (L"RuntimeVariationsSeedETag", L"\"JHaGKqYIj1q/zMvgOLYKnwxYIg8QAAYadtakLEVvKWY=\"") stub
-15:29:54 WIN 0518:fixme:seh:WerRegisterCustomMetadata (L"UXConfigCorrelationId", L"") stub
-15:29:54 WIN 0518:fixme:seh:WerRegisterCustomMetadata (L"is_cp", L"0") stub
-15:29:55 WIN 050c:fixme:seh:WerRegisterCustomMetadata (L"MetricsClientIdHash", L"5658648482531446273") stub
-15:29:55 WIN 050c:fixme:seh:WerRegisterCustomMetadata (L"MetricsSessionId", L"19") stub
-15:29:55 WIN 05b4:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:29:55 WIN 05b4:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"utility") stub
-15:29:55 WIN 05b4:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:29:55 WIN 05b4:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:29:55 WIN 05b4:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:29:55 WIN 050c:fixme:seh:WerRegisterCustomMetadata (L"is_cp", L"0") stub
-15:29:55 WIN 05ac:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:29:55 WIN 05ac:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"gpu-process") stub
-15:29:55 WIN 05ac:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:29:55 WIN 05ac:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:29:55 WIN 05ac:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:29:55 WIN 05d4:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:29:55 WIN 05d4:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"utility") stub
-15:29:55 WIN 05d4:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:29:55 WIN 05d4:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:29:55 WIN 05d4:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:29:55 WIN 061c:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:29:55 WIN 061c:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"renderer") stub
-15:29:55 WIN 061c:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:29:55 WIN 061c:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:29:55 WIN 061c:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:29:55 WIN 05b4:fixme:seh:WerRegisterCustomMetadata (L"MetricsClientIdHash", L"5658648482531446273") stub
-15:29:55 WIN 05b4:fixme:seh:WerRegisterCustomMetadata (L"MetricsSessionId", L"19") stub
-15:29:55 WIN 05ac:fixme:seh:WerRegisterCustomMetadata (L"MetricsClientIdHash", L"5658648482531446273") stub
-15:29:55 WIN 05ac:fixme:seh:WerRegisterCustomMetadata (L"MetricsSessionId", L"19") stub
-15:29:55 WIN 05ac:err:winediag:wined3d_dll_init Using the Vulkan renderer.
-15:29:55 WIN 05ac:err:winediag:wined3d_dll_init Using the Vulkan renderer.
-15:29:55 WIN 05ac:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_FOGENABLE) (0x1c) should have a representative.
-15:29:55 WIN 05ac:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_SPECULARENABLE) (0x1d) should have a representative.
-15:29:55 WIN 05ac:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_COLORKEYENABLE) (0x29) should have a representative.
-15:29:55 WIN 05ac:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_RANGEFOGENABLE) (0x30) should have a representative.
-15:29:55 WIN 05ac:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_LIGHTING) (0x89) should have a representative.
-15:29:55 WIN 05ac:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_COLORVERTEX) (0x8d) should have a representative.
-15:29:55 WIN 05ac:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_LOCALVIEWER) (0x8e) should have a representative.
-15:29:55 WIN 05ac:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_NORMALIZENORMALS) (0x8f) should have a representative.
-15:29:55 WIN 05ac:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_DIFFUSEMATERIALSOURCE) (0x91) should have a representative.
-15:29:55 WIN 05ac:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_SPECULARMATERIALSOURCE) (0x92) should have a representative.
-15:29:55 WIN 05ac:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_AMBIENTMATERIALSOURCE) (0x93) should have a representative.
-15:29:55 WIN 05ac:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_EMISSIVEMATERIALSOURCE) (0x94) should have a representative.
-15:29:55 WIN 05ac:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_VERTEXBLEND) (0x97) should have a representative.
-15:29:55 WIN 050c:fixme:seh:WerRegisterCustomMetadata (L"is_cp", L"0") stub
-15:29:56 WIN 06c0:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:29:56 WIN 06c0:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"renderer") stub
-15:29:56 WIN 06c0:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:29:56 WIN 06c0:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:29:56 WIN 06c0:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:29:56 WIN 0708:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:29:56 WIN 0708:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"renderer") stub
-15:29:56 WIN 0708:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:29:56 WIN 0708:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:29:56 WIN 0708:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:29:57 WIN 0554:err:ole:StdMarshalImpl_MarshalInterface Failed to create ifstub, hr 0x80004002
-15:29:57 WIN 0554:err:ole:CoMarshalInterface Failed to marshal the interface {c17f100e-3a46-4a78-8013-769dc9b97390}, hr 0x80004002
-15:29:57 WIN 0568:err:ole:StdMarshalImpl_MarshalInterface Failed to create ifstub, hr 0x80004002
-15:29:57 WIN 0568:err:ole:CoMarshalInterface Failed to marshal the interface {c17f100e-3a46-4a78-8013-769dc9b97390}, hr 0x80004002
-15:30:14 WIN 0554:err:ole:create_server class {daa52b27-8897-50af-ada5-c6c71bb64e17} not registered
-15:30:14 WIN 0554:err:ole:com_get_class_object no class object {daa52b27-8897-50af-ada5-c6c71bb64e17} could be created for context 0x4
-15:30:14 WIN 0554:err:ole:create_server class {daa52b27-8897-50af-ada5-c6c71bb64e17} not registered
-15:30:14 WIN 0554:err:ole:com_get_class_object no class object {daa52b27-8897-50af-ada5-c6c71bb64e17} could be created for context 0x4
-15:30:14 WIN 0554:err:ole:create_server class {daa52b27-8897-50af-ada5-c6c71bb64e17} not registered
-15:30:14 WIN 0554:err:ole:com_get_class_object no class object {daa52b27-8897-50af-ada5-c6c71bb64e17} could be created for context 0x4
-15:31:00 WIN 07d0:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:31:00 WIN 07d0:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"utility") stub
-15:31:00 WIN 07d0:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:31:00 WIN 07d0:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:31:00 WIN 07d0:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:31:11 WIN 0828:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:31:11 WIN 0828:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"utility") stub
-15:31:11 WIN 0828:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:31:11 WIN 0828:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:31:11 WIN 0828:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:31:26 WIN 0878:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:31:26 WIN 0878:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"utility") stub
-15:31:26 WIN 0878:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:31:26 WIN 0878:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:31:26 WIN 0878:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:31:45 WIN 08c4:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:31:45 WIN 08c4:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"utility") stub
-15:31:45 WIN 08c4:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:31:45 WIN 08c4:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:31:45 WIN 08c4:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:32:08 WIN 0918:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:32:08 WIN 0918:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"utility") stub
-15:32:08 WIN 0918:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:32:08 WIN 0918:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:32:08 WIN 0918:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-15:32:27 WIN 0944:fixme:seh:WerRegisterCustomMetadata (L"OfficialBuild", L"1") stub
-15:32:27 WIN 0944:fixme:seh:WerRegisterCustomMetadata (L"ProcessType", L"gpu-process") stub
-15:32:27 WIN 0944:fixme:seh:WerRegisterCustomMetadata (L"Channel", L"none") stub
-15:32:27 WIN 0944:fixme:seh:WerRegisterCustomMetadata (L"WV", L"RobloxStudioBeta.exe") stub
-15:32:27 WIN 0944:fixme:seh:WerRegisterCustomMetadata (L"WV_V", L"0, 731, 0, 7310") stub
-^C15:32:50 WRN Received signal signal=interrupt
-
+15:38:46 INF Logging to file path=/home/ssuvj/.var/app/org.vinegarhq.Vinegar/cache/vinegar/logs/2026-07-28T15:37:56+03:00.log
+15:38:46 INF System information cpu="Intel(R) Core(TM) 3 100U" mem="7.5 GB" distro="Debian GNU/Linux 13 (trixie) 13" display=" (tty)"
+15:38:46 INF DRM Devices cards="[Intel Corporation Raptor Lake-U [Intel Graphics]]"
+15:38:46 DBG Using Prefix environment env="[WINEDLLOVERRIDES=;dxdiagn,winemenubuilder.exe,mscoree,mshtml= WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS=--disable-gpu VK_LOADER_LAYERS_ENABLE=VK_LAYER_VINEGAR_VinegarLayer WINE_D3D_CONFIG=renderer=vulkan WINEDEBUG=,warn+seh XR_LOADER_DEBUG=none]"
+15:38:46 INF Checking for updates
+15:38:46 DBG rbxweb request method=GET url="https://clientsettings.roblox.com/v2/user-channel?binaryType=WindowsStudio64"
+15:38:46 DBG rbxweb response status=200
+15:38:46 DBG rbxweb request method=GET url=https://clientsettings.roblox.com/v2/client-version/WindowsStudio64/channel/LIVE
+15:38:46 DBG rbxweb response status=200
+15:38:46 INF Using Deployment guid=version-14d8b191232f4ddd channel=LIVE
+15:38:46 INF Installing Studio new=version-14d8b191232f4ddd reason="no such file or directory"
+15:38:46 INF Finding Mirror
+15:38:47 INF Fetching Package List
+15:38:47 DBG rbxweb request method=GET url=https://setup.rbxcdn.com/channel/common/version-14d8b191232f4ddd-rbxPkgManifest.txt
+15:38:47 DBG rbxweb response status=200
+15:38:47 INF Fetching Installation Directives
+15:38:47 DBG rbxweb request method=GET url=https://setup.rbxcdn.com/channel/common/version-14d8b191232f4ddd-RobloxStudioInstaller.exe
+15:38:47 DBG rbxweb response status=200
+15:38:47 INF Installing Packages count=34 dir=/home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/versions/version-14d8b191232f4ddd
+15:38:47 INF Downloading package name=RobloxStudio.zip sum=cd4cd009bd3ffaa0a6fb82b86e2dfea4
+15:38:47 INF Downloading package name=content-terrain.zip sum=97327884177381d0f42d428110b4c516
+15:38:47 INF Downloading package name=content-platform-dictionaries.zip sum=6789c4ca6a428c2cbf604079154ceb3e
+15:38:47 INF Downloading package name=WebView2RuntimeInstaller.zip sum=33edb5a4ed7ff2d851b009472d14d59d
+15:38:47 INF Downloading package name=content-avatar.zip sum=8d67ff126c0406c41d729b4abae93b69
+15:38:47 INF Downloading package name=studiocontent-models.zip sum=6b068c7b9041ba046c47239c0028aea6
+15:38:47 INF Downloading package name=WebView2.zip sum=7d58c0d0165342730d5e60fa90e4150b
+15:38:47 INF Downloading package name=ssl.zip sum=a4deebb412dcb2d4a7023a035d6a90cf
+15:38:47 INF Downloading package name=content-configs.zip sum=ceda52645d2edaddfdd3e28a0ea7d469
+15:38:47 INF Downloading package name=content-api-docs.zip sum=cfdf3bcc6658e33ac43721ad426ce994
+15:38:47 INF Downloading package name=shaders.zip sum=0eaa58f49ecd4e0bb9d45cd40aa95249
+15:38:47 INF Downloading package name=content-models.zip sum=d1e313c9213d1418b2f8ebc27f372361
+15:38:47 INF Downloading package name=content-qt_translations.zip sum=9ac41564393da36084990e6dd9d08f50
+15:38:47 INF Downloading package name=content-fonts.zip sum=7071af81f7fad1d26ec29b7699f2d96f
+15:38:47 INF Downloading package name=ApplicationConfig.zip sum=9e6ce8a71b433d3e6802b3438b418c2d
+15:38:47 INF Downloading package name=content-sounds.zip sum=eb9dd4d0637fd6ae21747e6b6a281d21
+15:38:47 INF Downloading package name=redist.zip sum=ef9ef682cc92761cdcfff6614aaad325
+15:38:47 INF Downloading package name=extracontent-models.zip sum=7638dfe9f1a538801efc0bfa6c527678
+15:38:47 INF Downloading package name=Plugins.zip sum=b4b04085aaf099cec525e5368992fbf5
+15:38:47 INF Downloading package name=BuiltInPlugins.zip sum=0f4aafa029e25f18afe4e787140ba115
+15:38:47 INF Downloading package name=Libraries.zip sum=22bc7408734797e22d451fb1a46c7d1d
+15:38:47 INF Downloading package name=extracontent-translations.zip sum=05ad996224bf0ecb21cd232070fbbd2b
+15:38:47 INF Downloading package name=content-platform-fonts.zip sum=8f379ec2b22ff106b837d79f7fdbf0d8
+15:38:47 INF Downloading package name=StudioFonts.zip sum=a9ab0fb1b76e33f406e92991b71f3646
+15:38:47 INF Downloading package name=content-sky.zip sum=1d0390337d1a4a58e5514be1a9481ad6
+15:38:47 INF Downloading package name=extracontent-textures.zip sum=dc589dfcd63f854ad81edd0c34caa2d2
+15:38:47 INF Downloading package name=BuiltInStandalonePlugins.zip sum=f80b0b396f2e763dce8a48b7a238c5b4
+15:38:47 INF Downloading package name=extracontent-scripts.zip sum=8ca1d4bec5eca9b5859f56670eb0e2d2
+15:38:47 INF Downloading package name=content-textures3.zip sum=10461fdfb35f35cca13dbe35dcf21343
+15:38:47 INF Downloading package name=extracontent-luapackages.zip sum=e5a4ce955978bab41a5c775c86009df2
+15:38:47 INF Downloading package name=content-textures2.zip sum=9c0c53e6eec0b3b1ccc275362f6c0a72
+15:38:47 INF Downloading package name=content-studio_svg_textures.zip sum=de91cb984034588a10bf52715f54f1b2
+15:38:47 INF Downloading package name=LibrariesQt5.zip sum=70ba6824862059773260f5911fc09025
+15:38:47 INF Downloading package name=studiocontent-textures.zip sum=d178966148d64aa1305d660681b146f1
+15:38:47 INF Extracting package name=content-terrain.zip dest=PlatformContent/pc/terrain
+15:38:47 INF Extracting package name=studiocontent-models.zip dest=StudioContent/models
+15:38:47 INF Extracting package name=WebView2.zip dest=.
+15:38:47 INF Extracting package name=ssl.zip dest=ssl
+15:38:48 INF Extracting package name=content-configs.zip dest=content/configs
+15:38:48 INF Extracting package name=content-models.zip dest=content/models
+15:38:48 INF Extracting package name=ApplicationConfig.zip dest=ApplicationConfig
+15:38:51 INF Extracting package name=content-api-docs.zip dest=content/api_docs
+15:38:52 INF Extracting package name=content-platform-dictionaries.zip dest=PlatformContent/pc/shared_compression_dictionaries
+15:38:52 INF Extracting package name=content-avatar.zip dest=content/avatar
+15:38:52 INF Extracting package name=content-qt_translations.zip dest=content/qt_translations
+15:38:52 INF Extracting package name=content-sounds.zip dest=content/sounds
+15:38:55 INF Extracting package name=shaders.zip dest=shaders
+15:38:57 INF Extracting package name=content-fonts.zip dest=content/fonts
+15:38:58 INF Extracting package name=WebView2RuntimeInstaller.zip dest=WebView2RuntimeInstaller
+15:38:58 INF Extracting package name=redist.zip dest=.
+15:38:59 INF Extracting package name=Plugins.zip dest=Plugins
+15:39:03 INF Extracting package name=extracontent-models.zip dest=ExtraContent/models
+15:39:03 INF Extracting package name=RobloxStudio.zip dest=.
+15:39:03 INF Extracting package name=Libraries.zip dest=.
+15:39:03 INF Extracting package name=extracontent-translations.zip dest=ExtraContent/translations
+15:39:09 INF Extracting package name=content-platform-fonts.zip dest=PlatformContent/pc/fonts
+15:39:10 INF Extracting package name=content-sky.zip dest=content/sky
+15:39:12 INF Extracting package name=BuiltInPlugins.zip dest=BuiltInPlugins
+15:39:14 INF Extracting package name=extracontent-textures.zip dest=ExtraContent/textures
+15:39:17 INF Extracting package name=extracontent-scripts.zip dest=ExtraContent/scripts
+15:39:20 INF Extracting package name=content-textures3.zip dest=PlatformContent/pc/textures
+15:39:25 INF Extracting package name=StudioFonts.zip dest=StudioFonts
+15:39:26 INF Extracting package name=extracontent-luapackages.zip dest=ExtraContent/LuaPackages
+15:39:27 INF Extracting package name=content-textures2.zip dest=content/textures
+15:39:29 INF Extracting package name=content-studio_svg_textures.zip dest=content/studio_svg_textures
+15:39:31 INF Extracting package name=BuiltInStandalonePlugins.zip dest=BuiltInStandalonePlugins
+15:39:31 INF Extracting package name=LibrariesQt5.zip dest=.
+15:39:31 INF Extracting package name=studiocontent-textures.zip dest=StudioContent/textures
+15:39:31 INF Writing AppSettings
+15:39:31 INF Successfully installed! guid=version-14d8b191232f4ddd
+15:39:31 INF Applying FFlags
+15:39:31 INF Fetching WebView upload=144.0.3719.92
+15:39:32 INF Downloading WebView catalog="dNC7zSOWrDfonkfozjelmPuzIGq9i8b7H33iSz_pJM0="
+15:39:51 INF Setting up Wine first-time=true
+15:39:51 INF Fetching Wine build tag=stable+20260614215204 released=2026-06-14T21:53:52.000Z
+15:39:58 INF Updated Wine build configuration tag=stable+20260614215204 released=2026-06-14T21:53:52.000Z
+15:39:58 INF wine: Updating Wine Prefix
+15:39:58 DBG Running Wine Command cmd="/home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/kombucha/bin/wine wineboot --update"
+15:40:00 WIN wine: failed to start L"C:\\windows\\syswow64\\rundll32.exe": c0000135
+15:40:00 WIN 002c:err:setupapi:do_file_copyW Unsupported style(s) 0x10
+15:40:00 WIN 002c:err:setupapi:SetupDiInstallDevice Failed to start service L"winebth" for device L"ROOT\\WINE\\WINEBTH", error 1359.
+15:40:00 WIN 002c:err:setupapi:SetupDiInstallDevice Failed to control service L"winebth" for device L"ROOT\\WINE\\WINEBTH", error 1062.
+15:40:00 WIN 002c:err:setupapi:do_file_copyW Unsupported style(s) 0x10
+15:40:00 WIN 0114:err:setupapi:do_file_copyW Unsupported style(s) 0x10
+15:40:00 WIN 0114:err:setupapi:do_file_copyW Unsupported style(s) 0x10
+15:40:00 WIN 002c:err:setupapi:do_file_copyW Unsupported style(s) 0x10
+15:40:02 DBG Running Wine Command cmd="/home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/kombucha/bin/wineserver --kill"
+15:40:02 DBG Running Wine Command cmd="/home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/kombucha/bin/wineserver --persistent=6"
+15:40:02 DBG Running Wine Command cmd="/home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/kombucha/bin/wine wineboot --restart"
+15:40:02 WIN 002c:err:wineboot:process_run_key Error running cmd L"C:\\windows\\system32\\winemenubuilder.exe -a -r" (126).
+15:40:02 WIN 00a4:err:ntoskrnl:ZwLoadDriver failed to create driver L"\\Registry\\Machine\\System\\CurrentControlSet\\Services\\winebth": c00000e5
+15:40:02 WIN 003c:fixme:service:scmdatabase_autostart_services Auto-start service L"winebth" failed to start: 1359
+15:40:03 DBG Changing Wine's theme dark=false
+15:40:03 INF Updating Paths
+15:40:03 DBG Running Wine Command cmd="/home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/kombucha/bin/wine wineboot --restart"
+15:40:03 INF Checking WebView against=144.0.3719.92
+15:40:03 INF Installing WebView version=144.0.3719.92 path=/home/ssuvj/.var/app/org.vinegarhq.Vinegar/cache/vinegar/webview-144.0.3719.92.exe
+15:40:03 DBG Running Wine Command cmd="/home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/kombucha/bin/wine reg query HKCU\\Software\\Wine\\AppDefaults\\msedgewebview2.exe /s"
+15:40:03 DBG Running Wine Command cmd="/home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/kombucha/bin/wine /home/ssuvj/.var/app/org.vinegarhq.Vinegar/cache/vinegar/webview-144.0.3719.92.exe --msedgewebview --do-not-launch-msedge --system-level"
+15:40:03 WIN 0128:fixme:ntdll:RtlGetDeviceFamilyInfoEnum 0000000000000000 00007FFFFE20F48C 00007FFFFE20F488: stub
+15:40:03 WIN 0128:fixme:ntdll:EtwRegisterTraceGuidsW   register trace class {00000000-0000-0000-0000-000000000000}
+15:40:03 WIN 0128:fixme:ntdll:EtwEventSetInformation (deadbeef, 2, 00000001406812A3, 42) stub
+15:40:03 WIN 0128:fixme:ntdll:EtwEventSetInformation (deadbeef, 2, 00000001406812DE, 42) stub
+15:40:03 WIN 0130:fixme:ntdll:RtlGetDeviceFamilyInfoEnum 0000000000000000 00007FFFFE20F48C 00007FFFFE20F488: stub
+15:40:03 WIN 0130:fixme:ntdll:EtwEventSetInformation (deadbeef, 2, 0000000140681319, 45) stub
+15:40:03 WIN 0130:fixme:file:NtLockFile I/O completion on lock not implemented yet
+15:40:03 WIN 0130:fixme:seh:WerRegisterCustomMetadata (L"MetricsClientIdHash", L"0") stub
+15:40:03 WIN 0130:fixme:seh:WerRegisterCustomMetadata (L"MetricsSessionId", L"0") stub
+15:40:03 WIN 0130:fixme:seh:WerRegisterCustomMetadata (L"VariationsSeedETag", L"") stub
+15:40:03 WIN 0130:fixme:seh:WerRegisterCustomMetadata (L"RuntimeVariationsSeedETag", L"") stub
+15:40:03 WIN 0130:fixme:seh:WerRegisterCustomMetadata (L"UXConfigCorrelationId", L"") stub
+15:40:03 WIN 0130:fixme:seh:WerRegisterCustomMetadata (L"is_cp", L"0") stub
+15:40:03 WIN 0130:fixme:process:SetProcessShutdownParameters (00000100, 00000001): partial stub.
+15:40:03 WIN 0128:fixme:file:NtLockFile I/O completion on lock not implemented yet
+15:40:03 WIN 0128:fixme:heap:RtlSetHeapInformation HEAP_INFORMATION_CLASS 1 not implemented!
+15:40:04 WIN 0128:fixme:file:NtSetInformationFile Unsupported class (74)
+15:40:04 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A4, 5, 00007FFFFE20E790, 8
+15:40:11 WIN 0128:fixme:process:GetProcessMitigationPolicy (FFFFFFFFFFFFFFFF, 4, 00007FFFFE20DFE4, 4): stub
+15:40:11 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:11 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:11 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:11 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:11 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:11 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:11 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:11 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:11 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:11 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:11 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:11 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:11 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:11 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:11 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:11 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:11 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:11 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:11 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:11 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:11 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:11 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:11 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:11 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:11 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:11 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:11 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:11 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:11 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:12 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:13 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:13 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:14 WIN 0128:fixme:file:SetFileInformationByHandle 00000000000000A8, 5, 00007FFFFE20E860, 8
+15:40:14 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E130 1 5 00000000000000A8 - stub
+15:40:14 WIN 0128:fixme:security:SetCachedSigningLevel 00007FFFFE20E9E0 1 5 00000000000000A4 - stub
+15:40:14 WIN 0128:fixme:nls:RtlGetThreadPreferredUILanguages 00000038, 00007FFFFE20E36C, 0000000000000000 00007FFFFE20E368
+15:40:14 WIN 0128:fixme:nls:get_dummy_preferred_ui_language (0x38 0x409 00007FFFFE20E36C 0000000000000000 00007FFFFE20E368) returning a dummy value (current locale)
+15:40:14 WIN 0128:fixme:nls:RtlGetThreadPreferredUILanguages 00000038, 00007FFFFE20E36C, 00007FFFFE20E350 00007FFFFE20E368
+15:40:14 WIN 0128:fixme:nls:get_dummy_preferred_ui_language (0x38 0x409 00007FFFFE20E36C 00007FFFFE20E350 00007FFFFE20E368) returning a dummy value (current locale)
+15:40:14 WIN 0128:fixme:combase:RoGetActivationFactory (L"Windows.System.UserProfile.AssignedAccessSettings", {34a81d0d-8a29-5ef3-a7be-618e6ac3bd01}, 00007FFFFE20E438): semi-stub
+15:40:14 WIN 0128:err:combase:RoGetActivationFactory Failed to find library for L"Windows.System.UserProfile.AssignedAccessSettings"
+15:40:14 WIN 0128:fixme:combase:RoGetActivationFactory (L"Windows.System.UserProfile.AssignedAccessSettings", {34a81d0d-8a29-5ef3-a7be-618e6ac3bd01}, 00007FFFFE20E438): semi-stub
+15:40:14 WIN 0128:err:combase:RoGetActivationFactory Failed to find library for L"Windows.System.UserProfile.AssignedAccessSettings"
+15:40:14 WIN 0128:fixme:combase:RoGetActivationFactory (L"Windows.Internal.System.Profile.RegionPolicyEvaluator", {1ca20398-c1d9-5f12-b40a-6528206e3b5e}, 00007FFFFE20E418): semi-stub
+15:40:14 WIN 0128:err:combase:RoGetActivationFactory Failed to find library for L"Windows.Internal.System.Profile.RegionPolicyEvaluator"
+15:40:14 WIN 0128:fixme:combase:RoGetActivationFactory (L"Windows.System.UserProfile.AssignedAccessSettings", {34a81d0d-8a29-5ef3-a7be-618e6ac3bd01}, 00007FFFFE20E428): semi-stub
+15:40:14 WIN 0128:err:combase:RoGetActivationFactory Failed to find library for L"Windows.System.UserProfile.AssignedAccessSettings"
+15:40:14 WIN 0128:fixme:combase:RoGetActivationFactory (L"Windows.System.UserProfile.AssignedAccessSettings", {34a81d0d-8a29-5ef3-a7be-618e6ac3bd01}, 00007FFFFE20E428): semi-stub
+15:40:14 WIN 0128:err:combase:RoGetActivationFactory Failed to find library for L"Windows.System.UserProfile.AssignedAccessSettings"
+15:40:15 WIN 0128:fixme:hnetcfg:enumvar_Next 00007FFFFE8033E0,1,00007FFFFE20E4C0,0000000000000000
+15:40:15 WIN 0128:fixme:hnetcfg:netfw_rule_put_Name 00007FFFFE8033E0, L"Microsoft Edge (mDNS-In)"
+15:40:15 WIN 0128:fixme:hnetcfg:netfw_rule_put_Description 00007FFFFE8033E0, L"Inbound rule for Microsoft Edge to allow mDNS traffic."
+15:40:15 WIN 0128:fixme:hnetcfg:netfw_rule_put_ApplicationName 00007FFFFE8033E0, L"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.92\\msedgewebview2.exe"
+15:40:15 WIN 0128:fixme:hnetcfg:netfw_rule_put_Protocol 00007FFFFE8033E0, 17
+15:40:15 WIN 0128:fixme:hnetcfg:netfw_rule_put_Direction 00007FFFFE8033E0, 1
+15:40:15 WIN 0128:fixme:hnetcfg:netfw_rule_put_Enabled 00007FFFFE8033E0, 0xffffffff
+15:40:15 WIN 0128:fixme:hnetcfg:netfw_rule_put_LocalPorts 00007FFFFE8033E0, L"5353"
+15:40:15 WIN 0128:fixme:hnetcfg:netfw_rule_put_Grouping 00007FFFFE8033E0, L"Microsoft Edge WebView2 Runtime"
+15:40:15 WIN 0128:fixme:hnetcfg:netfw_rule_put_Profiles 00007FFFFE8033E0, 0x7fffffff
+15:40:15 WIN 0128:fixme:hnetcfg:netfw_rule_put_Action 00007FFFFE8033E0, 1
+15:40:15 WIN 0128:fixme:hnetcfg:netfw_rules_Add 00007FFFFE8033B0, 00007FFFFE8033E0
+15:40:15 WIN 0128:fixme:hnetcfg:enumvar_Next 00007FFFFE8033E0,1,00007FFFFE20E230,0000000000000000
+15:40:15 WIN 0128:fixme:thread:NtSetInformationThread ThreadPowerThrottling stub!
+15:40:15 WIN 0128:fixme:file:ReplaceFileW Ignoring flags 2
+15:40:15 WIN 0128:fixme:thread:NtSetInformationThread ThreadPowerThrottling stub!
+15:40:30 INF Launching Studio cmd="/home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/kombucha/bin/wine explorer /desktop=e646e7c0-c6fa-44b5-90c9-5af477018ba1,1814x1024 /home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/versions/version-14d8b191232f4ddd/RobloxStudioBeta.exe"
+15:40:30 WIN 01b8:err:system:NtUserChangeDisplaySettings Changing (null) display settings returned -2.
+15:40:30 WIN 01b8:err:explorer:initialize_display_settings Failed to set primary display settings.
+15:40:31 WIN 01cc:err:winediag:wined3d_dll_init Using the Vulkan renderer.
+15:40:31 WIN 01cc:fixme:win:RegisterPowerSettingNotification (0000000000020084,{02731015-4510-4526-99e6-e5a17ebd1aea},0): stub
+15:40:31 WIN 01cc:fixme:file:NtLockFile I/O completion on lock not implemented yet
+15:40:31 WIN 01cc:fixme:d3d:adapter_vk_init_driver_info Failed to retrieve GPU description for device "Intel(R) Graphics (RPL-U)" 8086:a7ad.
+15:40:31 WIN 01cc:fixme:ntdll:NtQuerySystemInformation info_class SYSTEM_PERFORMANCE_INFORMATION
+15:40:31 WIN 01f0:fixme:file:NtLockFile I/O completion on lock not implemented yet
+15:40:31 WIN 01f0:fixme:process:SetProcessShutdownParameters (00000100, 00000001): partial stub.
+15:40:31 WIN 021c:fixme:ntdll:RtlGetDeviceFamilyInfoEnum 00007FB922EFEA68 00007FB922EFEA60 00007FB922EFEA64: stub
+15:40:32 WIN 01e0:fixme:d3d:adapter_vk_init_driver_info Failed to retrieve GPU description for device "Intel(R) Graphics (RPL-U)" 8086:a7ad.
+15:40:32 WIN 01e0:fixme:d3d:adapter_vk_init_driver_info Failed to retrieve GPU description for device "Intel(R) Graphics (RPL-U)" 8086:a7ad.
+15:40:32 WIN 01cc:fixme:nls:get_dummy_preferred_ui_language (0x8 0x409 00007FFFFE207D40 00007FFFFE207C80 00007FFFFE207D48) returning a dummy value (current locale)
+15:40:32 WIN 01e0:fixme:wbemprox:wbem_locator_ConnectServer unsupported flags
+15:40:32 WIN 01e0:fixme:wbemprox:client_security_SetBlanket 00006FFFFAE32030, 00007FB8F78AD690, 10, 0, (null), 3, 3, 0000000000000000, 0
+15:40:32 WIN 01e0:fixme:wbemprox:client_security_Release 00006FFFFAE32030
+15:40:32 WIN 01e0:fixme:wbemprox:exec_assoc_view ignoring keywords
+15:40:32 WIN 01e0:fixme:wbemprox:enum_class_object_Next timeout not supported
+15:40:32 WIN 01e0:fixme:wbemprox:exec_assoc_view ignoring keywords
+15:40:32 WIN 01e0:fixme:wbemprox:exec_assoc_view ignoring keywords
+15:40:32 WIN 01e0:fixme:wbemprox:exec_assoc_view ignoring keywords
+15:40:32 WIN 01cc:fixme:win:RegisterPowerSettingNotification (000000000007009E,{02731015-4510-4526-99e6-e5a17ebd1aea},0): stub
+15:40:32 WIN 01cc:fixme:win:RegisterSuspendResumeNotification 000000000007009E, 0: stub.
+15:40:33 WIN 01cc:fixme:ole:get_tymed_from_nonole_cf returning TYMED_NULL for cf 0010
+15:40:33 WIN 01cc:fixme:ntdll:RtlGetDeviceFamilyInfoEnum 0000000000000000 00007FB9172BD6BC 00007FB9172BD6B8: stub
+15:40:33 WIN 01cc:fixme:ntdll:EtwEventSetInformation (deadbeef, 2, 000061400008C0D8, 27) stub
+15:40:33 WIN 01cc:fixme:ntdll:EtwRegisterTraceGuidsW   register trace class {00000000-0000-0000-0000-000000000000}
+15:40:33 WIN 01cc:fixme:ver:GetCurrentApplicationUserModelId (00007FB9172BD4CC 00007FB9172BD4D0): stub
+15:40:33 WIN 01cc:fixme:ver:GetCurrentApplicationUserModelId (00007FFFFE20A280 00006140000F0280): stub
+15:40:33 WIN 01cc:fixme:dwmapi:DwmSetWindowAttribute (00000000000100C8, d, 00007FFFFE20A3F0, 4) stub
+15:40:34 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000100C8 c04a 1 0000000000000000
+15:40:34 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000100C8 c04b 1 0000000000000000
+15:40:34 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000100C8 c04c 1 0000000000000000
+15:40:34 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000100C8 c04d 1 0000000000000000
+15:40:35 WIN 01cc:fixme:menu:NtUserGetSystemMenu not supported on other process window 0x100f8
+15:40:35 INF Environment variable not found.
+15:40:35 INF SetParent failed while parenting browser window with error: 
+15:40:35 INF Environment variable not found.
+15:40:35 WIN 01cc:fixme:ver:GetCurrentPackageFullName (00007FFFFE20A26C 00007FFFFE20A270): stub
+15:40:35 WIN 01cc:fixme:shell:SHGetPropertyStoreForWindow (0000000000020090 00006FFFFA89DE68 00007FFFFE20A2E0) stub!
+15:40:35 WIN 01cc:fixme:shell:window_prop_store_GetValue 00007FB883771AB0, {{9f4c2855-9f79-4b39-a8d0-e1d42de1d5f3},5}, 00007FFFFE20A2C0
+15:40:35 WIN 01cc:fixme:ver:GetCurrentApplicationUserModelId (00007FFFFE20A2E0 00006140000F0140): stub
+15:40:35 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000200F8 c04a 1 0000000000000000
+15:40:35 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000200F8 c04b 1 0000000000000000
+15:40:35 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000200F8 c04c 1 0000000000000000
+15:40:35 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000200F8 c04d 1 0000000000000000
+15:40:35 WIN 01cc:fixme:menu:NtUserGetSystemMenu not supported on other process window 0x10108
+15:40:35 INF SetParent failed while parenting browser window with error: 
+15:40:35 INF Success.
+15:40:39 WIN 01cc:fixme:msg:pack_message msg 14 (WM_ERASEBKGND) not supported yet
+15:40:39 WIN 01cc:fixme:msg:pack_message msg 14 (WM_ERASEBKGND) not supported yet
+15:40:55 ERR Failed to register with GameMode err="dbus: Gtk reported an error with message: 'Timeout was reached', domain: '205' and code: '24'"
+15:41:02 WIN 01cc:fixme:ver:GetCurrentApplicationUserModelId (00007FFFFE20A280 00006140000F0640): stub
+15:41:03 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000300D6 c04a 1 0000000000000000
+15:41:03 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000300D6 c04b 1 0000000000000000
+15:41:03 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000300D6 c04c 1 0000000000000000
+15:41:03 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000300D6 c04d 1 0000000000000000
+15:41:03 WIN 01cc:fixme:menu:NtUserGetSystemMenu not supported on other process window 0x20118
+15:41:03 INF SetParent failed while parenting browser window with error: 
+15:41:03 INF Success.
+15:41:03 WIN 01cc:fixme:shell:SHGetPropertyStoreForWindow (0000000000040112 00006FFFFA89DE68 00007FFFFE20A2E0) stub!
+15:41:03 WIN 01cc:fixme:shell:window_prop_store_GetValue 00007FB8856F1690, {{9f4c2855-9f79-4b39-a8d0-e1d42de1d5f3},5}, 00007FFFFE20A2C0
+15:41:03 WIN 01cc:fixme:ver:GetCurrentApplicationUserModelId (00007FFFFE20A2E0 00006140000F0640): stub
+15:41:03 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000400D6 c04a 1 0000000000000000
+15:41:03 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000400D6 c04b 1 0000000000000000
+15:41:03 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000400D6 c04c 1 0000000000000000
+15:41:03 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000400D6 c04d 1 0000000000000000
+15:41:03 WIN 01cc:fixme:menu:NtUserGetSystemMenu not supported on other process window 0x30118
+15:41:04 INF SetParent failed while parenting browser window with error: 
+15:41:04 INF Success.
+15:41:06 WIN 01cc:fixme:msg:pack_message msg 14 (WM_ERASEBKGND) not supported yet
+15:41:06 WIN 01cc:fixme:msg:pack_message msg 14 (WM_ERASEBKGND) not supported yet
+15:41:51 WIN Failed to call portal: Timeout was reached
+15:42:11 WIN 01cc:fixme:ole:get_tymed_from_nonole_cf returning TYMED_NULL for cf 0010
+15:42:38 WIN 01cc:fixme:ole:get_tymed_from_nonole_cf returning TYMED_NULL for cf 0010
+15:43:05 WIN 01cc:fixme:ver:GetCurrentApplicationUserModelId (00007FFFFE20A280 00006140000F0500): stub
+15:43:06 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000800D4 c04a 1 0000000000000000
+15:43:06 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000800D4 c04b 1 0000000000000000
+15:43:06 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000800D4 c04c 1 0000000000000000
+15:43:06 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000800D4 c04d 1 0000000000000000
+15:43:07 WIN 01cc:fixme:menu:NtUserGetSystemMenu not supported on other process window 0x40090
+15:43:07 INF SetParent failed while parenting browser window with error: 
+15:43:07 INF Success.
+15:43:07 WIN 01cc:fixme:shell:SHGetPropertyStoreForWindow (00000000000400EC 00006FFFFA89DE68 00007FFFFE20A2E0) stub!
+15:43:07 WIN 01cc:fixme:shell:window_prop_store_GetValue 00007FB8859438B0, {{9f4c2855-9f79-4b39-a8d0-e1d42de1d5f3},5}, 00007FFFFE20A2C0
+15:43:07 WIN 01cc:fixme:ver:GetCurrentApplicationUserModelId (00007FFFFE20A2E0 00006140000F0500): stub
+15:43:08 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000900D4 c04a 1 0000000000000000
+15:43:08 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000900D4 c04b 1 0000000000000000
+15:43:08 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000900D4 c04c 1 0000000000000000
+15:43:08 WIN 01cc:fixme:msg:ChangeWindowMessageFilterEx 00000000000900D4 c04d 1 0000000000000000
+15:43:08 WIN 01cc:fixme:menu:NtUserGetSystemMenu not supported on other process window 0x4011e
+15:43:08 INF SetParent failed while parenting browser window with error: 
+15:43:08 INF Success.
+15:43:11 WIN 01cc:fixme:msg:pack_message msg 14 (WM_ERASEBKGND) not supported yet
+15:43:11 WIN 01cc:fixme:msg:pack_message msg 14 (WM_ERASEBKGND) not supported yet
+^C
 ssuvj@7ui87ui8:~$ 
