@@ -15,9 +15,9 @@ sudo apt update -y
 sudo apt install falkon -y
 
 # 4. freetube
-flatpak update -y
-sudo apt update -y
-flatpak install io.freetubeapp.FreeTube -y
+#flatpak update -y
+#sudo apt update -y
+#flatpak install io.freetubeapp.FreeTube -y
 
 # 5. xterm terminal
 sudo apt update -y
@@ -55,7 +55,7 @@ sudo apt install wget -y
 sudo apt update -y
 sudo apt install openssh-server -y
 
-# 14. stress
+# 14. stress (cpu,ram etc)
 sudo apt update -y
 sudo apt install stress -y
 
@@ -84,12 +84,12 @@ sudo apt update -y
 sudo apt install rofi xcape -y
 
 # 21. openbox
-sudo apt update -y
-sudo apt install openbox -y
+#sudo apt update -y
+#sudo apt install openbox -y
 
 # 22. tint2
-sudo apt update -y
-sudo apt install tint2 -y
+#sudo apt update -y
+#sudo apt install tint2 -y
 
 # 23. rofi
 sudo apt update -y
