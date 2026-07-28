@@ -1,136 +1,28 @@
-ssuvj@7ui87ui8:~$ rm -rf ~/.var/app/org.vinegarhq.Vinegar
+ssuvj@7ui87ui8:~$ rm -rf ~/.var/app/org.vinegarhq.Vinegar/data/vinegar/prefixes/studio/drive_c/Program\ Files\ \(x86\)/Microsoft/EdgeWebView
+ssuvj@7ui87ui8:~$ xdg-mime default org.vinegarhq.Vinegar.desktop x-scheme-handler/roblox-studio
 ssuvj@7ui87ui8:~$ DISPLAY=:0 flatpak run org.vinegarhq.Vinegar
-16:08:02 INF Logging to file path=/home/ssuvj/.var/app/org.vinegarhq.Vinegar/cache/vinegar/logs/2026-07-28T16:07:12+03:00.log
-16:08:02 INF System information cpu="Intel(R) Core(TM) 3 100U" mem="7.5 GB" distro="Debian GNU/Linux 13 (trixie) 13" display=" (tty)"
-16:08:02 INF DRM Devices cards="[Intel Corporation Raptor Lake-U [Intel Graphics]]"
-16:08:09 INF Setting up Wine first-time=true
-16:08:10 INF Fetching Wine build tag=stable+20260614215204 released=2026-06-14T21:53:52.000Z
-16:08:10 INF Setting up Wine first-time=true
-16:08:10 INF Updated Wine build configuration tag=stable+20260614215204 released=2026-06-14T21:53:52.000Z
-16:08:10 INF wine: Updating Wine Prefix
-16:08:10 ERR Error! err="exec: \"/home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/kombucha/bin/wine\": stat /home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/kombucha/bin/wine: no such file or directory"
-16:08:17 ERR Error! err="dl: create link: symlink kombucha-stable+20260614215204 /home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/kombucha: file exists"
-16:10:23 INF Saving configuration!
-16:10:26 INF Saving configuration!
-16:12:30 INF Goodbye!
-ssuvj@7ui87ui8:~$ DISPLAY=:0 flatpak run org.vinegarhq.Vinegar
-16:13:26 INF Logging to file path=/home/ssuvj/.var/app/org.vinegarhq.Vinegar/cache/vinegar/logs/2026-07-28T16:12:36+03:00.log
-16:13:26 INF System information cpu="Intel(R) Core(TM) 3 100U" mem="7.5 GB" distro="Debian GNU/Linux 13 (trixie) 13" display=" (tty)"
-16:13:26 INF DRM Devices cards="[Intel Corporation Raptor Lake-U [Intel Graphics]]"
-16:13:26 INF Checking for updates
-16:13:26 INF Using Deployment guid=version-14d8b191232f4ddd channel=LIVE
-16:13:26 INF Installing Studio new=version-14d8b191232f4ddd reason="no such file or directory"
-16:13:26 INF Finding Mirror
-16:13:27 INF Fetching Package List
-16:13:27 INF Fetching Installation Directives
-16:13:27 INF Installing Packages count=34 dir=/home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/versions/version-14d8b191232f4ddd
-16:13:27 INF Downloading package name=RobloxStudio.zip sum=cd4cd009bd3ffaa0a6fb82b86e2dfea4
-16:13:27 INF Downloading package name=ssl.zip sum=a4deebb412dcb2d4a7023a035d6a90cf
-16:13:27 INF Downloading package name=WebView2.zip sum=7d58c0d0165342730d5e60fa90e4150b
-16:13:27 INF Downloading package name=redist.zip sum=ef9ef682cc92761cdcfff6614aaad325
-16:13:27 INF Downloading package name=ApplicationConfig.zip sum=9e6ce8a71b433d3e6802b3438b418c2d
-16:13:27 INF Downloading package name=content-models.zip sum=d1e313c9213d1418b2f8ebc27f372361
-16:13:27 INF Downloading package name=content-textures2.zip sum=9c0c53e6eec0b3b1ccc275362f6c0a72
-16:13:27 INF Downloading package name=content-terrain.zip sum=97327884177381d0f42d428110b4c516
-16:13:27 INF Downloading package name=content-sky.zip sum=1d0390337d1a4a58e5514be1a9481ad6
-16:13:27 INF Downloading package name=content-fonts.zip sum=7071af81f7fad1d26ec29b7699f2d96f
-16:13:27 INF Downloading package name=studiocontent-models.zip sum=6b068c7b9041ba046c47239c0028aea6
-16:13:27 INF Downloading package name=content-qt_translations.zip sum=9ac41564393da36084990e6dd9d08f50
-16:13:27 INF Downloading package name=extracontent-scripts.zip sum=8ca1d4bec5eca9b5859f56670eb0e2d2
-16:13:27 INF Downloading package name=content-textures3.zip sum=10461fdfb35f35cca13dbe35dcf21343
-16:13:27 INF Downloading package name=Libraries.zip sum=22bc7408734797e22d451fb1a46c7d1d
-16:13:27 INF Downloading package name=content-sounds.zip sum=eb9dd4d0637fd6ae21747e6b6a281d21
-16:13:27 INF Downloading package name=content-configs.zip sum=ceda52645d2edaddfdd3e28a0ea7d469
-16:13:27 INF Downloading package name=extracontent-translations.zip sum=05ad996224bf0ecb21cd232070fbbd2b
-16:13:27 INF Downloading package name=extracontent-textures.zip sum=dc589dfcd63f854ad81edd0c34caa2d2
-16:13:27 INF Downloading package name=WebView2RuntimeInstaller.zip sum=33edb5a4ed7ff2d851b009472d14d59d
-16:13:27 INF Downloading package name=content-avatar.zip sum=8d67ff126c0406c41d729b4abae93b69
-16:13:27 INF Downloading package name=BuiltInPlugins.zip sum=0f4aafa029e25f18afe4e787140ba115
-16:13:27 INF Downloading package name=content-platform-dictionaries.zip sum=6789c4ca6a428c2cbf604079154ceb3e
-16:13:27 INF Downloading package name=shaders.zip sum=0eaa58f49ecd4e0bb9d45cd40aa95249
-16:13:27 INF Downloading package name=LibrariesQt5.zip sum=70ba6824862059773260f5911fc09025
-16:13:27 INF Downloading package name=Plugins.zip sum=b4b04085aaf099cec525e5368992fbf5
-16:13:27 INF Downloading package name=BuiltInStandalonePlugins.zip sum=f80b0b396f2e763dce8a48b7a238c5b4
-16:13:27 INF Downloading package name=StudioFonts.zip sum=a9ab0fb1b76e33f406e92991b71f3646
-16:13:27 INF Downloading package name=extracontent-models.zip sum=7638dfe9f1a538801efc0bfa6c527678
-16:13:27 INF Downloading package name=content-studio_svg_textures.zip sum=de91cb984034588a10bf52715f54f1b2
-16:13:27 INF Downloading package name=content-platform-fonts.zip sum=8f379ec2b22ff106b837d79f7fdbf0d8
-16:13:27 INF Downloading package name=content-api-docs.zip sum=cfdf3bcc6658e33ac43721ad426ce994
-16:13:27 INF Downloading package name=studiocontent-textures.zip sum=d178966148d64aa1305d660681b146f1
-16:13:27 INF Downloading package name=extracontent-luapackages.zip sum=e5a4ce955978bab41a5c775c86009df2
-16:13:27 INF Extracting package name=ApplicationConfig.zip dest=ApplicationConfig
-16:13:27 INF Extracting package name=WebView2.zip dest=.
-16:13:28 INF Extracting package name=content-terrain.zip dest=PlatformContent/pc/terrain
-16:13:28 INF Extracting package name=studiocontent-models.zip dest=StudioContent/models
-16:13:28 INF Extracting package name=content-models.zip dest=content/models
-16:13:28 INF Extracting package name=content-qt_translations.zip dest=content/qt_translations
-16:13:28 INF Extracting package name=content-sounds.zip dest=content/sounds
-16:13:28 INF Extracting package name=ssl.zip dest=ssl
-16:13:28 INF Extracting package name=content-configs.zip dest=content/configs
-16:13:29 INF Extracting package name=extracontent-translations.zip dest=ExtraContent/translations
-16:13:29 INF Extracting package name=redist.zip dest=.
-16:13:29 INF Extracting package name=content-sky.zip dest=content/sky
-16:13:30 INF Extracting package name=content-textures2.zip dest=content/textures
-16:13:30 INF Extracting package name=extracontent-scripts.zip dest=ExtraContent/scripts
-16:13:30 INF Extracting package name=content-fonts.zip dest=content/fonts
-16:13:31 INF Extracting package name=content-textures3.zip dest=PlatformContent/pc/textures
-16:13:32 INF Extracting package name=Libraries.zip dest=.
-16:13:33 INF Extracting package name=extracontent-textures.zip dest=ExtraContent/textures
-16:13:33 INF Extracting package name=WebView2RuntimeInstaller.zip dest=WebView2RuntimeInstaller
-16:13:34 INF Extracting package name=content-avatar.zip dest=content/avatar
-16:13:35 INF Extracting package name=content-platform-dictionaries.zip dest=PlatformContent/pc/shared_compression_dictionaries
-16:13:45 INF Extracting package name=RobloxStudio.zip dest=.
-16:13:50 INF Extracting package name=BuiltInPlugins.zip dest=BuiltInPlugins
-16:13:54 INF Extracting package name=extracontent-models.zip dest=ExtraContent/models
-16:13:55 INF Extracting package name=content-studio_svg_textures.zip dest=content/studio_svg_textures
-16:13:55 INF Extracting package name=Plugins.zip dest=Plugins
-16:14:00 INF Extracting package name=content-platform-fonts.zip dest=PlatformContent/pc/fonts
-16:14:00 INF Extracting package name=LibrariesQt5.zip dest=.
-16:14:02 INF Extracting package name=StudioFonts.zip dest=StudioFonts
-16:14:06 INF Extracting package name=shaders.zip dest=shaders
-16:14:09 INF Extracting package name=content-api-docs.zip dest=content/api_docs
-16:14:11 INF Extracting package name=BuiltInStandalonePlugins.zip dest=BuiltInStandalonePlugins
-16:14:11 INF Extracting package name=studiocontent-textures.zip dest=StudioContent/textures
-16:14:11 INF Extracting package name=extracontent-luapackages.zip dest=ExtraContent/LuaPackages
-16:14:12 INF Writing AppSettings
-16:14:12 INF Successfully installed! guid=version-14d8b191232f4ddd
-16:14:12 INF Applying FFlags
-16:14:12 INF Fetching WebView upload=144.0.3719.92
-16:14:12 INF Downloading WebView catalog="dNC7zSOWrDfonkfozjelmPuzIGq9i8b7H33iSz_pJM0="
-16:14:29 INF Setting up Wine first-time=true
-16:14:29 INF wine: Updating Wine Prefix
-16:14:31 WIN wine: failed to start L"C:\\windows\\syswow64\\rundll32.exe": c0000135
-16:14:31 WIN 002c:err:setupapi:do_file_copyW Unsupported style(s) 0x10
-16:14:31 WIN 002c:err:setupapi:SetupDiInstallDevice Failed to start service L"winebth" for device L"ROOT\\WINE\\WINEBTH", error 1359.
-16:14:31 WIN 002c:err:setupapi:SetupDiInstallDevice Failed to control service L"winebth" for device L"ROOT\\WINE\\WINEBTH", error 1062.
-16:14:31 WIN 002c:err:setupapi:do_file_copyW Unsupported style(s) 0x10
-16:14:31 WIN 0114:err:setupapi:do_file_copyW Unsupported style(s) 0x10
-16:14:31 WIN 0114:err:setupapi:do_file_copyW Unsupported style(s) 0x10
-16:14:31 WIN 002c:err:setupapi:do_file_copyW Unsupported style(s) 0x10
-16:14:33 WIN 002c:err:wineboot:process_run_key Error running cmd L"C:\\windows\\system32\\winemenubuilder.exe -a -r" (126).
-16:14:33 WIN 00a4:err:ntoskrnl:ZwLoadDriver failed to create driver L"\\Registry\\Machine\\System\\CurrentControlSet\\Services\\winebth": c00000e5
-16:14:33 INF Updating Paths
-16:14:33 INF Checking WebView against=144.0.3719.92
-16:14:33 INF Installing WebView version=144.0.3719.92 path=/home/ssuvj/.var/app/org.vinegarhq.Vinegar/cache/vinegar/webview-144.0.3719.92.exe
-16:14:33 WIN 0130:fixme:seh:WerRegisterCustomMetadata (L"MetricsClientIdHash", L"0") stub
-16:14:33 WIN 0130:fixme:seh:WerRegisterCustomMetadata (L"MetricsSessionId", L"0") stub
-16:14:33 WIN 0130:fixme:seh:WerRegisterCustomMetadata (L"VariationsSeedETag", L"") stub
-16:14:33 WIN 0130:fixme:seh:WerRegisterCustomMetadata (L"RuntimeVariationsSeedETag", L"") stub
-16:14:33 WIN 0130:fixme:seh:WerRegisterCustomMetadata (L"UXConfigCorrelationId", L"") stub
-16:14:33 WIN 0130:fixme:seh:WerRegisterCustomMetadata (L"is_cp", L"0") stub
-16:15:03 INF Launching Studio cmd="/home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/kombucha/bin/wine explorer /desktop=c966e6fc-0965-4c0d-beee-e505c3df9f44,1814x1024 /home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/versions/version-14d8b191232f4ddd/RobloxStudioBeta.exe"
-16:15:03 WIN 01b8:err:system:NtUserChangeDisplaySettings Changing (null) display settings returned -2.
-16:15:03 WIN 01b8:err:explorer:initialize_display_settings Failed to set primary display settings.
-16:15:08 INF Environment variable not found.
-16:15:08 INF SetParent failed while parenting browser window with error: 
-16:15:08 INF Environment variable not found.
-16:15:08 INF SetParent failed while parenting browser window with error: 
-16:15:08 INF Success.
-16:15:28 ERR Failed to register with GameMode err="dbus: Gtk reported an error with message: 'Timeout was reached', domain: '205' and code: '24'"
-^C16:17:52 WRN Received signal signal=interrupt
-16:17:52 WIN Failed to call portal: The connection is closed
-16:17:52 WIN Failed to call portal: The connection is closed
-16:17:52 WIN Failed to call portal: The connection is closed
-16:17:52 WIN Failed to call portal: The connection is closed
+16:19:46 INF Logging to file path=/home/ssuvj/.var/app/org.vinegarhq.Vinegar/cache/vinegar/logs/2026-07-28T16:19:16+03:00.log
+16:19:46 INF System information cpu="Intel(R) Core(TM) 3 100U" mem="7.5 GB" distro="Debian GNU/Linux 13 (trixie) 13" display=" (tty)"
+16:19:46 INF DRM Devices cards="[Intel Corporation Raptor Lake-U [Intel Graphics]]"
+16:19:46 INF Acquiring user authentication
+16:19:46 WRN Retrieving authenticated user failed err="no current user"
+16:19:46 INF Checking for updates
+16:19:46 INF Using Deployment guid=version-14d8b191232f4ddd channel=LIVE
+16:19:46 INF Up to date guid=version-14d8b191232f4ddd
+16:19:46 INF Applying FFlags
+16:19:46 INF Setting up Wine first-time=false
+16:19:46 INF Checking WebView against=144.0.3719.92
+16:19:46 INF Launching Studio cmd="/home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/kombucha/bin/wine explorer /desktop=e704373a-2099-4b47-abec-c282d152674e,1814x1024 /home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/versions/version-14d8b191232f4ddd/RobloxStudioBeta.exe"
+16:19:47 WIN 07e4:err:system:NtUserChangeDisplaySettings Changing (null) display settings returned -2.
+16:19:47 WIN 07e4:err:explorer:initialize_display_settings Failed to set primary display settings.
+16:20:11 ERR Failed to register with GameMode err="dbus: Gtk reported an error with message: 'Timeout was reached', domain: '205' and code: '24'"
+16:20:29 INF Skipping setup! ver=version-14d8b191232f4ddd
+16:20:29 INF Launching Studio cmd="/home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/kombucha/bin/wine explorer /desktop=6e8b9599-90d9-4ef5-9377-9ce70033785d,1814x1024 /home/ssuvj/.var/app/org.vinegarhq.Vinegar/data/vinegar/versions/version-14d8b191232f4ddd/RobloxStudioBeta.exe roblox-studio:1+launchmode:edit+launchtime:1785244828360+distributorType:Global+userId:925664422+browser:chrome+task:EditPlace+placeId:135795281166441+universeId:10064116782+avatar+browsertrackerid:1784578093690006+robloxLocale:en_us+gameLocale:en_us+channel:"
+16:20:29 WIN 0440:err:system:NtUserChangeDisplaySettings Changing (null) display settings returned -2.
+16:20:29 WIN 0440:err:explorer:initialize_display_settings Failed to set primary display settings.
+16:20:54 ERR Failed to register with GameMode err="dbus: Gtk reported an error with message: 'Timeout was reached', domain: '205' and code: '24'"
+^C16:34:18 WRN Received signal signal=interrupt
+16:34:18 WRN Received signal signal=interrupt
 
+16:34:18 WIN Failed to call portal: The connection is closed
 ssuvj@7ui87ui8:~$ 
