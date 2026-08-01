@@ -1,2 +1,6 @@
-# my configurations and other things
-ksdlkjfkabshijkfbfiuadsyjfsdaf
+#  c v bnbv
+
+hgfvgbhgfcdb n
+nhjbgvf
+hf
+cg
