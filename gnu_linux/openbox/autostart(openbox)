@@ -7,3 +7,8 @@ dunst &
 mate-power-manager &
 xcape -e 'Super_L=Alt_L|F3' &
 copyq &
+
+# Adaugă neapărat aceste 3 linii pentru ca Vinegar/Roblox să funcționeze:
+/usr/libexec/at-spi-bus-launcher &
+/usr/libexec/dbus-daemon --syslog --fork --print-pid &
+dbus-update-activation-environment --all &
