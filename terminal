@@ -342,6 +342,7 @@
         <command>scrot</command>
       </action>
     </keybind>
+
     <keybind key="W-F1">
       <action name="Execute">
         <command>rofi -show drun -show-icons</command>
@@ -354,31 +355,37 @@
         </action>
       </keybind>
     </keybind>
+
     <keybind key="XF86AudioMute">
       <action name="Execute">
         <command>wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle</command>
       </action>
     </keybind>
+
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
         <command>wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-</command>
       </action>
     </keybind>
+
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
         <command>wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+</command>
       </action>
     </keybind>
+
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
         <command>brightnessctl set 5%-</command>
       </action>
     </keybind>
+
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
         <command>brightnessctl set 5%+</command>
       </action>
     </keybind>
+
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
