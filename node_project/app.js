@@ -1,29 +1,71 @@
 let currentFile = null;
 let currentData = null;
 
+let nodeSpacingY = 80;
 
-function renderTree(node, level = 0) {
+
+function calculateHeight(node) {
+    if (!node.ideas) {
+        return 1;
+    }
+
+    let total = 0;
+
+    for (const child of Object.values(node.ideas)) {
+        total += calculateHeight(child);
+    }
+
+    return Math.max(total, 1);
+}
+
+
+
+function renderTree(node, depth = 0, yStart = 0) {
+
     let html = "";
 
+    let height = calculateHeight(node);
+
+    let x = 800 + depth * 250;
+    let y = yStart + (height * nodeSpacingY) / 2;
+
+
     html += `
-        <div class="node" style="margin-left:${level * 25}px">
+        <div class="node"
+             style="
+             left:${x}px;
+             top:${y}px;
+             ">
             ${node.title || "No title"}
         </div>
     `;
 
+
     if (node.ideas) {
+
+        let currentY = yStart;
+
         for (const child of Object.values(node.ideas)) {
-            html += renderTree(child, level + 1);
+
+            html += renderTree(
+                child,
+                depth + 1,
+                currentY
+            );
+
+            currentY += calculateHeight(child) * nodeSpacingY;
         }
     }
+
 
     return html;
 }
 
 
+
 document.getElementById("open").onclick = async () => {
 
-    [fileHandle] = await window.showOpenFilePicker({
+    const [fileHandle] = await window.showOpenFilePicker({
         types: [
             {
                 description: "JSON files",
@@ -34,10 +76,13 @@ document.getElementById("open").onclick = async () => {
         ]
     });
 
+
     currentFile = fileHandle;
+
 
     const file = await currentFile.getFile();
     const text = await file.text();
+
 
     currentData = JSON.parse(text);
 
@@ -58,13 +103,17 @@ document.getElementById("save").onclick = async () => {
         return;
     }
 
+
     const writable = await currentFile.createWritable();
+
 
     await writable.write(
         JSON.stringify(currentData, null, 2)
     );
 
+
     await writable.close();
+
 
     alert("Saved!");
 };
