@@ -4,6 +4,9 @@ node_project branch
  - status
     - unstable
 
+ - version
+    - ?
+
  - plans
     - left mouse hold to drag
     - open work
@@ -15,6 +18,3 @@ node_project branch
 
  - features
     - mouse scroll
-
- - version
-    - ?
