@@ -356,7 +356,6 @@
           <command>rofi -show drun</command>
         </action>
       </keybind>
-
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
