@@ -16,5 +16,7 @@ node_project branch
     - working colors
     - and much more
 
- - features
+ - features (early-tested)
     - mouse scroll
+
+what i want: heavy tested before publish that less bugs the better it is
