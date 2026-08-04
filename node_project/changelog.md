@@ -23,3 +23,11 @@
     - rename
     - add child (button)
     - delete
+
+## 0.0.0.8 alp dev
+- hi, when i will be publicly released?
+    - i dont know son
+- why you are always like that?
+    - son i really dont know
+- what you know then? and why you keep saying to me "son" i am not your son
+    - son...
