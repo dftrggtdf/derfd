@@ -19,4 +19,4 @@
 
 ## 0.0.0.7 alp dev
 - added renaming system
-- added ERR1 message working system
+- added ERR001 message working system
