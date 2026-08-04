@@ -12,3 +12,6 @@
 
 ## 0.0.0.5 alp dev
 - more natural dragging sytem
+
+## 0.0.0.6 alp dev
+- fixed dragging reseting after previously being moved

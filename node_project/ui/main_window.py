@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import QMainWindow
 
 from ui.canvas import Canvas
+from ui.node_item import NodeItem
 
 
 
@@ -27,4 +28,25 @@ class MainWindow(QMainWindow):
 
         self.setCentralWidget(
             self.canvas
+        )
+
+
+
+        # root node
+
+        node = NodeItem(
+            "New Mind Map"
+        )
+
+
+        # pozitia root-ului
+
+        node.setPos(
+            -90,
+            -35
+        )
+
+
+        self.canvas.scene.addItem(
+            node
         )
