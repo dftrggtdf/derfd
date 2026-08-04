@@ -9,3 +9,6 @@
 
 ## 0.0.0.4 alp dev
 - fixed "physics" dragging problem
+
+## 0.0.0.5 alp dev
+- more natural dragging sytem
