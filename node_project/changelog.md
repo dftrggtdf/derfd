@@ -17,7 +17,4 @@
 - fixed dragging reseting after previously being moved
 
 ## 0.0.0.7 alp dev
-- added double left click to rename parent/child
-- main node able to be edited
-- press enter -> save (PRESET) ((unstable))
-- press esc -> cancel (PRESET) ((unstable))
+- added renaming system
