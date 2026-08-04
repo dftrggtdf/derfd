@@ -19,5 +19,5 @@
 ## 0.0.0.7 alp dev
 - added double left click to rename parent/child
 - main node able to be edited
-- press enter -> save (PRESET)
-- press esc -> cancel (PRESET)
+- press enter -> save (PRESET) ((unstable))
+- press esc -> cancel (PRESET) ((unstable))
