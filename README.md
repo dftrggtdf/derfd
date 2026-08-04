@@ -3,6 +3,8 @@ node_project branch
 
  - status
     - unstable
+    - platform
+       - gnu/linux debian
 
  - version
     - ?
