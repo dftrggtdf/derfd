@@ -18,5 +18,8 @@
 - fixed dragging reseting after previously being moved
 
 ## 0.0.0.7 alp dev
-- added renaming system
-- added ERR001 message working system
+- double left clicking renaming stuff
+- right click meniu
+    - rename
+    - add child (button)
+    - delete

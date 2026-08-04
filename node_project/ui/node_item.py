@@ -3,8 +3,15 @@ from PySide6.QtGui import QBrush, QPen, QFont
 from PySide6.QtWidgets import (
     QGraphicsItem,
     QGraphicsTextItem,
-    QGraphicsObject
+    QGraphicsObject,
+    QLineEdit,
+    QGraphicsProxyWidget,
+    QMessageBox,
+    QMenu
 )
+
+from errors import get_error
+
 
 
 class NodeItem(QGraphicsObject):
@@ -20,6 +27,9 @@ class NodeItem(QGraphicsObject):
 
         self.dragging = False
         self.drag_offset = QPointF()
+
+
+        self.editor_proxy = None
 
 
 
@@ -45,19 +55,17 @@ class NodeItem(QGraphicsObject):
         )
 
 
-        # selectare doar
+
         self.setFlag(
             QGraphicsItem.ItemIsSelectable,
             True
         )
 
 
-        # important:
-        # textul nu mai fura mouse-ul
-
         self.text.setAcceptedMouseButtons(
             Qt.NoButton
         )
+
 
 
 
@@ -70,6 +78,7 @@ class NodeItem(QGraphicsObject):
             self.width,
             self.height
         )
+
 
 
 
@@ -106,6 +115,20 @@ class NodeItem(QGraphicsObject):
 
     def mousePressEvent(self, event):
 
+        if self.editor_proxy is not None:
+
+            QMessageBox.warning(
+                None,
+                "node_project",
+                get_error("ERR001")
+            )
+
+            event.ignore()
+
+            return
+
+
+
         if event.button() == Qt.LeftButton:
 
             self.dragging = True
@@ -133,8 +156,15 @@ class NodeItem(QGraphicsObject):
 
 
 
-
     def mouseMoveEvent(self, event):
+
+        if self.editor_proxy is not None:
+
+            event.ignore()
+
+            return
+
+
 
         if self.dragging:
 
@@ -157,8 +187,15 @@ class NodeItem(QGraphicsObject):
 
 
 
-
     def mouseReleaseEvent(self, event):
+
+        if self.editor_proxy is not None:
+
+            event.ignore()
+
+            return
+
+
 
         if event.button() == Qt.LeftButton:
 
@@ -172,3 +209,160 @@ class NodeItem(QGraphicsObject):
 
 
         super().mouseReleaseEvent(event)
+
+
+
+
+
+    def mouseDoubleClickEvent(self, event):
+
+        if event.button() == Qt.LeftButton:
+
+            self.start_rename()
+
+            event.accept()
+
+            return
+
+
+
+        super().mouseDoubleClickEvent(event)
+
+
+
+
+
+    def contextMenuEvent(self, event):
+
+        menu = QMenu()
+
+
+        rename_action = menu.addAction(
+            "Rename"
+        )
+
+
+        add_child_action = menu.addAction(
+            "Add Child"
+        )
+
+
+        delete_action = menu.addAction(
+            "Delete"
+        )
+
+
+        action = menu.exec(
+            event.screenPos()
+        )
+
+
+        if action == rename_action:
+
+            self.start_rename()
+
+
+
+        elif action == add_child_action:
+
+            print(
+                "Add Child pressed"
+            )
+
+
+
+        elif action == delete_action:
+
+            if self.scene():
+
+                self.scene().removeItem(
+                    self
+                )
+
+
+
+
+
+    def start_rename(self):
+
+        if self.editor_proxy is not None:
+
+            return
+
+
+
+        self.text.hide()
+
+
+
+        editor = QLineEdit()
+
+
+        editor.setText(
+            self.text.toPlainText()
+        )
+
+
+        editor.selectAll()
+
+
+        editor.returnPressed.connect(
+            self.finish_rename
+        )
+
+
+        self.editor_proxy = QGraphicsProxyWidget(
+            self
+        )
+
+
+        self.editor_proxy.setWidget(
+            editor
+        )
+
+
+        self.editor_proxy.setPos(
+            15,
+            15
+        )
+
+
+        editor.setFocus(
+            Qt.OtherFocusReason
+        )
+
+
+
+
+
+    def finish_rename(self):
+
+        if self.editor_proxy is None:
+
+            return
+
+
+
+        editor = (
+            self.editor_proxy.widget()
+        )
+
+
+        self.text.setPlainText(
+            editor.text()
+        )
+
+
+        self.text.show()
+
+
+
+        self.editor_proxy.setWidget(
+            None
+        )
+
+
+        self.editor_proxy.deleteLater()
+
+
+        self.editor_proxy = None
