@@ -1,10 +1,17 @@
 from PySide6.QtCore import Qt, QPoint
-from PySide6.QtWidgets import QGraphicsView, QGraphicsScene
+from PySide6.QtGui import QBrush
+from PySide6.QtWidgets import (
+    QGraphicsView,
+    QGraphicsScene,
+    QGraphicsEllipseItem
+)
+
 
 
 class Canvas(QGraphicsView):
 
     def __init__(self, parent=None):
+
         super().__init__(parent)
 
 
@@ -24,12 +31,6 @@ class Canvas(QGraphicsView):
         self.last_mouse_position = QPoint()
 
 
-
-        self.setRenderHints(
-            self.renderHints()
-        )
-
-
         self.setTransformationAnchor(
             QGraphicsView.AnchorUnderMouse
         )
@@ -40,10 +41,28 @@ class Canvas(QGraphicsView):
         )
 
 
-
         # fundal
         self.setBackgroundBrush(
-            Qt.white
+            QBrush(Qt.white)
+        )
+
+
+        # TEST OBJECT
+        test = QGraphicsEllipseItem(
+            -50,
+            -50,
+            100,
+            100
+        )
+
+
+        test.setBrush(
+            QBrush(Qt.red)
+        )
+
+
+        self.scene.addItem(
+            test
         )
 
 
@@ -59,7 +78,6 @@ class Canvas(QGraphicsView):
             factor = 1 / self.zoom_factor
 
 
-
         self.scale(
             factor,
             factor
@@ -68,8 +86,6 @@ class Canvas(QGraphicsView):
 
 
     def mousePressEvent(self, event):
-
-        # pan doar pe spațiu liber
 
         item = self.itemAt(
             event.position().toPoint()
@@ -83,6 +99,7 @@ class Canvas(QGraphicsView):
 
             self.panning = True
 
+
             self.last_mouse_position = (
                 event.position().toPoint()
             )
@@ -92,10 +109,10 @@ class Canvas(QGraphicsView):
                 Qt.ClosedHandCursor
             )
 
+
             event.accept()
 
             return
-
 
 
         super().mousePressEvent(event)
@@ -137,7 +154,6 @@ class Canvas(QGraphicsView):
             return
 
 
-
         super().mouseMoveEvent(event)
 
 
@@ -147,6 +163,7 @@ class Canvas(QGraphicsView):
         if event.button() == Qt.LeftButton:
 
             self.panning = False
+
 
             self.setCursor(
                 Qt.ArrowCursor
