@@ -16,7 +16,7 @@ node_project branch
     - new map button work
     - drag mind map branches
     - working colors
-    - and much more
+    - ability to turn autosave off
 
  - features (early-tested)
     - mouse scroll
