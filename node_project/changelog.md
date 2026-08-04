@@ -1,8 +1,8 @@
-## 0.0.0.1 alpha unreleased
+## 0.0.0.1 alp dev
 - blank white canvas
 
-## 0.0.0.2 alpha unreleased
+## 0.0.0.2 alp dev
 - zoom added
 
-## 0.0.0.3 alpha unreleased
+## 0.0.0.3 alp dev
 - fixed dragging problem
