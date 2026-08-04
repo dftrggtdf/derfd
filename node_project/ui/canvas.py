@@ -7,7 +7,6 @@ from PySide6.QtWidgets import (
 )
 
 
-
 class Canvas(QGraphicsView):
 
     def __init__(self, parent=None):
@@ -15,20 +14,25 @@ class Canvas(QGraphicsView):
         super().__init__(parent)
 
 
-        self.scene = QGraphicsScene()
+        self.scene = QGraphicsScene(
+            -100000,
+            -100000,
+            200000,
+            200000
+        )
+
 
         self.setScene(
             self.scene
         )
 
 
-        # zoom
         self.zoom_factor = 1.15
 
 
-        # pan
         self.panning = False
         self.last_mouse_position = QPoint()
+
 
 
         self.setTransformationAnchor(
@@ -36,18 +40,14 @@ class Canvas(QGraphicsView):
         )
 
 
-        self.setResizeAnchor(
-            QGraphicsView.AnchorUnderMouse
-        )
-
-
-        # fundal
         self.setBackgroundBrush(
             QBrush(Qt.white)
         )
 
 
-        # TEST OBJECT
+
+        # test object
+
         test = QGraphicsEllipseItem(
             -50,
             -50,
@@ -87,32 +87,27 @@ class Canvas(QGraphicsView):
 
     def mousePressEvent(self, event):
 
-        item = self.itemAt(
-            event.position().toPoint()
-        )
+        if event.button() == Qt.LeftButton:
 
-
-        if (
-            event.button() == Qt.LeftButton
-            and item is None
-        ):
-
-            self.panning = True
-
-
-            self.last_mouse_position = (
+            item = self.itemAt(
                 event.position().toPoint()
             )
 
 
-            self.setCursor(
-                Qt.ClosedHandCursor
-            )
+            if item is None:
+
+                self.panning = True
+
+                self.last_mouse_position = (
+                    event.position().toPoint()
+                )
 
 
-            event.accept()
+                self.setCursor(
+                    Qt.ClosedHandCursor
+                )
 
-            return
+                return
 
 
         super().mousePressEvent(event)
@@ -135,21 +130,13 @@ class Canvas(QGraphicsView):
             )
 
 
-            self.horizontalScrollBar().setValue(
-                self.horizontalScrollBar().value()
-                -
-                delta.x()
+            self.centerOn(
+                self.mapToScene(
+                    self.viewport().rect().center()
+                    -
+                    delta
+                )
             )
-
-
-            self.verticalScrollBar().setValue(
-                self.verticalScrollBar().value()
-                -
-                delta.y()
-            )
-
-
-            event.accept()
 
             return
 
@@ -164,10 +151,11 @@ class Canvas(QGraphicsView):
 
             self.panning = False
 
-
             self.setCursor(
                 Qt.ArrowCursor
             )
+
+            return
 
 
         super().mouseReleaseEvent(event)
