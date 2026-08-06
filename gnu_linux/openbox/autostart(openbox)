@@ -1,4 +1,5 @@
-picom --experimental-backends &
+picom --backend glx --vsync &
+
 pcmanfm --desktop &
 tint2 &
 GTK_THEME=Adwaita nm-applet &
@@ -8,7 +9,13 @@ mate-power-manager &
 xcape -e 'Super_L=Alt_L|F3' &
 copyq &
 
-# Adaugă neapărat aceste 3 linii pentru ca Vinegar/Roblox să funcționeze:
-/usr/libexec/at-spi-bus-launcher &
-/usr/libexec/dbus-daemon --syslog --fork --print-pid &
+# Comentează aceste linii deoarece Debian 13 se ocupă deja de ele automat. 
+# Dublarea lor provoacă micro-înghețări în Flatpak/Sober.
+# /usr/libexec/at-spi-bus-launcher &
+# /usr/libexec/dbus-daemon --syslog --fork --print-pid &
+
+# Păstrează doar linia de actualizare a mediului, este suficientă:
 dbus-update-activation-environment --all &
+# microphone to 150%
+(sleep 3 && wpctl set-volume alsa_input.pci-0000_00_1f.3.analog-stereo 1.50) &
+
