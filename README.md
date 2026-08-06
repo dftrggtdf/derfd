@@ -4,7 +4,7 @@
     - present
     - hi
 
-- lvlfarmerNOTIF.sh (cooming soon)
+- lvlfarmermonitorator.sh (cooming soon)
     - for roblox fruit battleground
     - features
         - captures level and sends
@@ -16,3 +16,8 @@
     - available on
         - gnu/linux
             - __debian__
+
+## plans
+- port to windows
+    - node_project
+    - lvlfarmermonitorator.sh
