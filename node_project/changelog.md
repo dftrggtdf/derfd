@@ -33,3 +33,6 @@
 - added a line between parent and child
 - made the line to follow the parent and child when moved
 - added a warning and a confirmation before deleting parent node
+
+## 0.0.0.9_1 alp dev
+- fixed adding 2 childs from same parent to act as 1

@@ -115,15 +115,32 @@ class MainWindow(QMainWindow):
         )
 
 
-        # Pozitie temporara
+        # --------------------------------
+        # Pozitionarea copilului
+        # --------------------------------
 
-        child.setPos(
-            parent.x() + 250,
-            parent.y()
+        child_number = len(
+            parent.children
         )
 
 
-        # Cream linia dintre parent si child
+        spacing = 100
+
+
+        offset_y = (
+            child_number - 1
+        ) * spacing
+
+
+        child.setPos(
+            parent.x() + 250,
+            parent.y() + offset_y
+        )
+
+
+        # --------------------------------
+        # Cream edge-ul
+        # --------------------------------
 
         edge = EdgeItem(
             parent,
@@ -140,8 +157,6 @@ class MainWindow(QMainWindow):
             edge
         )
 
-
-        # Linia sta in spatele nodurilor
 
         edge.setZValue(
             -1
