@@ -29,7 +29,7 @@ class NodeItem(QGraphicsObject):
     add_child_requested = Signal(object)
     delete_requested = Signal(object)
     position_changed = Signal()
-    rename_finished = Signal(object, str, str)
+    rename_started = Signal(object)
 
 
     def __init__(
@@ -50,6 +50,8 @@ class NodeItem(QGraphicsObject):
 
         self.parent_node = parent_node
         self.children = []
+
+        self.rename_old_text = ""
 
         self.text = QGraphicsTextItem(
             title,
@@ -334,16 +336,28 @@ class NodeItem(QGraphicsObject):
 
             return
 
-        old_text = (
+
+        # Salvam numele INAINTE de editare
+
+        self.rename_old_text = (
             self.text.toPlainText()
         )
 
+
+        # MainWindow face snapshot-ul acum
+
+        self.rename_started.emit(
+            self
+        )
+
+
         self.text.hide()
+
 
         editor = QLineEdit()
 
         editor.setText(
-            old_text
+            self.rename_old_text
         )
 
         editor.selectAll()
@@ -351,6 +365,7 @@ class NodeItem(QGraphicsObject):
         editor.returnPressed.connect(
             self.finish_rename
         )
+
 
         self.editor_proxy = QGraphicsProxyWidget(
             self
@@ -365,6 +380,7 @@ class NodeItem(QGraphicsObject):
             15
         )
 
+
         editor.setFocus(
             Qt.OtherFocusReason
         )
@@ -376,23 +392,24 @@ class NodeItem(QGraphicsObject):
 
             return
 
+
         editor = (
             self.editor_proxy.widget()
         )
 
-        old_text = (
-            self.text.toPlainText()
-        )
 
         new_text = (
             editor.text()
         )
 
+
         self.text.setPlainText(
             new_text
         )
 
+
         self.text.show()
+
 
         self.editor_proxy.setWidget(
             None
@@ -401,11 +418,3 @@ class NodeItem(QGraphicsObject):
         self.editor_proxy.deleteLater()
 
         self.editor_proxy = None
-
-        if old_text != new_text:
-
-            self.rename_finished.emit(
-                self,
-                old_text,
-                new_text
-            )

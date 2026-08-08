@@ -48,3 +48,6 @@
 - deleting a child or anything would reset everyone's position to initial
 - added ctrl + z to undo
 - added ctrl + y to redo
+
+## 0.0.0.9_4 alp dev
+- fixed renaming not working to ctrl + z and ctrl + y

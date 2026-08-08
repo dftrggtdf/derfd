@@ -16,14 +16,17 @@ class MainWindow(QMainWindow):
 
         super().__init__()
 
+
         self.setWindowTitle(
             "node_project (INTERNAL CLIENT)"
         )
+
 
         self.resize(
             1200,
             800
         )
+
 
         self.canvas = Canvas()
 
@@ -31,14 +34,19 @@ class MainWindow(QMainWindow):
             self.canvas
         )
 
+
         self.edges = []
 
+
         self.horizontal_spacing = 280
+
         self.vertical_spacing = 110
+
 
         # Undo / Redo
 
         self.undo_stack = []
+
         self.redo_stack = []
 
         self.history_locked = False
@@ -50,20 +58,25 @@ class MainWindow(QMainWindow):
             "New Mind Map"
         )
 
+
         self.connect_node(
             node
         )
 
+
         self.canvas.scene.addItem(
             node
         )
+
 
         node.setPos(
             -90,
             -35
         )
 
+
         self.root_node = node
+
 
         self.canvas.centerOn(
             node
@@ -111,61 +124,49 @@ class MainWindow(QMainWindow):
             self.update_edges
         )
 
-        node.rename_finished.connect(
-            self.rename_finished
+        node.rename_started.connect(
+            self.rename_started
         )
 
 
-    # -------------------------------------------------
-    # SNAPSHOT
-    # -------------------------------------------------
+    # ----------------------------------------
+    # HISTORY
+    # ----------------------------------------
 
     def take_snapshot(self):
 
-        nodes = []
+        nodes = self.all_nodes()
 
-        for item in self.canvas.scene.items():
-
-            if isinstance(
-                item,
-                NodeItem
-            ):
-
-                parent_index = None
-
-                if item.parent_node is not None:
-
-                    try:
-
-                        parent_index = (
-                            self.all_nodes().index(
-                                item.parent_node
-                            )
-                        )
-
-                    except ValueError:
-
-                        parent_index = None
+        snapshot = []
 
 
-                nodes.append(
-                    {
-                        "node": item,
-                        "title": item.text.toPlainText(),
-                        "position": QPointF(
-                            item.pos()
+        for node in nodes:
+
+            snapshot.append(
+                {
+                    "node": node,
+
+                    "title":
+                        node.text.toPlainText(),
+
+                    "position":
+                        QPointF(
+                            node.pos()
                         ),
-                        "parent": item.parent_node,
-                        "parent_index": parent_index
-                    }
-                )
 
-        return nodes
+                    "parent":
+                        node.parent_node
+                }
+            )
+
+
+        return snapshot
 
 
     def all_nodes(self):
 
         result = []
+
 
         for item in self.canvas.scene.items():
 
@@ -178,6 +179,7 @@ class MainWindow(QMainWindow):
                     item
                 )
 
+
         return result
 
 
@@ -187,18 +189,33 @@ class MainWindow(QMainWindow):
 
             return
 
-        snapshot = self.take_snapshot()
 
         self.undo_stack.append(
-            snapshot
+            self.take_snapshot()
         )
+
 
         self.redo_stack.clear()
 
 
-    # -------------------------------------------------
+    # ----------------------------------------
+    # RENAME
+    # ----------------------------------------
+
+    def rename_started(
+        self,
+        node
+    ):
+
+        # Snapshot-ul este facut
+        # inainte ca numele sa fie schimbat.
+
+        self.save_history()
+
+
+    # ----------------------------------------
     # ADD CHILD
-    # -------------------------------------------------
+    # ----------------------------------------
 
     def create_child(
         self,
@@ -281,20 +298,23 @@ class MainWindow(QMainWindow):
             edge
         )
 
+
         self.edges.append(
             edge
         )
+
 
         edge.setZValue(
             -1
         )
 
+
         self.update_edges()
 
 
-    # -------------------------------------------------
-    # ARRANGE
-    # -------------------------------------------------
+    # ----------------------------------------
+    # ARRANGE CHILDREN
+    # ----------------------------------------
 
     def arrange_children(
         self,
@@ -304,6 +324,7 @@ class MainWindow(QMainWindow):
         children = list(
             parent.children
         )
+
 
         if not children:
 
@@ -338,6 +359,7 @@ class MainWindow(QMainWindow):
                 +
                 self.horizontal_spacing
             )
+
 
             new_y = (
                 first_y
@@ -381,27 +403,9 @@ class MainWindow(QMainWindow):
                 )
 
 
-    # -------------------------------------------------
-    # RENAME
-    # -------------------------------------------------
-
-    def rename_finished(
-        self,
-        node,
-        old_text,
-        new_text
-    ):
-
-        if old_text == new_text:
-
-            return
-
-        self.save_history()
-
-
-    # -------------------------------------------------
+    # ----------------------------------------
     # DELETE
-    # -------------------------------------------------
+    # ----------------------------------------
 
     def delete_node(
         self,
@@ -507,6 +511,7 @@ class MainWindow(QMainWindow):
                     edge
                 )
 
+
             if edge in self.edges:
 
                 self.edges.remove(
@@ -537,9 +542,9 @@ class MainWindow(QMainWindow):
         node.deleteLater()
 
 
-    # -------------------------------------------------
-    # EDGE UPDATE
-    # -------------------------------------------------
+    # ----------------------------------------
+    # EDGES
+    # ----------------------------------------
 
     def update_edges(self):
 
@@ -556,9 +561,9 @@ class MainWindow(QMainWindow):
                 edge.update_position()
 
 
-    # -------------------------------------------------
+    # ----------------------------------------
     # UNDO
-    # -------------------------------------------------
+    # ----------------------------------------
 
     def undo(self):
 
@@ -567,7 +572,9 @@ class MainWindow(QMainWindow):
             return
 
 
-        current = self.take_snapshot()
+        current = (
+            self.take_snapshot()
+        )
 
 
         previous = (
@@ -585,9 +592,9 @@ class MainWindow(QMainWindow):
         )
 
 
-    # -------------------------------------------------
+    # ----------------------------------------
     # REDO
-    # -------------------------------------------------
+    # ----------------------------------------
 
     def redo(self):
 
@@ -596,7 +603,9 @@ class MainWindow(QMainWindow):
             return
 
 
-        current = self.take_snapshot()
+        current = (
+            self.take_snapshot()
+        )
 
 
         next_state = (
@@ -614,9 +623,9 @@ class MainWindow(QMainWindow):
         )
 
 
-    # -------------------------------------------------
+    # ----------------------------------------
     # RESTORE
-    # -------------------------------------------------
+    # ----------------------------------------
 
     def restore_snapshot(
         self,
@@ -642,7 +651,7 @@ class MainWindow(QMainWindow):
         self.edges.clear()
 
 
-        # Stergem toate nodurile actuale
+        # Stergem nodurile actuale
 
         current_nodes = self.all_nodes()
 
@@ -659,7 +668,7 @@ class MainWindow(QMainWindow):
             node.deleteLater()
 
 
-        # Cream nodurile
+        # Cream nodurile noi
 
         old_to_new = {}
 
@@ -689,7 +698,7 @@ class MainWindow(QMainWindow):
             )
 
 
-        # Stabilim parent relationships
+        # Refacem relatiile parent / child
 
         for data in snapshot:
 
@@ -705,8 +714,10 @@ class MainWindow(QMainWindow):
 
             if old_parent is not None:
 
-                new_parent = old_to_new.get(
-                    old_parent
+                new_parent = (
+                    old_to_new.get(
+                        old_parent
+                    )
                 )
 
 
@@ -716,12 +727,13 @@ class MainWindow(QMainWindow):
                         new_parent
                     )
 
+
                     new_parent.children.append(
                         new_node
                     )
 
 
-        # Gasim root-ul
+        # Gasim root
 
         for data in snapshot:
 
@@ -756,13 +768,16 @@ class MainWindow(QMainWindow):
                     child
                 )
 
+
                 self.canvas.scene.addItem(
                     edge
                 )
 
+
                 self.edges.append(
                     edge
                 )
+
 
                 edge.setZValue(
                     -1
