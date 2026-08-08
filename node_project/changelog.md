@@ -30,4 +30,6 @@
 - fixed repetitive deleting issue
 
 ## 0.0.0.9 alp dev
-spooky
+- added a line between parent and child
+- made the line to follow the parent and child when moved
+- added a warning and a confirmation before deleting parent node
