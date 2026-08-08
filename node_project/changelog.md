@@ -36,3 +36,9 @@
 
 ## 0.0.0.9_1 alp dev
 - fixed adding 2 childs from same parent to act as 1
+
+## 0.0.0.9_2 alp dev
+- node lines auto translating position
+- when one node moved, rest is moving too (if applies)
+- changed font to monospace 10
+- added text to be vizible during low zoom
