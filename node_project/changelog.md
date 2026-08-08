@@ -42,3 +42,9 @@
 - when one node moved, rest is moving too (if applies)
 - changed font to monospace 10
 - added text to be vizible during low zoom
+
+## 0.0.0.9_3 alp dev
+- fixed when moving a child doesnt move descendants too
+- deleting a child or anything would reset everyone's position to initial
+- added ctrl + z to undo
+- added ctrl + y to redo

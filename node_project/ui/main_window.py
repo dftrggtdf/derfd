@@ -1,3 +1,5 @@
+from PySide6.QtCore import QPointF
+from PySide6.QtGui import QShortcut, QKeySequence
 from PySide6.QtWidgets import (
     QMainWindow,
     QMessageBox
@@ -29,28 +31,27 @@ class MainWindow(QMainWindow):
             self.canvas
         )
 
-        # Toate edge-urile
         self.edges = []
 
-        # Distantele layout-ului
-        self.horizontal_spacing = 250
-        self.vertical_spacing = 100
+        self.horizontal_spacing = 280
+        self.vertical_spacing = 110
 
-        # Root node
+        # Undo / Redo
+
+        self.undo_stack = []
+        self.redo_stack = []
+
+        self.history_locked = False
+
+
+        # Root
+
         node = NodeItem(
             "New Mind Map"
         )
 
-        node.add_child_requested.connect(
-            self.create_child
-        )
-
-        node.delete_requested.connect(
-            self.delete_node
-        )
-
-        node.position_changed.connect(
-            self.update_edges
+        self.connect_node(
+            node
         )
 
         self.canvas.scene.addItem(
@@ -64,51 +65,217 @@ class MainWindow(QMainWindow):
 
         self.root_node = node
 
+        self.canvas.centerOn(
+            node
+        )
+
+
+        # Ctrl + Z
+
+        self.undo_shortcut = QShortcut(
+            QKeySequence("Ctrl+Z"),
+            self
+        )
+
+        self.undo_shortcut.activated.connect(
+            self.undo
+        )
+
+
+        # Ctrl + Y
+
+        self.redo_shortcut = QShortcut(
+            QKeySequence("Ctrl+Y"),
+            self
+        )
+
+        self.redo_shortcut.activated.connect(
+            self.redo
+        )
+
+
+    def connect_node(
+        self,
+        node
+    ):
+
+        node.add_child_requested.connect(
+            self.create_child
+        )
+
+        node.delete_requested.connect(
+            self.delete_node
+        )
+
+        node.position_changed.connect(
+            self.update_edges
+        )
+
+        node.rename_finished.connect(
+            self.rename_finished
+        )
+
+
+    # -------------------------------------------------
+    # SNAPSHOT
+    # -------------------------------------------------
+
+    def take_snapshot(self):
+
+        nodes = []
+
+        for item in self.canvas.scene.items():
+
+            if isinstance(
+                item,
+                NodeItem
+            ):
+
+                parent_index = None
+
+                if item.parent_node is not None:
+
+                    try:
+
+                        parent_index = (
+                            self.all_nodes().index(
+                                item.parent_node
+                            )
+                        )
+
+                    except ValueError:
+
+                        parent_index = None
+
+
+                nodes.append(
+                    {
+                        "node": item,
+                        "title": item.text.toPlainText(),
+                        "position": QPointF(
+                            item.pos()
+                        ),
+                        "parent": item.parent_node,
+                        "parent_index": parent_index
+                    }
+                )
+
+        return nodes
+
+
+    def all_nodes(self):
+
+        result = []
+
+        for item in self.canvas.scene.items():
+
+            if isinstance(
+                item,
+                NodeItem
+            ):
+
+                result.append(
+                    item
+                )
+
+        return result
+
+
+    def save_history(self):
+
+        if self.history_locked:
+
+            return
+
+        snapshot = self.take_snapshot()
+
+        self.undo_stack.append(
+            snapshot
+        )
+
+        self.redo_stack.clear()
+
+
+    # -------------------------------------------------
+    # ADD CHILD
+    # -------------------------------------------------
 
     def create_child(
         self,
         parent
     ):
 
+        self.save_history()
+
+
         child = NodeItem(
             "New Node",
             parent_node=parent
         )
 
-        # Salvam copilul
+
         parent.children.append(
             child
         )
 
-        # Conectam actiunile
-        child.add_child_requested.connect(
-            self.create_child
+
+        self.connect_node(
+            child
         )
 
-        child.delete_requested.connect(
-            self.delete_node
-        )
 
-        child.position_changed.connect(
-            self.update_edges
-        )
-
-        # Adaugam in scena
         self.canvas.scene.addItem(
             child
         )
 
-        # Pozitia initiala nu mai este importanta,
-        # deoarece layout-ul o va calcula.
-        child.setPos(
-            parent.pos()
+
+        child_index = (
+            len(parent.children) - 1
         )
 
-        # Cream edge-ul
+
+        child_count = (
+            len(parent.children)
+        )
+
+
+        total_height = (
+            (child_count - 1)
+            *
+            self.vertical_spacing
+        )
+
+
+        first_y = (
+            parent.y()
+            -
+            total_height / 2
+        )
+
+
+        child.setPos(
+            parent.x()
+            +
+            self.horizontal_spacing,
+
+            first_y
+            +
+            child_index
+            *
+            self.vertical_spacing
+        )
+
+
+        self.arrange_children(
+            parent
+        )
+
+
         edge = EdgeItem(
             parent,
             child
         )
+
 
         self.canvas.scene.addItem(
             edge
@@ -122,99 +289,257 @@ class MainWindow(QMainWindow):
             -1
         )
 
-        # Recalculam tot arborele
-        self.layout_tree()
-
         self.update_edges()
 
 
-    def layout_tree(self):
+    # -------------------------------------------------
+    # ARRANGE
+    # -------------------------------------------------
 
-        if self.root_node is None:
-            return
+    def arrange_children(
+        self,
+        parent
+    ):
 
-        # Numarul total de niveluri
-        levels = {}
-
-        self.collect_levels(
-            self.root_node,
-            0,
-            levels
+        children = list(
+            parent.children
         )
 
-        # Pozitionam fiecare nivel
-        for level in sorted(levels.keys()):
+        if not children:
 
-            nodes = levels[level]
+            return
 
-            count = len(nodes)
 
-            total_height = (
-                (count - 1)
+        count = len(
+            children
+        )
+
+
+        total_height = (
+            (count - 1)
+            *
+            self.vertical_spacing
+        )
+
+
+        first_y = (
+            parent.y()
+            -
+            total_height / 2
+        )
+
+
+        for index, child in enumerate(
+            children
+        ):
+
+            new_x = (
+                parent.x()
+                +
+                self.horizontal_spacing
+            )
+
+            new_y = (
+                first_y
+                +
+                index
                 *
                 self.vertical_spacing
             )
 
-            start_y = (
-                -total_height / 2
+
+            old_position = (
+                child.pos()
             )
 
-            for index, node in enumerate(nodes):
 
-                x = (
-                    level
-                    *
-                    self.horizontal_spacing
+            delta = QPointF(
+                new_x
+                -
+                old_position.x(),
+
+                new_y
+                -
+                old_position.y()
+            )
+
+
+            child.setPos(
+                new_x,
+                new_y
+            )
+
+
+            if (
+                delta.x() != 0
+                or
+                delta.y() != 0
+            ):
+
+                child.move_descendants(
+                    delta
                 )
 
-                y = (
-                    start_y
-                    +
-                    index
-                    *
-                    self.vertical_spacing
-                )
 
-                # Root-ul ramane reperul.
-                # Nivelurile sunt construite in jurul lui.
+    # -------------------------------------------------
+    # RENAME
+    # -------------------------------------------------
 
-                node.setPos(
-                    x,
-                    y
-                )
+    def rename_finished(
+        self,
+        node,
+        old_text,
+        new_text
+    ):
 
-        # Punem root-ul aproape de centru
-        self.root_node.setPos(
-            0,
-            0
+        if old_text == new_text:
+
+            return
+
+        self.save_history()
+
+
+    # -------------------------------------------------
+    # DELETE
+    # -------------------------------------------------
+
+    def delete_node(
+        self,
+        node
+    ):
+
+        if node is self.root_node:
+
+            QMessageBox.warning(
+                self,
+                "node_project",
+                "The root node cannot be deleted."
+            )
+
+            return
+
+
+        if node.children:
+
+            first = QMessageBox.question(
+                self,
+                "Confirm deletion",
+                "This node has children.\n"
+                "Delete this node and all descendants?",
+                QMessageBox.Yes
+                |
+                QMessageBox.No,
+                QMessageBox.No
+            )
+
+
+            if first != QMessageBox.Yes:
+
+                return
+
+
+            second = QMessageBox.question(
+                self,
+                "Confirm deletion again",
+                "Are you sure?\n"
+                "This action cannot be undone.",
+                QMessageBox.Yes
+                |
+                QMessageBox.No,
+                QMessageBox.No
+            )
+
+
+            if second != QMessageBox.Yes:
+
+                return
+
+
+        self.save_history()
+
+
+        self._delete_node_recursive(
+            node
         )
+
 
         self.update_edges()
 
 
-    def collect_levels(
+    def _delete_node_recursive(
         self,
-        node,
-        level,
-        levels
+        node
     ):
 
-        if level not in levels:
-
-            levels[level] = []
-
-        levels[level].append(
-            node
+        children = list(
+            node.children
         )
 
-        for child in node.children:
 
-            self.collect_levels(
-                child,
-                level + 1,
-                levels
+        for child in children:
+
+            self._delete_node_recursive(
+                child
             )
 
+
+        related_edges = []
+
+
+        for edge in self.edges:
+
+            if (
+                edge.parent_node is node
+                or
+                edge.child_node is node
+            ):
+
+                related_edges.append(
+                    edge
+                )
+
+
+        for edge in related_edges:
+
+            if edge.scene():
+
+                edge.scene().removeItem(
+                    edge
+                )
+
+            if edge in self.edges:
+
+                self.edges.remove(
+                    edge
+                )
+
+
+        if node.parent_node is not None:
+
+            if node in node.parent_node.children:
+
+                node.parent_node.children.remove(
+                    node
+                )
+
+
+        if node.scene():
+
+            node.scene().removeItem(
+                node
+            )
+
+
+        node.children.clear()
+
+        node.parent_node = None
+
+        node.deleteLater()
+
+
+    # -------------------------------------------------
+    # EDGE UPDATE
+    # -------------------------------------------------
 
     def update_edges(self):
 
@@ -231,87 +556,81 @@ class MainWindow(QMainWindow):
                 edge.update_position()
 
 
-    def delete_node(
-        self,
-        node
-    ):
+    # -------------------------------------------------
+    # UNDO
+    # -------------------------------------------------
 
-        # Daca nodul are copii,
-        # cerem doua confirmari.
+    def undo(self):
 
-        if node.children:
+        if not self.undo_stack:
 
-            first = QMessageBox.question(
-                self,
-                "Confirm deletion",
-                "This node has children.\n"
-                "Delete this node and all descendants?",
-                QMessageBox.Yes
-                |
-                QMessageBox.No,
-                QMessageBox.No
-            )
+            return
 
-            if first != QMessageBox.Yes:
 
-                return
+        current = self.take_snapshot()
 
-            second = QMessageBox.question(
-                self,
-                "Confirm deletion again",
-                "Are you sure?\n"
-                "This action cannot be undone.",
-                QMessageBox.Yes
-                |
-                QMessageBox.No,
-                QMessageBox.No
-            )
 
-            if second != QMessageBox.Yes:
-
-                return
-
-        self._delete_node_recursive(
-            node
+        previous = (
+            self.undo_stack.pop()
         )
 
-        # Rearanjam ce a ramas
-        self.layout_tree()
 
-
-    def _delete_node_recursive(
-        self,
-        node
-    ):
-
-        # Copie pentru ca lista se modifica
-        children = list(
-            node.children
+        self.redo_stack.append(
+            current
         )
 
-        for child in children:
 
-            self._delete_node_recursive(
-                child
-            )
+        self.restore_snapshot(
+            previous
+        )
 
-        # Stergem edge-urile asociate
 
-        related_edges = []
+    # -------------------------------------------------
+    # REDO
+    # -------------------------------------------------
 
-        for edge in self.edges:
+    def redo(self):
 
-            if (
-                edge.parent_node is node
-                or
-                edge.child_node is node
-            ):
+        if not self.redo_stack:
 
-                related_edges.append(
-                    edge
-                )
+            return
 
-        for edge in related_edges:
+
+        current = self.take_snapshot()
+
+
+        next_state = (
+            self.redo_stack.pop()
+        )
+
+
+        self.undo_stack.append(
+            current
+        )
+
+
+        self.restore_snapshot(
+            next_state
+        )
+
+
+    # -------------------------------------------------
+    # RESTORE
+    # -------------------------------------------------
+
+    def restore_snapshot(
+        self,
+        snapshot
+    ):
+
+        self.history_locked = True
+
+
+        # Stergem edge-urile
+
+        for edge in list(
+            self.edges
+        ):
 
             if edge.scene():
 
@@ -319,32 +638,138 @@ class MainWindow(QMainWindow):
                     edge
                 )
 
-            if edge in self.edges:
 
-                self.edges.remove(
-                    edge
-                )
+        self.edges.clear()
 
-        # Scoatem nodul din parent
 
-        if node.parent_node is not None:
+        # Stergem toate nodurile actuale
 
-            if node in node.parent_node.children:
+        current_nodes = self.all_nodes()
 
-                node.parent_node.children.remove(
+
+        for node in current_nodes:
+
+            if node.scene():
+
+                node.scene().removeItem(
                     node
                 )
 
-        # Scoatem din scena
 
-        if node.scene():
+            node.deleteLater()
 
-            node.scene().removeItem(
+
+        # Cream nodurile
+
+        old_to_new = {}
+
+
+        for data in snapshot:
+
+            old_node = data["node"]
+
+
+            new_node = NodeItem(
+                data["title"]
+            )
+
+
+            new_node.setPos(
+                data["position"]
+            )
+
+
+            old_to_new[
+                old_node
+            ] = new_node
+
+
+            self.canvas.scene.addItem(
+                new_node
+            )
+
+
+        # Stabilim parent relationships
+
+        for data in snapshot:
+
+            old_node = data["node"]
+
+            new_node = old_to_new[
+                old_node
+            ]
+
+
+            old_parent = data["parent"]
+
+
+            if old_parent is not None:
+
+                new_parent = old_to_new.get(
+                    old_parent
+                )
+
+
+                if new_parent is not None:
+
+                    new_node.parent_node = (
+                        new_parent
+                    )
+
+                    new_parent.children.append(
+                        new_node
+                    )
+
+
+        # Gasim root-ul
+
+        for data in snapshot:
+
+            if data["parent"] is None:
+
+                self.root_node = (
+                    old_to_new[
+                        data["node"]
+                    ]
+                )
+
+                break
+
+
+        # Reconectam semnalele
+
+        for node in self.all_nodes():
+
+            self.connect_node(
                 node
             )
 
-        node.children.clear()
 
-        node.parent_node = None
+        # Recream edge-urile
 
-        node.deleteLater()
+        for node in self.all_nodes():
+
+            for child in node.children:
+
+                edge = EdgeItem(
+                    node,
+                    child
+                )
+
+                self.canvas.scene.addItem(
+                    edge
+                )
+
+                self.edges.append(
+                    edge
+                )
+
+                edge.setZValue(
+                    -1
+                )
+
+
+        self.update_edges()
+
+
+        self.history_locked = False

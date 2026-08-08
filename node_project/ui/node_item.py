@@ -27,10 +27,9 @@ from errors import get_error
 class NodeItem(QGraphicsObject):
 
     add_child_requested = Signal(object)
-
     delete_requested = Signal(object)
-
     position_changed = Signal()
+    rename_finished = Signal(object, str, str)
 
 
     def __init__(
@@ -41,68 +40,46 @@ class NodeItem(QGraphicsObject):
 
         super().__init__()
 
-
         self.width = 180
-
         self.height = 70
 
-
         self.dragging = False
-
         self.drag_offset = QPointF()
-
 
         self.editor_proxy = None
 
-
-        # Relatia cu arborele
-
         self.parent_node = parent_node
-
         self.children = []
-
-
-        # Text
 
         self.text = QGraphicsTextItem(
             title,
             self
         )
 
-
         self.text.setFont(
             QFont(
-                "Arial",
-                12
+                "Monospace",
+                10
             )
         )
-
 
         self.text.setDefaultTextColor(
             Qt.black
         )
-
 
         self.text.setPos(
             20,
             22
         )
 
-
-        # Selectare
-
         self.setFlag(
             QGraphicsItem.ItemIsSelectable,
             True
         )
 
-
-        # Textul nu primeste click
-
         self.text.setAcceptedMouseButtons(
             Qt.NoButton
         )
-
 
 
     def boundingRect(self):
@@ -113,7 +90,6 @@ class NodeItem(QGraphicsObject):
             self.width,
             self.height
         )
-
 
 
     def paint(
@@ -141,13 +117,11 @@ class NodeItem(QGraphicsObject):
                 )
             )
 
-
         painter.setBrush(
             QBrush(
                 Qt.white
             )
         )
-
 
         painter.drawRoundedRect(
             self.boundingRect(),
@@ -156,13 +130,10 @@ class NodeItem(QGraphicsObject):
         )
 
 
-
     def mousePressEvent(
         self,
         event
     ):
-
-        # Nu permitem drag in timpul rename
 
         if self.editor_proxy is not None:
 
@@ -181,18 +152,15 @@ class NodeItem(QGraphicsObject):
 
             self.dragging = True
 
-
             self.drag_offset = (
                 event.scenePos()
                 -
                 self.scenePos()
             )
 
-
             self.setSelected(
                 True
             )
-
 
             event.accept()
 
@@ -202,7 +170,6 @@ class NodeItem(QGraphicsObject):
         super().mousePressEvent(
             event
         )
-
 
 
     def mouseMoveEvent(
@@ -219,17 +186,35 @@ class NodeItem(QGraphicsObject):
 
         if self.dragging:
 
-            self.setPos(
+            old_position = self.scenePos()
+
+            new_position = (
                 event.scenePos()
                 -
                 self.drag_offset
             )
 
+            delta = (
+                new_position
+                -
+                old_position
+            )
 
-            # Anuntam MainWindow ca pozitia s-a schimbat
+            self.setPos(
+                new_position
+            )
+
+            if (
+                delta.x() != 0
+                or
+                delta.y() != 0
+            ):
+
+                self.move_descendants(
+                    delta
+                )
 
             self.position_changed.emit()
-
 
             event.accept()
 
@@ -241,6 +226,23 @@ class NodeItem(QGraphicsObject):
         )
 
 
+    def move_descendants(
+        self,
+        delta
+    ):
+
+        for child in self.children:
+
+            child.setPos(
+                child.pos()
+                +
+                delta
+            )
+
+            child.move_descendants(
+                delta
+            )
+
 
     def mouseReleaseEvent(
         self,
@@ -249,7 +251,13 @@ class NodeItem(QGraphicsObject):
 
         if event.button() == Qt.LeftButton:
 
+            was_dragging = self.dragging
+
             self.dragging = False
+
+            if was_dragging:
+
+                self.position_changed.emit()
 
             event.accept()
 
@@ -259,7 +267,6 @@ class NodeItem(QGraphicsObject):
         super().mouseReleaseEvent(
             event
         )
-
 
 
     def mouseDoubleClickEvent(
@@ -281,7 +288,6 @@ class NodeItem(QGraphicsObject):
         )
 
 
-
     def contextMenuEvent(
         self,
         event
@@ -289,38 +295,31 @@ class NodeItem(QGraphicsObject):
 
         menu = QMenu()
 
-
         rename_action = menu.addAction(
             "Rename"
         )
-
 
         add_child_action = menu.addAction(
             "Add Child"
         )
 
-
         delete_action = menu.addAction(
             "Delete"
         )
-
 
         action = menu.exec(
             event.screenPos()
         )
 
-
         if action == rename_action:
 
             self.start_rename()
-
 
         elif action == add_child_action:
 
             self.add_child_requested.emit(
                 self
             )
-
 
         elif action == delete_action:
 
@@ -329,53 +328,46 @@ class NodeItem(QGraphicsObject):
             )
 
 
-
     def start_rename(self):
 
         if self.editor_proxy is not None:
 
             return
 
-
-        self.text.hide()
-
-
-        editor = QLineEdit()
-
-
-        editor.setText(
+        old_text = (
             self.text.toPlainText()
         )
 
+        self.text.hide()
+
+        editor = QLineEdit()
+
+        editor.setText(
+            old_text
+        )
 
         editor.selectAll()
-
 
         editor.returnPressed.connect(
             self.finish_rename
         )
 
-
         self.editor_proxy = QGraphicsProxyWidget(
             self
         )
 
-
         self.editor_proxy.setWidget(
             editor
         )
-
 
         self.editor_proxy.setPos(
             15,
             15
         )
 
-
         editor.setFocus(
             Qt.OtherFocusReason
         )
-
 
 
     def finish_rename(self):
@@ -384,26 +376,36 @@ class NodeItem(QGraphicsObject):
 
             return
 
-
         editor = (
             self.editor_proxy.widget()
         )
 
+        old_text = (
+            self.text.toPlainText()
+        )
 
-        self.text.setPlainText(
+        new_text = (
             editor.text()
         )
 
+        self.text.setPlainText(
+            new_text
+        )
 
         self.text.show()
-
 
         self.editor_proxy.setWidget(
             None
         )
 
-
         self.editor_proxy.deleteLater()
 
-
         self.editor_proxy = None
+
+        if old_text != new_text:
+
+            self.rename_finished.emit(
+                self,
+                old_text,
+                new_text
+            )
