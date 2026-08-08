@@ -7,15 +7,14 @@
 - lvlfarmermonitorator.sh (cooming soon)
     - for roblox fruit battleground
     - features
-        - captures level and sends
+        - captures level
             - *and send to discord channel or dm*
         - captures time till bosses
             - *and send to discord channel or dm*
         - captures gems after some levels (just a concept)
             - *and send to discord channel or dm*
     - available on
-        - gnu/linux
-            - __debian__
+        - gnu/linux - __debian__
 
 - pianoautoplayer.py (cooming soon)
     - for roblox auto piano key player
