@@ -51,3 +51,25 @@
 
 ## 0.0.0.9_4 alp dev
 - fixed renaming not working to ctrl + z and ctrl + y
+
+## 0.0.1.0.0 alp dev (NOTE NOTE NOTE)
+- added save
+- added open
+- added button to create new mind map
+    - *with confirmation if exist modifcations non-saved*
+- added dirty state
+    - *it knows if theres something not saved*
+- ctrl + s to save quickly
+- added option to click somewhere else to apply renamed
+- fixed bugs
+    - 0. note: not all covered, too much
+    - 1. opening saved mind maps throws unmatched version error
+    - 2. too long names wont fit
+    - 3. automatically json type file
+- renaming system:
+    - click enter -> finishes current renaming
+    - click esc -> cancel current renaming
+    - click on different node -> finishes current renaming
+    - click on white canvas -> finishes current renaming
+    - after finishing can be renamed again
+    - while in editing cant move node
