@@ -16,15 +16,8 @@
     - available on
         - gnu/linux - __debian__
 
-- pianoautoplayer.py (cooming soon)
-    - for roblox auto piano key player
-    - features
-        - play any song
-            *that are listed and tested*
-        - while playing, you can press keys at the same time
-            *it wont break*
-        - interactive ui
-    - structure
+- pianoautoplayer.cpp
+
 
 ## plans
 - port to windows
