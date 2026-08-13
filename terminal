@@ -1,53 +1,21 @@
-ssuvj@7ui87ui8:~/Documents/derfd/pianoautoplayer$ rm -rf build
-ssuvj@7ui87ui8:~/Documents/derfd/pianoautoplayer$ cmake -S . -B build
--- The CXX compiler identification is GNU 14.2.0
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /usr/bin/c++ - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
--- Found Threads: TRUE
--- Performing Test HAVE_STDATOMIC
--- Performing Test HAVE_STDATOMIC - Success
--- Found WrapAtomic: TRUE
--- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so
--- Found WrapOpenGL: TRUE
--- Could NOT find XKB (missing: XKB_LIBRARY XKB_INCLUDE_DIR) (Required is at least version "0.5.0")
--- Found WrapVulkanHeaders: /usr/include
--- Found X11: /usr/include
--- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so
--- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found
--- Looking for gethostbyname
--- Looking for gethostbyname - found
--- Looking for connect
--- Looking for connect - found
--- Looking for remove
--- Looking for remove - found
--- Looking for shmat
--- Looking for shmat - found
--- Configuring done (1.3s)
--- Generating done (0.1s)
--- Build files have been written to: /home/ssuvj/Documents/derfd/pianoautoplayer/build
-ssuvj@7ui87ui8:~/Documents/derfd/pianoautoplayer$ cmake --build build -j$(nproc)
+ssuvj@7ui87ui8:~/Documents/derfd/pianoautoplayer$ cat compile.log
 [  0%] Built target pianoautoplayer_autogen_timestamp_deps
 [  7%] Automatic MOC and UIC for target pianoautoplayer
-AutoGen warning: "SRC:/src/core/song.cpp" is empty.
-
 AutoGen warning: "SRC:/src/core/song.hpp" is empty.
+
+AutoGen warning: "SRC:/src/core/song.cpp" is empty.
 
 [  7%] Built target pianoautoplayer_autogen
 [ 15%] Automatic RCC for resources/resources.qrc
-[ 23%] Building CXX object CMakeFiles/pianoautoplayer.dir/src/main.cpp.o
-[ 38%] Building CXX object CMakeFiles/pianoautoplayer.dir/src/core/player.cpp.o
-[ 38%] Building CXX object CMakeFiles/pianoautoplayer.dir/src/input/x11_input.cpp.o
-[ 46%] Building CXX object CMakeFiles/pianoautoplayer.dir/src/core/parser.cpp.o
-[ 53%] Building CXX object CMakeFiles/pianoautoplayer.dir/src/core/logger.cpp.o
-[ 61%] Building CXX object CMakeFiles/pianoautoplayer.dir/pianoautoplayer_autogen/mocs_compilation.cpp.o
-[ 69%] Building CXX object CMakeFiles/pianoautoplayer.dir/src/gui/main_window.cpp.o
-[ 76%] Building CXX object CMakeFiles/pianoautoplayer.dir/src/core/song.cpp.o
-[ 84%] Building CXX object CMakeFiles/pianoautoplayer.dir/pianoautoplayer_autogen/3YJK5W5UP7/qrc_resources.cpp.o
+[ 23%] Building CXX object CMakeFiles/pianoautoplayer.dir/pianoautoplayer_autogen/mocs_compilation.cpp.o
+[ 38%] Building CXX object CMakeFiles/pianoautoplayer.dir/src/gui/main_window.cpp.o
+[ 38%] Building CXX object CMakeFiles/pianoautoplayer.dir/src/core/parser.cpp.o
+[ 46%] Building CXX object CMakeFiles/pianoautoplayer.dir/src/main.cpp.o
+[ 53%] Building CXX object CMakeFiles/pianoautoplayer.dir/src/core/player.cpp.o
+[ 61%] Building CXX object CMakeFiles/pianoautoplayer.dir/src/core/song.cpp.o
+[ 69%] Building CXX object CMakeFiles/pianoautoplayer.dir/src/core/logger.cpp.o
+[ 76%] Building CXX object CMakeFiles/pianoautoplayer.dir/pianoautoplayer_autogen/3YJK5W5UP7/qrc_resources.cpp.o
+[ 84%] Building CXX object CMakeFiles/pianoautoplayer.dir/src/input/x11_input.cpp.o
 In file included from /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetatype.h:13,
                  from /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h:18,
                  from /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject:1,
