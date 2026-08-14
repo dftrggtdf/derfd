@@ -1,4 +1,7 @@
-## projects
+## <!> about
+- i dont upload broken and unstable versions anymore
+
+### projects
 - **node_project**
     - alp dev patches
     - present
@@ -19,7 +22,7 @@
 - **pianoautoplayer.cpp**
     - project is not frozen
 
-## plans
+### plans
 - port to windows
     - node_project
     - lvlfarmermonitorator.sh 
