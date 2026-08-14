@@ -17,7 +17,7 @@
         - gnu/linux - __debian__
 
 - pianoautoplayer.cpp
-
+    - project is not frozen
 
 ## plans
 - port to windows
