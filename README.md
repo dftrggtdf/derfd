@@ -1,10 +1,10 @@
 ## projects
-- node_project
+- **node_project**
     - alp dev patches
     - present
     - hi
 
-- lvlfarmermonitorator.sh (cooming soon)
+- **lvlfarmermonitorator.sh (cooming soon)**
     - for roblox fruit battleground
     - features
         - captures level
@@ -14,9 +14,9 @@
         - captures gems after some levels (just a concept)
             - *and send to discord channel or dm*
     - available on
-        - gnu/linux - __debian__
+        - gnu/linux - *debian*
 
-- pianoautoplayer.cpp
+- **pianoautoplayer.cpp**
     - project is not frozen
 
 ## plans
