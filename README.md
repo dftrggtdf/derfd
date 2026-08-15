@@ -19,15 +19,6 @@
     - available on
         - gnu/linux - *debian*
 
-- **pianoautoplayer.cpp**
-    - project is not frozen
-
-- **mp3topianokey.cpp (cooming soon)**
-    - for roblox piano
-    - about
-        - converts a song into keyboard piano sheet
-            - *that can be used with "pianoautoplayer.cpp"*
-
 ### plans
 - port to windows
     - node_project
