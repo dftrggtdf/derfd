@@ -22,4 +22,4 @@
 ### plans
 - port to windows
     - node_project
-    - lvlfarmermonitorator.sh e
+    - lvlfarmermonitorator.sh 
