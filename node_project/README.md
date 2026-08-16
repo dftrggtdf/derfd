@@ -1,12 +1,10 @@
-## node_project
-- about
-    - this is an analog to mindmup google drive's extension that recently was forced to be pay to use
-    - i didnt wanted to pay so i will create my own from scratch and the source code will be listed here
+development
 
-- platform
-    - in preset *august 2026* is developed on gnu/linux debian distribution
-    - its planned to be developed and ported to windows
+this is an experimental development build
+crashes, broken ui, incomplete features and data loss are possible
 
-- price
-    - free
-    - open-source
+when reporting a bug, include:
+- steps to reproduce
+- expected behavior
+- actual behavior
+- terminal output
