@@ -138,3 +138,7 @@ sudo apt install pluma -y
 # 34. jq
 sudo apt update -y
 sudo apt install jq -y
+
+# 35. hexedit
+sudo apt update -y
+sudo apt install hexedit -y
