@@ -8,6 +8,7 @@ dunst &
 mate-power-manager &
 xcape -e 'Super_L=Alt_L|F3' &
 copyq &
+package-update-indicator &
 
 # Comentează aceste linii deoarece Debian 13 se ocupă deja de ele automat. 
 # Dublarea lor provoacă micro-înghețări în Flatpak/Sober.
