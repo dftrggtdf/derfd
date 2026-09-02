@@ -142,3 +142,7 @@ sudo apt install jq -y
 # 35. hexedit
 sudo apt update -y
 sudo apt install hexedit -y
+
+# 36. gsimplecal - calendar pentru ceasul din tint2
+sudo apt update -y
+sudo apt install gsimplecal -y
