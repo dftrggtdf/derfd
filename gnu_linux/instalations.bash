@@ -146,3 +146,6 @@ sudo apt install hexedit -y
 # 36. gsimplecal - calendar pentru ceasul din tint2
 sudo apt update -y
 sudo apt install gsimplecal -y
+
+# 37. gnome package updater & notificator systray
+sudo apt install gnome-package-updater package-update-indicator -y
