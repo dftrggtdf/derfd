@@ -10,13 +10,13 @@ xcape -e 'Super_L=Alt_L|F3' &
 copyq &
 package-update-indicator &
 
-# Comentează aceste linii deoarece Debian 13 se ocupă deja de ele automat. 
+# Comentează aceste linii deoarece Debian 13 se ocupă deja de ele automat.
 # Dublarea lor provoacă micro-înghețări în Flatpak/Sober.
 # /usr/libexec/at-spi-bus-launcher &
 # /usr/libexec/dbus-daemon --syslog --fork --print-pid &
 
-# Păstrează doar linia de actualizare a mediului, este suficientă:
+# Păstrează doar linia de actualizare a mediului.
 dbus-update-activation-environment --all &
+
 # microphone to 150%
 (sleep 3 && wpctl set-volume alsa_input.pci-0000_00_1f.3.analog-stereo 1.50) &
-
