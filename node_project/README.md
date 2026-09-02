@@ -3,8 +3,9 @@ development
 this is an experimental development build
 crashes, broken ui, incomplete features and data loss are possible
 
-when reporting a bug, include:
-- steps to reproduce
-- expected behavior
-- actual behavior
-- terminal output
+reporting a bug?
+    - join https://discord.gg/Bv4ZrtxhjN
+    - use forum channel and read the rules
+
+write a suggestion?
+    - let me copy paste from up here
