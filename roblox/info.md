@@ -3,6 +3,9 @@ automations, scripts (not exploits)
 scrpts/automations:
 1. elemental awakening
     - 1.1 AADV_spin.sh
+        - * features:
+            - cooming soon i forgor
+
         - * requirements:
             - xdotool
             - xinput
@@ -15,7 +18,7 @@ scrpts/automations:
             - 1920x1080 resolution
             - x11
 
-        - * verify
+        - * verify:
             - command -v xdotool
             - command -v xinput
             - command -v import
