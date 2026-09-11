@@ -2,7 +2,7 @@ automations, scripts (not exploits)
 
 scrpts/automations:
 1. elemental awakening
-    - AADV_spin.sh
+    - 1.1 AADV_spin.sh
         - * requirements:
             - xdotool
             - xinput
@@ -12,9 +12,8 @@ scrpts/automations:
             - tesseract-ocr
             - coreutils
             - gawk
-
-        - 1920x1080 resolution
-        - x11
+            - 1920x1080 resolution
+            - x11
 
         - * verify
             - command -v xdotool
@@ -28,3 +27,12 @@ scrpts/automations:
             - tesseract --version
             - echo "$XDG_SESSION_TYPE"
             - #!/bin/bash
+
+    - 1.2 AADV_SCG.sh
+        - * requirements:
+            - xdotool
+            - xinput
+            - imagemagick
+            - python3
+            - python3-pil
+            - stdbuf
