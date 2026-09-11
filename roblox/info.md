@@ -13,6 +13,9 @@ scrpts/automations:
             - coreutils
             - gawk
 
+            1920x1080 resolution
+            x11
+
         - * verify
             - command -v xdotool
             - command -v xinput
