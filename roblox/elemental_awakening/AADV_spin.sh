@@ -724,14 +724,6 @@ recognize_final_result() {
         return 0
     fi
 
-    if [[ "$OCR_TEXT" == *"$TARGET_TEXT"* ]]; then
-
-        echo
-        echo "[OCR] TARGET MATCHED"
-
-        return 0
-    fi
-
     echo
     echo "[OCR] DIFFERENT ELEMENT DETECTED"
 
