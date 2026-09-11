@@ -13,19 +13,6 @@ scrpts/automations:
             - coreutils
             - gawk
 
-        - * install
-            - sudo apt update
-
-            sudo apt install \
-                xdotool \
-                xinput \
-                imagemagick \
-                python3 \
-                python3-pil \
-                tesseract-ocr \
-                coreutils \
-                gawk
-
         - * verify
             - command -v xdotool
             - command -v xinput
