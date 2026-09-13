@@ -1,7 +1,5 @@
-# Schimbă linia picom cu asta (folosește placa video Intel și activează VSync):
 picom --backend glx --vsync &
 
-pcmanfm --desktop &
 tint2 &
 GTK_THEME=Adwaita nm-applet &
 volumeicon &
@@ -14,10 +12,8 @@ xset r rate 200 50 &
 feh --bg-fill "$HOME/Pictures/Wallpapers/desktop_wallpaper.png" &
 package-update-indicator &
 
-# Debian 13 pornește deja automat aceste servicii.
-# Nu le pornim manual, deoarece dublarea lor poate provoca micro-înghețări.
+# Debian 13 pornește automat aceste servicii.
 # /usr/libexec/at-spi-bus-launcher &
 # /usr/libexec/dbus-daemon --syslog --fork --print-pid &
 
-# Actualizează mediul DBus pentru aplicațiile pornite din Openbox:
 dbus-update-activation-environment --all &
