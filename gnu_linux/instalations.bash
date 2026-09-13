@@ -41,7 +41,7 @@ sudo apt install -y \
     xinit \
     xterm \
     dconf-cli \
-    feh \
+    feh
 
 # ======================================
 # 3. UTILITIES / APPLICATIONS
@@ -81,15 +81,13 @@ sudo apt install -y \
 # 4. FLATPAK
 # ======================================
 
-echo "[4/4] Installing Flatpak applications..."
+echo "[4/4] Installing Flatpak..."
 
 sudo apt install -y flatpak
 
 flatpak remote-add --if-not-exists \
     flathub \
     https://dl.flathub.org/repo/flathub.flatpakrepo
-
-flatpak install flathub io.freetubeapp.FreeTube -y
 
 # ======================================
 # COMPLETE
