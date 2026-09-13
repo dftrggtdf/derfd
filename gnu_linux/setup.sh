@@ -6,14 +6,13 @@ REPO_DIR="$HOME/derfd"
 
 echo "=== DERFD SETUP ==="
 
-# Instalează toate pachetele definite în instalations.bash
-bash "$REPO_DIR/gnu_linux/instalations.bash"
+# Instalează toate pachetele definite în apps.bash
+bash "$REPO_DIR/gnu_linux/apps.bash"
 
 # Configurații Openbox
 mkdir -p "$HOME/.config/openbox"
 mkdir -p "$HOME/.config/tint2"
 mkdir -p "$HOME/.config/rofi"
-mkdir -p "$HOME/.config/pcmanfm/default"
 
 cp "$REPO_DIR/gnu_linux/openbox/rc.xml" \
    "$HOME/.config/openbox/rc.xml"
@@ -30,7 +29,7 @@ chmod +x "$HOME/.config/openbox/autostart"
 mkdir -p "$HOME/Pictures/Wallpapers"
 
 cp "$REPO_DIR/gnu_linux/2q1yk0tc0r0f1.png" \
-   "$HOME/Pictures/Wallpapers/desktop_wallpaper.png" 2>/dev/null || true
+   "$HOME/Pictures/Wallpapers/desktop_wallpaper.png"
 
 # Xinit
 echo "exec openbox-session" > "$HOME/.xinitrc"
@@ -48,7 +47,7 @@ echo 'gtk-theme-name = "Adwaita-dark"' > "$HOME/.gtkrc-2.0"
 
 # MATE Terminal
 dconf write /org/mate/terminal/profiles/default/use-system-font false
-dconf write /org/mate/terminal/profiles/default/font "'Monospace 10'"
+dconf write /org/mate/terminal/profiles/default/font "'Monospace 9'"
 
 echo
 echo "=== INSTALARE FINALIZATĂ ==="
