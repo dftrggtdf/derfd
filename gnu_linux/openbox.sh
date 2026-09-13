@@ -137,7 +137,7 @@ echo "=========================================="
 echo " Openbox a fost configurat."
 echo "=========================================="
 echo
-echo "Nu se face reboot automat."
+echo "Poti da reboot la sistem."
 echo
 echo "Pentru a porni noua sesiune:"
 echo "  startx"
