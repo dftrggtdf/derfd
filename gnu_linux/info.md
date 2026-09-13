@@ -1,15 +1,22 @@
 # apps.bash
-- meant for installing all of them
-- includes all packages and applications
+
+* installs all required packages and applications
+* contains the package and application installation list
+* does not remove the MATE desktop
+* does not remove the display manager
 
 # openbox.sh
 
-- meant for going from mate debian to openbox + configurations
+* converts a Debian MATE installation to Openbox
+* installs the required packages and applications
+* removes the MATE desktop components that are no longer needed
+* removes the display manager
+* applies the derfd Openbox configuration
 
 # setup.sh
 
-- meant for repairing/reapplying the derfd configuration
-- does not remove the MATE desktop
-- does not remove the display manager
-- restores configuration files and settings
-- can be used after something was deleted, broken or changed
+* repairs or reapplies the derfd configuration
+* does not remove the MATE desktop
+* does not remove the display manager
+* restores configuration files and settings
+* can be used after something was deleted, broken or changed
