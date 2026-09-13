@@ -70,6 +70,7 @@ echo "[4/7] Configurare MATE Terminal..."
 
 dconf write /org/mate/terminal/profiles/default/use-system-font false
 dconf write /org/mate/terminal/profiles/default/font "'Monospace 9'"
+dconf write /org/mate/terminal/profiles/default/scrollback-unlimited true
 
 # ------------------------------------------------------------
 # 5. Configurare X11 si GTK
