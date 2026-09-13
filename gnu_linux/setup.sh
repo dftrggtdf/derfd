@@ -48,6 +48,7 @@ echo 'gtk-theme-name = "Adwaita-dark"' > "$HOME/.gtkrc-2.0"
 # MATE Terminal
 dconf write /org/mate/terminal/profiles/default/use-system-font false
 dconf write /org/mate/terminal/profiles/default/font "'Monospace 9'"
+dconf write /org/mate/terminal/profiles/default/scrollback-unlimited true
 
 echo
 echo "=== INSTALARE FINALIZATĂ ==="
