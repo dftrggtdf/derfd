@@ -59,7 +59,6 @@ sudo apt install -y \
     copyq \
     copyq-plugins \
     falkon \
-    chromium \
     inxi \
     fastfetch \
     htop \
