@@ -1,5 +1,4 @@
-# instalations.bash
-
+# apps.bash
 - meant for installing all of them
 - includes all packages and applications
 
