@@ -96,6 +96,10 @@ flatpak remote-add --if-not-exists \
     flathub \
     https://dl.flathub.org/repo/flathub.flatpakrepo
 
+echo "Installing Chromium from Flathub..."
+
+flatpak install -y flathub org.chromium.Chromium
+
 # ======================================
 # COMPLETE
 # ======================================
