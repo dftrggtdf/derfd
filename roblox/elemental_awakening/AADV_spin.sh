@@ -30,7 +30,11 @@ SAFE_ZONE_Y=870
 LEVEL_ONE_X=955
 LEVEL_ONE_Y=995
 
-LEVEL_UP_TIME=10
+# Level crop
+LEVEL_CROP_X=944
+LEVEL_CROP_Y=840
+LEVEL_CROP_W=28
+LEVEL_CROP_H=29
 
 # ------------------------------------------------------------
 # BUTTON COORDINATES
@@ -70,19 +74,7 @@ TARGET_ELEMENT="light"
 # RARITY SETTINGS
 # ------------------------------------------------------------
 
-# These are the rarities which require Continue after the
-# second spin instead of Exit.
-#
-# IMPORTANT:
-# The current RESULT area must actually contain the rarity
-# text for this detection to work.
-
 HIGH_RARITY_1="exotic"
-
-# Add more rarities here if the game has them.
-# Example:
-# HIGH_RARITY_2="legendary"
-# HIGH_RARITY_3="mythic"
 
 # ------------------------------------------------------------
 # COUNTER / TIMER
@@ -102,6 +94,7 @@ cleanup() {
     if [[ -n "${KEY_PID:-}" ]]; then
         kill "$KEY_PID" 2>/dev/null || true
     fi
+
     rm -f "$STOP_FILE"
 }
 
@@ -112,6 +105,7 @@ cleanup() {
 stop_script() {
     echo
     echo "[#] SCRIPT STOPPED"
+
     trap - INT TERM EXIT
 
     if [[ -n "${KEY_PID:-}" ]]; then
@@ -119,6 +113,7 @@ stop_script() {
     fi
 
     rm -f "$STOP_FILE"
+
     exit 0
 }
 
@@ -142,6 +137,7 @@ check_stop() {
 (
     stdbuf -oL xinput test "$KEYBOARD_ID" 2>/dev/null |
     while read -r type action keycode; do
+
         if [[ "$type" == "key" &&
               "$action" == "press" &&
               "$keycode" == "54" ]]; then
@@ -152,8 +148,10 @@ check_stop() {
             echo "[#] EMERGENCY STOP - C"
 
             kill -TERM "$MAIN_PID" 2>/dev/null || true
+
             break
         fi
+
     done
 ) &
 
@@ -273,6 +271,47 @@ show_status() {
 }
 
 # ------------------------------------------------------------
+# CHECK LEVEL 2
+# ------------------------------------------------------------
+
+is_level_two() {
+    local LEVEL_IMAGE
+    local OCR_OUTPUT
+    local OCR_TEXT
+
+    check_stop
+
+    LEVEL_IMAGE=$(mktemp --suffix=.png)
+    OCR_OUTPUT=$(mktemp)
+
+    import -window root \
+        -crop "${LEVEL_CROP_W}x${LEVEL_CROP_H}+${LEVEL_CROP_X}+${LEVEL_CROP_Y}" \
+        "$LEVEL_IMAGE" 2>/dev/null
+
+    if [[ ! -s "$LEVEL_IMAGE" ]]; then
+        rm -f "$LEVEL_IMAGE" "$OCR_OUTPUT"
+        return 1
+    fi
+
+    tesseract \
+        "$LEVEL_IMAGE" \
+        stdout \
+        --psm 10 \
+        -c tessedit_char_whitelist=12 \
+        2>/dev/null > "$OCR_OUTPUT"
+
+    OCR_TEXT=$(tr -cd '12' < "$OCR_OUTPUT")
+
+    rm -f "$LEVEL_IMAGE" "$OCR_OUTPUT"
+
+    if [[ "$OCR_TEXT" == *"2"* ]]; then
+        return 0
+    fi
+
+    return 1
+}
+
+# ------------------------------------------------------------
 # LEVEL UP
 # ------------------------------------------------------------
 
@@ -289,6 +328,7 @@ level_up() {
     check_stop
 
     echo "[LEVEL UP] Pressing 1..."
+
     xdotool click 1
 
     check_stop
@@ -302,6 +342,7 @@ level_up() {
     check_stop
 
     echo "[LEVEL UP] Clicking Safe Zone..."
+
     xdotool click 1
 
     check_stop
@@ -315,6 +356,7 @@ level_up() {
     check_stop
 
     echo "[LEVEL UP] Pressing 1..."
+
     xdotool click 1
 
     check_stop
@@ -328,6 +370,7 @@ level_up() {
     check_stop
 
     echo "[LEVEL UP] Clicking Safe Zone..."
+
     xdotool click 1
 
     check_stop
@@ -341,6 +384,7 @@ level_up() {
     check_stop
 
     echo "[LEVEL UP] Pressing 1..."
+
     xdotool click 1
 
     check_stop
@@ -353,53 +397,34 @@ level_up() {
 
     check_stop
 
-    echo "[LEVEL UP] Starting ${LEVEL_UP_TIME} second click..."
-
-    local START_NS
-    local NOW_NS
-    local ELAPSED_NS
-    local LEVEL_UP_TIME_NS
-    local REMAINING_NS
-    local REMAINING_TENTHS
-
-    START_NS=$(date +%s%N)
-
-    LEVEL_UP_TIME_NS=$(
-        awk "BEGIN {printf \"%.0f\", $LEVEL_UP_TIME * 1000000000}"
-    )
+    echo "[LEVEL UP] Starting Level 2 checker..."
 
     while true; do
+
         check_stop
 
-        NOW_NS=$(date +%s%N)
-
-        ELAPSED_NS=$((NOW_NS - START_NS))
-
-        if (( ELAPSED_NS >= LEVEL_UP_TIME_NS )); then
-            break
-        fi
-
-        REMAINING_NS=$((LEVEL_UP_TIME_NS - ELAPSED_NS))
-
-        REMAINING_TENTHS=$((REMAINING_NS / 100000000))
-
         xdotool mousemove "$SAFE_ZONE_X" "$SAFE_ZONE_Y"
+
         xdotool click 1
 
-        printf "\r[LEVEL UP] Clicking... %d.%d seconds remaining" \
-            "$((REMAINING_TENTHS / 10))" \
-            "$((REMAINING_TENTHS % 10))"
+        check_stop
+
+        if is_level_two; then
+
+            echo
+            echo "[LEVEL UP] Level 2 detected."
+            echo "[LEVEL UP] Resetting..."
+
+            reset_game
+
+            echo "[LEVEL UP] Reset completed."
+
+            return 1
+        fi
 
         sleep 0.1
+
     done
-
-    echo
-
-    echo "[LEVEL UP] ${LEVEL_UP_TIME} seconds completed."
-
-    sleep 1
-
-    check_stop
 }
 
 # ------------------------------------------------------------
@@ -473,6 +498,7 @@ wait_for_result() {
     local HEX
 
     while true; do
+
         check_stop
 
         HEX=$(get_pixel_hex "$RECOVERY_X" "$RECOVERY_Y")
@@ -605,16 +631,6 @@ is_high_rarity() {
     if [[ "$OCR_TEXT" == *"exotic"* ]]; then
         return 0
     fi
-
-    # Future rarities can be added here.
-    #
-    # if [[ "$OCR_TEXT" == *"legendary"* ]]; then
-    #     return 0
-    # fi
-    #
-    # if [[ "$OCR_TEXT" == *"mythic"* ]]; then
-    #     return 0
-    # fi
 
     return 1
 }
@@ -811,7 +827,11 @@ echo "Result text area:"
 echo "X=$RESULT_X Y=$RESULT_Y"
 echo "Size: ${RESULT_W}x${RESULT_H}"
 echo
-echo "Level Up time: ${LEVEL_UP_TIME}s"
+echo "Level crop:"
+echo "X=$LEVEL_CROP_X Y=$LEVEL_CROP_Y"
+echo "Size: ${LEVEL_CROP_W}x${LEVEL_CROP_H}"
+echo
+echo "Level Up mode: Level 2 checker"
 echo
 echo "Starting in 5 seconds..."
 echo "Move your mouse to the game/client."
@@ -848,9 +868,24 @@ while true; do
 
     level_up
 
+    LEVEL_UP_STATUS=$?
+
     check_stop
 
-    reset_game
+    # --------------------------------------------------------
+    # Level 2 was detected and reset_game() was already
+    # executed inside level_up().
+    #
+    # Do NOT continue to a new cycle.
+    # Do NOT reset again.
+    #
+    # Continue directly to Change Element -> Spin #1.
+    # --------------------------------------------------------
+
+    if (( LEVEL_UP_STATUS == 1 )); then
+        echo
+        echo "[LEVEL UP] Level 2 reset completed."
+    fi
 
     check_stop
 
