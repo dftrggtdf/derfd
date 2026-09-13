@@ -6,12 +6,16 @@ echo "======================================"
 echo " DERFD - PACKAGE INSTALLATION"
 echo "======================================"
 
-# Actualizare APT
+# ======================================
+# 1. UPDATE APT
+# ======================================
+
 echo "[1/4] Updating APT..."
+
 sudo apt update
 
 # ======================================
-# DESKTOP / OPENBOX
+# 2. DESKTOP / OPENBOX
 # ======================================
 
 echo "[2/4] Installing desktop packages..."
@@ -38,13 +42,12 @@ sudo apt install -y \
     xterm \
     dconf-cli \
     feh \
-    caja
 
 # ======================================
-# UTILITIES
+# 3. UTILITIES / APPLICATIONS
 # ======================================
 
-echo "[3/4] Installing utilities..."
+echo "[3/4] Installing utilities and applications..."
 
 sudo apt install -y \
     copyq \
@@ -70,10 +73,12 @@ sudo apt install -y \
     jq \
     gsimplecal \
     gnome-package-updater \
-    package-update-indicator
+    package-update-indicator \
+    audacity \
+    kdenlive
 
 # ======================================
-# FLATPAK
+# 4. FLATPAK
 # ======================================
 
 echo "[4/4] Installing Flatpak applications..."
@@ -84,10 +89,16 @@ flatpak remote-add --if-not-exists \
     flathub \
     https://dl.flathub.org/repo/flathub.flatpakrepo
 
-flatpak install flathub org.vinegarhq.Sober -y
 flatpak install flathub io.freetubeapp.FreeTube -y
+
+# ======================================
+# COMPLETE
+# ======================================
 
 echo
 echo "======================================"
 echo " INSTALLATION COMPLETE"
 echo "======================================"
+echo
+echo "Please reboot your system."
+echo
