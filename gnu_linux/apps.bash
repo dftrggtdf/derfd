@@ -34,13 +34,19 @@ sudo apt install -y \
     mate-utils \
     mate-calc \
     mate-power-manager \
+    network-manager \
     network-manager-gnome \
+    mate-polkit \
     volumeicon-alsa \
     dunst \
     adwaita-icon-theme \
     xinit \
+    x11-xserver-utils \
     xterm \
     dconf-cli \
+    dbus-user-session \
+    dbus-x11 \
+    xdg-utils \
     feh
 
 # ======================================
@@ -53,6 +59,7 @@ sudo apt install -y \
     copyq \
     copyq-plugins \
     falkon \
+    chromium \
     inxi \
     fastfetch \
     htop \
