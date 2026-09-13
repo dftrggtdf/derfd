@@ -9,4 +9,8 @@
 - includes instalations.bash aswell
 
 # setup.sh
-- meant for... bruh
+- meant for repairing/reapplying the derfd configuration
+- does not remove the MATE desktop
+- does not remove the display manager
+- restores configuration files and settings
+- can be used after something was deleted, broken or changed
