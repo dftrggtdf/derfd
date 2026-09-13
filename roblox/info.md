@@ -16,6 +16,7 @@ scrpts/automations:
             - coreutils
             - gawk
             - 1920x1080 resolution
+                - i run those scripts on 1920x1017 (with taskbar)
             - x11
 
         - * verify:
