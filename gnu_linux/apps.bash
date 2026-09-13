@@ -6,20 +6,10 @@ echo "======================================"
 echo " DERFD - PACKAGE INSTALLATION"
 echo "======================================"
 
-# ======================================
-# 1. UPDATE APT
-# ======================================
-
 echo "[1/4] Updating APT..."
-
 sudo apt update
 
-# ======================================
-# 2. DESKTOP / OPENBOX
-# ======================================
-
 echo "[2/4] Installing desktop packages..."
-
 sudo apt install -y \
     openbox \
     tint2 \
@@ -49,16 +39,13 @@ sudo apt install -y \
     xdg-utils \
     feh
 
-# ======================================
-# 3. UTILITIES / APPLICATIONS
-# ======================================
-
 echo "[3/4] Installing utilities and applications..."
-
 sudo apt install -y \
     copyq \
     copyq-plugins \
     falkon \
+    gimp \
+    vlc \
     inxi \
     fastfetch \
     htop \
@@ -81,14 +68,10 @@ sudo apt install -y \
     gnome-package-updater \
     package-update-indicator \
     audacity \
-    kdenlive
-
-# ======================================
-# 4. FLATPAK
-# ======================================
+    kdenlive \
+    mpv
 
 echo "[4/4] Installing Flatpak..."
-
 sudo apt install -y flatpak
 
 flatpak remote-add --if-not-exists \
@@ -96,17 +79,15 @@ flatpak remote-add --if-not-exists \
     https://dl.flathub.org/repo/flathub.flatpakrepo
 
 echo "Installing Chromium from Flathub..."
-
 flatpak install -y flathub org.chromium.Chromium
 
-# ======================================
-# COMPLETE
-# ======================================
+echo "Installing Krita from Flathub..."
+flatpak install -y flathub org.kde.krita
 
 echo
 echo "======================================"
 echo " INSTALLATION COMPLETE"
 echo "======================================"
 echo
-echo "Please reboot your system."
-echo
+echo "No automatic reboot will be performed."
+echo "You can reboot manually when ready."
