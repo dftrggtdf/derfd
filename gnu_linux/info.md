@@ -20,3 +20,8 @@
 * does not remove the display manager
 * restores configuration files and settings
 * can be used after something was deleted, broken or changed
+
+# vm_install_log.sh
+
+* whats happening during executing openbox.sh
+* can be different on an actual computer
