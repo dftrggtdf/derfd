@@ -25,3 +25,4 @@
 
 * whats happening during executing openbox.sh
 * can be different on an actual computer
+* not a script
