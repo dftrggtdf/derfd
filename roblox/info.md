@@ -20,13 +20,29 @@ scrpts/automations:
             - x11
 
     - 1.2 AADV_SCG.sh
-        - * requirements:
-            - xdotool
-            - xinput
-            - imagemagick
-            - python3
-            - python3-pil
-            - stdbuf
+        * requirements:
+            * X11 session
+            * xdotool
+            * xinput
+            * imagemagick
+            * python3
+            * python3-pil
+            * tesseract-ocr
+            * coreutils (`stdbuf`)
+
+* install requirements:
+    * Debian:
+        * `sudo apt install xdotool xinput imagemagick python3 python3-pil tesseract-ocr coreutils`
+
+* * important:
+
+    * The script requires an X11 session.
+    * Wayland is not supported.
+    * `stdbuf` is provided by the `coreutils` package.
+    * `stdbuf` does not need to be installed as a separate package.
+    * `tesseract-ocr` is required for level detection and final result OCR.
+    * The script uses fixed screen coordinates, so display resolution and scaling can affect it.
+
         
         - * tested:
             - sober
