@@ -1,6 +1,10 @@
 picom --backend glx --vsync &
 
 tint2 &
+
+# Keyboard layouts: US -> RO -> RU
+setxkbmap -layout us,ro,ru -variant ,std, -option grp:alt_shift_toggle &
+
 GTK_THEME=Adwaita nm-applet &
 volumeicon &
 dunst &
