@@ -1,17 +1,17 @@
 ## automations, scripts (not exploits)
 # description
 1. AADV_spin.sh
-    - * features:
+    - features:
         - cooming soon i forgor
 
 2. AADV_SCG.sh
-    - * features:
+    - features:
         - uh
 
-- * requirements:
+requirements:
         ```sudo apt install xdotool xinput imagemagick python3 python3-pil tesseract-ocr coreutils```
 ---
-- * tested:
+- tested:
     - sober
         - AADV_SCG.sh
             - input problems for me, random freezes sometimes to heat cpu
