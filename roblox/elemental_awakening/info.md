@@ -36,7 +36,7 @@ scrpts/automations:
                     - same story as SCG here
                     - didnt tested
         - * how it works
-# * AADV_SCG.sh
+# * AADV_spin.sh
 - 1. clicks PLAY at local X and Y
     - where is your x and y play located
 - 2. checks the level crop and verifies Level 1
@@ -87,7 +87,7 @@ scrpts/automations:
 - 18. starts the next cycle
 - 19. pressing C at any time stops the script
     - idk doesnt quite work, i tested on mocktail
-# * AADV_spin.sh
+# * AADV_SCG.sh
 - 1. clicks PLAY at local X and Y
 - 2. starts the Level Up sequence
 - 3. clicks the `1` inventory button and the Safe Zone repeatedly
