@@ -4,7 +4,7 @@
     - * features:
         - cooming soon i forgor
 
-- 2. AADV_SCG.sh
+2. AADV_SCG.sh
     - * features:
         - uh
 
