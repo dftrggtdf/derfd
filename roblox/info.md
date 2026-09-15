@@ -37,6 +37,9 @@ scrpts/automations:
                     - initially developed under it, problems with input and freezing cpu (whole client)
                     - it works
             - mocktail
+                - AADV_SCG.sh
                     - no input problems at all
                     - project seems in experimental stage as of right now
                     - it works
+                - AADV_spin
+                    - same story as SCG here
