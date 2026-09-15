@@ -51,7 +51,7 @@ scrpts/automations:
                     - same story as SCG here
         - * how it works
             * AADV_SCG.sh
-                - - 1. clicks PLAY at local X and Y
+                - 1. clicks PLAY at local X and Y
                     - where is your x and y play located
                 - 2. checks the level crop and verifies Level 1
                     - that works, images are my crops with resolution
@@ -59,7 +59,7 @@ scrpts/automations:
                     - it also checks the hex when it seens "1"
                 - 4. starts the level-up sequence
                 - 5. clicks the `1` inventory button and the Safe Zone as required
-                    - moves to 1
+                        - moves to 1
                     - sleep 0.2
                     - clicks
                     - moves to safe zone
