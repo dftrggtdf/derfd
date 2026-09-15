@@ -52,42 +52,42 @@ scrpts/automations:
         - * how it works
             * AADV_SCG.sh
                 - 1. clicks PLAY at local X and Y
-                    * where is your x and y play located
+                    - where is your x and y play located
                 - 2. checks the level crop and verifies Level 1
-                    * that works, images are my crops with resolution
+                    - that works, images are my crops with resolution
                 - 3. checks the HEX of the "1" inventory button
-                    * it also checks the hex when it seens "1"
+                    - it also checks the hex when it seens "1"
                 - 4. starts the level-up sequence
                 - 5. clicks the `1` inventory button and the Safe Zone as required
-                    * moves to 1
-                    * sleep 0.2
-                    * clicks
-                    * moves to safe zone
-                    * sleep 0.2
-                    * clicks
-                    * moves to 1
-                    * sleep 0.2
-                    * clicks
-                    * moves to safe zone
-                    * sleep 0.2
-                    * clicks
-                    * moves to 1
-                    * sleep 0.2
-                    * click
-                    * moves to safe zone
-                    * sleep 0.2
-                    * clicks to level up
+                    - moves to 1
+                    - sleep 0.2
+                    - clicks
+                    - moves to safe zone
+                    - sleep 0.2
+                    - clicks
+                    - moves to 1
+                    - sleep 0.2
+                    - clicks
+                    - moves to safe zone
+                    - sleep 0.2
+                    - clicks
+                    - moves to 1
+                    - sleep 0.2
+                    - click
+                    - moves to safe zone
+                    - sleep 0.2
+                    - clicks to level up
                 - 6. continuously checks the level crop
                 - 7. detects when the level changes from Level 1 to Level 2
                 - 8. resets the game using Escape → R → Enter
-                    * press esc
-                    * sleep 1
-                    * press r
-                    * sleep 1
-                    * press return
-                    * sleep 1
+                    - press esc
+                    - sleep 1
+                    - press r
+                    - sleep 1
+                    - press return
+                    - sleep 1
                 - 9. clicks CHANGE ELEMENT
-                    * checks for he hex, if not, doesnt press
+                    - checks for he hex, if not, doesnt press
                 - 10. clicks SPIN
                 - 11. checks the recovery pixel for the recovery HEX
                     * meant, the color aat the end of spinning, green
@@ -105,60 +105,60 @@ scrpts/automations:
                 - 1. clicks PLAY at local X and Y
                 - 2. starts the Level Up sequence
                 - 3. clicks the `1` inventory button and the Safe Zone repeatedly
-                    * moves to 1
-                    * sleep 0.2
-                    * clicks
-                    * moves to safe zone
-                    * sleep 0.2
-                    * clicks
-                    * moves to 1
-                    * sleep 0.2
-                    * clicks
-                    * moves to safe zone
-                    * sleep 0.2
-                    * clicks
-                    * moves to 1
-                    * sleep 0.2
-                    * click
-                    * moves to safe zone
-                    * sleep 0.2
-                    * clicks to level up
+                    - moves to 1
+                    - sleep 0.2
+                    - clicks
+                    - moves to safe zone
+                    - sleep 0.2
+                    - clicks
+                    - moves to 1
+                    - sleep 0.2
+                    - clicks
+                    - moves to safe zone
+                    - sleep 0.2
+                    - clicks
+                    - moves to 1
+                    - sleep 0.2
+                    - click
+                    - moves to safe zone
+                    - sleep 0.2
+                    - clicks to level up
                 - 4. continuously checks the level crop for Level 2 using OCR
                 - 5. when Level 2 is detected, resets the character
-                    * press esc
-                    * sleep 1
-                    * press r
-                    * sleep 1
-                    * press return
-                    * sleep 1
+                    - press esc
+                    - sleep 1
+                    - press r
+                    - sleep 1
+                    - press return
+                    - sleep 1
                 - 6. clicks CHANGE ELEMENT
-                    * checks for he hex, if not, doesnt press
+                    - checks for he hex, if not, doesnt press
                 - 7. starts Spin #1
                 - 8. checks the recovery pixel and waits for the target HEX
-                    * meant, the color aat the end of spinning, green
+                    - meant, the color aat the end of spinning, green
                 - 9. if the recovery HEX is detected, clicks CHANGE ELEMENT and spins again
                 - 10. scans the screen for the target HEX
                 - 11. when the target HEX is found, clicks CONTINUE
-                    * first spin is ignored
+                    - first spin is ignored
                 - 12. starts Spin #2
                 - 13. checks the recovery pixel and waits for the target HEX again
                 - 14. scans the screen for the target HEX
                 - 15. captures the final result text area
-                    * crop the same area target was extracted from
+                    - crop the same area target was extracted from
                 - 16. uses Tesseract OCR to read the final result
                 - 17. normalizes the OCR text for comparison
                 - 18. ~~checks if the result is a high-rarity result (`exotic`)~~
                 - 19. ~~if the result is `exotic`, clicks CONTINUE and starts another cycle~~
                 - 20. if the result matches the target element (`YOUR_ELEMENT`), stops the script
                 - 21. if the result is a different element, clicks EXIT
-                    * in reality, if theres a different element, it clicks continue
-                    * then exit, and a new cycle
+                    - in reality, if theres a different element, it clicks continue
+                    - then exit, and a new cycle
                 - 22. increases the completed cycle counter
-                    * by `1`
+                    - by `1`
                 - 23. displays the total completed cycles and elapsed time
-                    * not real time, it prints
+                    - not real time, it prints
                 - 24. starts the next cycle
                 - 25. pressing `C` at any time performs an emergency stop
-                    * i dont know but, for mocktail it didnt work, but for sober it does
+                    - i dont know but, for mocktail it didnt work, but for sober it does
                 - 26. if OCR/result verification fails, the script enters a permanent fail-safe pause and waits for `C`
-                    * i dunno, cant confirm for sure
+                    - i dunno, cant confirm for sure
