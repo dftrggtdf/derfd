@@ -19,19 +19,6 @@ scrpts/automations:
                 - i run those scripts on 1920x1017 (with taskbar)
             - x11
 
-        - * verify:
-            - command -v xdotool
-            - command -v xinput
-            - command -v import
-            - command -v python3
-            - command -v tesseract
-            - command -v awk
-            - command -v stdbuf
-            - python3 -c 'from PIL import Image; print("Pillow OK")'
-            - tesseract --version
-            - echo "$XDG_SESSION_TYPE"
-            - #!/bin/bash
-
     - 1.2 AADV_SCG.sh
         - * requirements:
             - xdotool
@@ -40,3 +27,16 @@ scrpts/automations:
             - python3
             - python3-pil
             - stdbuf
+        
+        - * tested:
+            - sober
+                - AADV_SCG.sh
+                    - input problems for me, random freezes sometimes to heat cpu
+                    - it works
+                - AADV_spin.sh
+                    - initially developed under it, problems with input and freezing cpu (whole client)
+                    - it works
+            - mocktail
+                    - no input problems at all
+                    - project seems in experimental stage as of right now
+                    - it works
