@@ -8,7 +8,7 @@
     - features:
         - uh
 
-requirements:
+- requirements:
         ``sudo apt install xdotool xinput imagemagick python3 python3-pil tesseract-ocr coreutils``
 ---
 - tested:
