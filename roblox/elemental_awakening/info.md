@@ -1,42 +1,39 @@
-automations, scripts (not exploits)
+-# utomations, scripts (not exploits)
+# description
+1. AADV_spin.sh
+    - * features:
+        - cooming soon i forgor
 
-scrpts/automations:
-1. elemental awakening
-    - 1.1 AADV_spin.sh
-        - * features:
-            - cooming soon i forgor
+- 2. AADV_SCG.sh
+    - * features:
+        - uh
 
-    - 1.2 AADV_SCG.sh
-        - * features:
-            - uh
-
-    - * requirements:
+- * requirements:
         ```sudo apt install xdotool xinput imagemagick python3 python3-pil tesseract-ocr coreutils```
-        
-        - * tested:
-            - sober
-                - AADV_SCG.sh
-                    - input problems for me, random freezes sometimes to heat cpu
-                    - `c` button doesnt seems to work (idk)
-                        - just ctrl c it when it spins
+---
+- * tested:
+    - sober
+        - AADV_SCG.sh
+            - input problems for me, random freezes sometimes to heat cpu
+                - `c` button doesnt seems to work (idk)
+                    - just ctrl c it when it spins
                     - it works
-                - AADV_spin.sh
-                    - initially developed under it, problems with input and freezing cpu (whole client)
-                    - `c` button doesnt seems to work (im confused)
-                        - ctrl c when it spins
+        - AADV_spin.sh
+            - initially developed under it, problems with input and freezing cpu (whole client)
+                - `c` button doesnt seems to work (im confused)
+                    - ctrl c when it spins
                     - it works
-            - mocktail
-                - AADV_SCG.sh
-                    - no input problems at all
-                    - project seems in experimental stage as of right now
+    - mocktail
+        - AADV_SCG.sh
+            - no input problems at all
+                - project seems in experimental stage as of right now
                     - `c` does work
-                        - ctrl c when it spins
+                    - ctrl c when it spins
                     - it works
-                - AADV_spin
-                    - same story as SCG here
-                    - didnt tested
-        - * how it works
-# * AADV_spin.sh
+        - AADV_spin
+            - same story as SCG here
+                - didnt tested
+# AADV_spin.sh
 - 1. clicks PLAY at local X and Y
     - where is your x and y play located
 - 2. checks the level crop and verifies Level 1
@@ -87,7 +84,7 @@ scrpts/automations:
 - 18. starts the next cycle
 - 19. pressing C at any time stops the script
     - idk doesnt quite work, i tested on mocktail
-# * AADV_SCG.sh
+# AADV_SCG.sh
 - 1. clicks PLAY at local X and Y
 - 2. starts the Level Up sequence
 - 3. clicks the `1` inventory button and the Safe Zone repeatedly
