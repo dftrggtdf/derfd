@@ -27,6 +27,7 @@
     * tesseract-ocr
     * coreutils (`stdbuf`)
     * 1920x1080 display resolution
+        * (its actually 1920x1017)
 
 * * install requirements:
 
