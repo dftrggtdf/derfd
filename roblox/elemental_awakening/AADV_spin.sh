@@ -68,7 +68,7 @@ RESULT_H=115
 # TARGET ELEMENT
 # ------------------------------------------------------------
 
-TARGET_ELEMENT="light"
+TARGET_ELEMENT="ELEMENT" # type here what you want
 
 # ------------------------------------------------------------
 # RARITY SETTINGS
@@ -753,26 +753,80 @@ recognize_final_result() {
 check_final_result() {
     local TEMP_RESULT
     local STATUS
+    local ATTEMPT
+    local MAX_ATTEMPTS=5
 
     TEMP_RESULT=$(mktemp --suffix=.png)
 
-    if ! capture_final_result "$TEMP_RESULT"; then
+    for ((ATTEMPT=1; ATTEMPT<=MAX_ATTEMPTS; ATTEMPT++)); do
 
-        rm -f "$TEMP_RESULT"
+        check_stop
 
-        return 2
-    fi
+        echo
+        echo "[OCR] Attempt $ATTEMPT/$MAX_ATTEMPTS..."
 
-    echo
-    echo "[OCR] Recognizing final spin..."
+        if ! capture_final_result "$TEMP_RESULT"; then
 
-    recognize_final_result "$TEMP_RESULT"
+            echo "[OCR] Capture failed."
 
-    STATUS=$?
+        else
+
+            echo "[OCR] Recognizing final spin..."
+
+            recognize_final_result "$TEMP_RESULT"
+
+            STATUS=$?
+
+            # ------------------------------------------------
+            # TARGET FOUND
+            # ------------------------------------------------
+
+            if (( STATUS == 0 )); then
+                rm -f "$TEMP_RESULT"
+                return 0
+            fi
+
+            # ------------------------------------------------
+            # HIGH RARITY
+            # ------------------------------------------------
+
+            if (( STATUS == 3 )); then
+                rm -f "$TEMP_RESULT"
+                return 3
+            fi
+
+            # ------------------------------------------------
+            # DIFFERENT ELEMENT
+            # ------------------------------------------------
+
+            if (( STATUS == 1 )); then
+                rm -f "$TEMP_RESULT"
+                return 1
+            fi
+
+            # ------------------------------------------------
+            # OCR ERROR
+            # ------------------------------------------------
+
+            if (( STATUS == 2 )); then
+                echo
+                echo "[OCR] No readable result yet."
+            fi
+        fi
+
+        if (( ATTEMPT < MAX_ATTEMPTS )); then
+            echo "[OCR] Waiting before retry..."
+            sleep 0.5
+        fi
+
+    done
 
     rm -f "$TEMP_RESULT"
 
-    return "$STATUS"
+    echo
+    echo "[OCR] ERROR: No readable result after $MAX_ATTEMPTS attempts."
+
+    return 2
 }
 
 # ------------------------------------------------------------
