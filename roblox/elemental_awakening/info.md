@@ -33,6 +33,7 @@
         - AADV_spin
             - same story as SCG here
                 - didnt tested
+---
 # AADV_spin.sh
 - 1. clicks PLAY at local X and Y
     - where is your x and y play located
