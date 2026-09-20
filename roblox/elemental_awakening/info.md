@@ -1,4 +1,4 @@
-## automations, scripts (not exploits)
+8## automations, scripts (not exploits)
 # description
 1. AADV_spin.sh
     - features:
@@ -147,4 +147,4 @@
 - 25. pressing `C` at any time performs an emergency stop
     - i dont know but, for mocktail it didnt work, but for sober it does
 - 26. if OCR/result verification fails, the script enters a permanent fail-safe pause and waits for `C`
-    - i dunno, cant confirm for sure
+    - works, tested on mocktail
