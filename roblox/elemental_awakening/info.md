@@ -1,14 +1,18 @@
-8## automations, scripts (not exploits)
+## automations, scripts (not exploits)
 # description
 1. AADV_spin.sh
     - features:
         - hex check
         - level scan
         - element target
+    - description:
+        - apeared 8 september 2026
 
 2. AADV_SCG.sh
     - features:
         - uh
+    - descruption:
+        - appeared 8 september 2026
 
 - requirements:
         ``sudo apt install xdotool xinput imagemagick python3 python3-pil tesseract-ocr coreutils``
