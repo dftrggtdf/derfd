@@ -1,4 +1,14 @@
-vboxuser@deb136zero:~/derfd/gnu_linux$ ./openbox.sh 
+vboxuser@deb136zero:~$ git clone https://github.com/dftrggtdf/derfd.git
+cd derfd/gnu_linux
+chmod +x openbox.sh
+./openbox.sh
+Cloning into 'derfd'...
+remote: Enumerating objects: 1405, done.
+remote: Counting objects: 100% (37/37), done.
+remote: Compressing objects: 100% (35/35), done.
+remote: Total 1405 (delta 18), reused 2 (delta 2), pack-reused 1368 (from 1)
+Receiving objects: 100% (1405/1405), 2.71 MiB | 2.70 MiB/s, done.
+Resolving deltas: 100% (747/747), done.
 ==========================================
  derfd - configurare Openbox
 ==========================================
@@ -8,10 +18,14 @@ vboxuser@deb136zero:~/derfd/gnu_linux$ ./openbox.sh
 ======================================
 [1/4] Updating APT...
 [sudo] password for vboxuser: 
-Hit:1 http://security.debian.org/debian-security trixie-security InRelease
-Hit:2 http://deb.debian.org/debian trixie InRelease
-Hit:3 http://deb.debian.org/debian trixie-updates InRelease
-84 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Hit:1 http://deb.debian.org/debian trixie InRelease
+Get:2 http://security.debian.org/debian-security trixie-security InRelease [43.4 kB]
+Get:3 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+Get:4 http://security.debian.org/debian-security trixie-security/main Sources [230 kB]
+Get:5 http://security.debian.org/debian-security trixie-security/main amd64 Packages [262 kB]
+Get:6 http://security.debian.org/debian-security trixie-security/main Translation-en [160 kB]
+Fetched 744 kB in 1s (1,107 kB/s)                          
+87 packages can be upgraded. Run 'apt list --upgradable' to see them.
 [2/4] Installing desktop packages...
 mate-terminal is already the newest version (1.26.1-1+b1).
 mate-terminal set to manually installed.
@@ -64,9 +78,9 @@ Suggested packages:
   libxml2-dev       alsamixergui           | gnome-alsamixer
 
 Summary:
-  Upgrading: 0, Installing: 38, Removing: 0, Not Upgrading: 84
+  Upgrading: 0, Installing: 38, Removing: 0, Not Upgrading: 87
   Download size: 10.6 MB
-  Space needed: 36.5 MB / 13.6 GB available
+  Space needed: 36.5 MB / 13.3 GB available
 
 Get:1 http://deb.debian.org/debian trixie/main amd64 dconf-cli amd64 0.40.0-5 [28.3 kB]
 Get:2 http://deb.debian.org/debian trixie/main amd64 dunst amd64 1.12.2-1 [138 kB]
@@ -106,7 +120,7 @@ Get:35 http://deb.debian.org/debian trixie/main amd64 scrot amd64 1.12.1-1 [81.2
 Get:36 http://deb.debian.org/debian trixie/main amd64 tint2 amd64 17.0.1-1.2 [398 kB]
 Get:37 http://deb.debian.org/debian trixie/main amd64 volumeicon-alsa amd64 0.5.1+git20230228-1+b1 [50.4 kB]
 Get:38 http://deb.debian.org/debian trixie/main amd64 xcape amd64 1.2-3+b2 [11.4 kB]
-Fetched 10.6 MB in 2s (4,698 kB/s)
+Fetched 10.6 MB in 3s (3,150 kB/s) 
 Extracting templates from packages: 100%
 Selecting previously unselected package dconf-cli.
 (Reading database ... 152902 files and directories currently installed.)
@@ -870,9 +884,9 @@ Recommended packages:
   libsvtav1enc0  software-properties-gtk
 
 Summary:
-  Upgrading: 12, Installing: 567, Removing: 0, Not Upgrading: 72
+  Upgrading: 12, Installing: 567, Removing: 0, Not Upgrading: 75
   Download size: 469 MB
-  Space needed: 1,657 MB / 13.6 GB available
+  Space needed: 1,657 MB / 13.2 GB available
 
 Get:1 http://deb.debian.org/debian trixie/main amd64 libc6 amd64 2.41-12+deb13u4 [2,847 kB]
 Get:2 http://deb.debian.org/debian trixie/main amd64 libc-bin amd64 2.41-12+deb13u4 [638 kB]
@@ -1453,7 +1467,7 @@ Get:576 http://deb.debian.org/debian trixie/main amd64 vlc-plugin-skins2 amd64 3
 Get:577 http://deb.debian.org/debian trixie/main amd64 vlc-plugin-video-splitter amd64 3.0.23-0+deb13u1 [121 kB]
 Get:578 http://deb.debian.org/debian trixie/main amd64 vlc-plugin-visualization amd64 3.0.23-0+deb13u1 [117 kB]
 Get:579 http://deb.debian.org/debian trixie/main amd64 yt-dlp all 2025.04.30-1 [2,054 kB]
-Fetched 469 MB in 1min 37s (4,851 kB/s)                                        
+Fetched 469 MB in 1min 23s (5,672 kB/s)                                        
 apt-listchanges: Reading changelogs...
 Extracting templates from packages: 100%
 Preconfiguring packages ...
@@ -3279,11 +3293,11 @@ Setting up swh-plugins (0.4.17-3) ...
 Setting up openssh-server (1:10.0p1-7+deb13u4) ...
 Creating config file /etc/ssh/sshd_config with new version
 Creating SSH2 RSA key; this may take some time ...
-3072 SHA256:xrB6TPklUUD5D2kyag8ROq+SEeat27iVwtqZk9vzxAc root@deb136zero (RSA)
+3072 SHA256:oJDsN7LF5L9r6nKghoI+WHhTfSnjyuC18dfWMquzGzg root@deb136zero (RSA)
 Creating SSH2 ECDSA key; this may take some time ...
-256 SHA256:6CDZAANHc4EviArptTepN2Uazv4uvSjRVGkTm5GGJUg root@deb136zero (ECDSA)
+256 SHA256:r4/I/iXVnbnc26R0Le7gT4U1g/8S73C+i7Aa+RTzkDI root@deb136zero (ECDSA)
 Creating SSH2 ED25519 key; this may take some time ...
-256 SHA256:4Em//ccDVAipHJe8XVwnCeYXqk5LzBTY4cyZ5aVuOmI root@deb136zero (ED25519)
+256 SHA256:+iN1KN1UxkKTpCuxe2GXmxs43Iz3Ti9x0+Khk6skWcc root@deb136zero (ED25519)
 Creating user 'sshd' (sshd user) with UID 986 and GID 65534.
 Created symlink '/etc/systemd/system/sshd.service' → '/usr/lib/systemd/system/ss
 h.service'.
@@ -3875,7 +3889,7 @@ Processing triggers for libvlc-bin:amd64 (3.0.23-0+deb13u1) ...
 [4/4] Installing Flatpak...
 flatpak is already the newest version (1.16.6-1~deb13u2).
 Summary:
-  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 72
+  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 75
 Installing Chromium from Flathub...
 Looking for matches…
 Required runtime for org.chromium.Chromium/x86_64/stable (runtime/org.freedesktop.Platform/x86_64/25.08) found in remote flathub
@@ -3897,12 +3911,12 @@ org.chromium.Chromium permissions:
         ID                                    Branch      Op Remote  Download
  1. [✓] org.chromium.Chromium.Codecs          stable      i  flathub   1.2 MB / 1.2 MB
  2. [✓] org.chromium.Chromium.Locale          stable      i  flathub   5.7 kB / 194.3 kB
- 3. [✓] org.freedesktop.Platform.GL.default   25.08       i  flathub 145.0 MB / 146.0 MB
- 4. [✓] org.freedesktop.Platform.GL.default   25.08-extra i  flathub  27.1 MB / 146.1 MB
+ 3. [✓] org.freedesktop.Platform.GL.default   25.08       i  flathub 147.0 MB / 148.0 MB
+ 4. [✓] org.freedesktop.Platform.GL.default   25.08-extra i  flathub  28.2 MB / 148.1 MB
  5. [✓] org.freedesktop.Platform.Locale       25.08       i  flathub  18.6 kB / 379.4 MB
  6. [✓] org.freedesktop.Platform.codecs-extra 25.08-extra i  flathub  14.4 MB / 14.6 MB
- 7. [✓] org.freedesktop.Platform              25.08       i  flathub 203.9 MB / 257.1 MB
- 8. [✓] org.chromium.Chromium                 stable      i  flathub 159.1 MB / 171.4 MB
+ 7. [✓] org.freedesktop.Platform              25.08       i  flathub 206.0 MB / 259.3 MB
+ 8. [✓] org.chromium.Chromium                 stable      i  flathub 160.7 MB / 172.7 MB
 
 Installation complete.
 Installing Krita from Flathub...
@@ -3976,7 +3990,7 @@ REMOVING:
   mate-desktop-environment*  task-mate-desktop*
 
 Summary:
-  Upgrading: 0, Installing: 0, Removing: 14, Not Upgrading: 72
+  Upgrading: 0, Installing: 0, Removing: 14, Not Upgrading: 75
   Freed space: 73.0 MB
 
 (Reading database ... 240566 files and directories currently installed.)
@@ -4043,7 +4057,7 @@ REMOVING:
   libmatemixer-common           yelp-xsl
 
 Summary:
-  Upgrading: 0, Installing: 0, Removing: 60, Not Upgrading: 72
+  Upgrading: 0, Installing: 0, Removing: 60, Not Upgrading: 75
   Freed space: 384 MB
 
 (Reading database ... 239834 files and directories currently installed.)
@@ -4133,7 +4147,7 @@ REMOVING:
   lightdm*
 
 Summary:
-  Upgrading: 0, Installing: 0, Removing: 1, Not Upgrading: 72
+  Upgrading: 0, Installing: 0, Removing: 1, Not Upgrading: 75
   Freed space: 838 kB
 
 (Reading database ... 195417 files and directories currently installed.)
@@ -4146,7 +4160,7 @@ REMOVING:
   liblightdm-gobject-1-0  libxklavier16  lightdm-gtk-greeter
 
 Summary:
-  Upgrading: 0, Installing: 0, Removing: 3, Not Upgrading: 72
+  Upgrading: 0, Installing: 0, Removing: 3, Not Upgrading: 75
   Freed space: 931 kB
 
 (Reading database ... 195277 files and directories currently installed.)
@@ -4168,3 +4182,4 @@ Poti da reboot la sistem.
 Pentru a porni noua sesiune:
   startx
 
+vboxuser@deb136zero:~/derfd/gnu_linux$ 
