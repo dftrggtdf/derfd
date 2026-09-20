@@ -120,6 +120,24 @@ if [ -f "$SCRIPT_DIR/openbox/autostart(openbox)" ]; then
     chmod +x "$HOME/.config/openbox/autostart"
 fi
 
+# Keyboard layout indicator
+
+if [ -f "$SCRIPT_DIR/openbox/keyboard-layout.sh" ]; then
+    cp "$SCRIPT_DIR/openbox/keyboard-layout.sh" \
+       "$HOME/.config/tint2/keyboard-layout.sh"
+
+    chmod +x "$HOME/.config/tint2/keyboard-layout.sh"
+fi
+
+# ------------------------------------------------------------
+# Wallpaper
+# ------------------------------------------------------------
+
+if [ -f "$SCRIPT_DIR/2q1yk0tc0r0f1.png" ]; then
+    cp "$SCRIPT_DIR/2q1yk0tc0r0f1.png" \
+       "$HOME/Pictures/Wallpapers/desktop_wallpaper.png"
+fi
+
 # ------------------------------------------------------------
 # Wallpaper
 # ------------------------------------------------------------
