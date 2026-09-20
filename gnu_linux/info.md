@@ -13,6 +13,12 @@
 * removes the display manager
 * applies the derfd Openbox configuration
 
+# openbox_:)LOG).sh
+
+* whats happening during executing openbox.sh
+* can be different on an actual computer
+* not a script
+
 # setup.sh
 
 * repairs or reapplies the derfd configuration
@@ -21,8 +27,16 @@
 * restores configuration files and settings
 * can be used after something was deleted, broken or changed
 
-# vm_install_log.sh
+# verificator.sh
 
-* whats happening during executing openbox.sh
-* can be different on an actual computer
+* verifies
+    - packages apt
+    - flatpak apps
+    - configurations
+* does not modify system
+
+# verificator_:)LOG).sh
+
+* what happens during executing verificator.sh
+* can be different on actual computer
 * not a script
