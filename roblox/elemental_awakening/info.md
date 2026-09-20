@@ -2,7 +2,9 @@
 # description
 1. AADV_spin.sh
     - features:
-        - cooming soon i forgor
+        - hex check
+        - level scan
+        - element target
 
 2. AADV_SCG.sh
     - features:
