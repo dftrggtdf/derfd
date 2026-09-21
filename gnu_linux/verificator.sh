@@ -493,20 +493,6 @@ if [ -f "$HOME/.config/tint2/tint2rc" ]; then
     fi
 fi
 
-if [ -x "$HOME/.config/tint2/keyboard-layout.sh" ]; then
-
-    keyboard_result="$("$HOME/.config/tint2/keyboard-layout.sh" 2>/dev/null)"
-
-    case "$keyboard_result" in
-        US|RO|RU)
-            ok "Keyboard indicator — răspunde: $keyboard_result"
-            ;;
-        *)
-            warn "Keyboard indicator — răspuns neașteptat: $keyboard_result"
-            ;;
-    esac
-fi
-
 # ------------------------------------------------------------
 # 8. X11
 # ------------------------------------------------------------
