@@ -25,12 +25,6 @@ cp "$REPO_DIR/gnu_linux/openbox/autostart(openbox)" \
 
 chmod +x "$HOME/.config/openbox/autostart"
 
-# Keyboard layout indicator
-cp "$REPO_DIR/gnu_linux/openbox/keyboard-layout.sh" \
-   "$HOME/.config/tint2/keyboard-layout.sh"
-
-chmod +x "$HOME/.config/tint2/keyboard-layout.sh"
-
 # Wallpaper
 mkdir -p "$HOME/Pictures/Wallpapers"
 
