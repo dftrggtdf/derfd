@@ -1,5 +1,5 @@
 font_desc = Sans 12
-panel_items = LTSEC
+panel_items = LTSC
 panel_size = 100% 48
 panel_layer = top
 panel_position = bottom center horizontal
