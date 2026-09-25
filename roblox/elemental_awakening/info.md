@@ -1,3 +1,11 @@
+---
+---
+---
+# scripts i executed in home folder aswell as elements.png being too
+---
+---
+---
+
 ## automations, scripts (not exploits)
 # description
 1. AADV_spin.sh
