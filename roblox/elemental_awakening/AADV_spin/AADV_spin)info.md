@@ -108,21 +108,3 @@ Press `C` to request an emergency stop while the script is running.
 * OCR can require repeated attempts if the result text is not yet readable.
 * The current high-rarity check explicitly recognizes `exotic`. Other special result names must be added to the script's recognition logic if they need separate handling.
 * The script has been tested on specific setups; behavior may differ on other systems.
-
----
-
-## Planned follow-up: basic spin script
-
-The planned basic script will be separate from `AADV_spin.sh`. Its purpose is to provide a simpler, reusable cycle without depending on a specific starting spin count.
-
-The intended sequence is:
-
-1. **Level up.**
-2. **Spin once**, then check the result using the HEX detector.
-3. **Do not press `CONTINUE`** after that spin.
-4. Ask whether the user wants to target a specific element.
-5. If targeting is enabled, attempt to obtain the chosen element.
-6. **Exit** the current game session.
-7. Start a new cycle.
-
-The target-selection option will be optional. The user should be able to run the basic script without choosing a target element.
