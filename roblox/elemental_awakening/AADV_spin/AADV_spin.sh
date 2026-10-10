@@ -68,7 +68,7 @@ RESULT_H=115
 # TARGET ELEMENT
 # ------------------------------------------------------------
 
-TARGET_ELEMENT="ELEMENT" # type here what you want
+TARGET_ELEMENT="blood"
 
 # ------------------------------------------------------------
 # RARITY SETTINGS
@@ -434,29 +434,25 @@ level_up() {
 reset_game() {
     check_stop
 
-    echo "[RESET]"
+    echo "[RESET] Pressing Escape..."
 
-    xdotool mousemove 500 500
+    xdotool key Escape
 
     sleep 0.5
 
     check_stop
 
-    xdotool key Escape
-
-    sleep 1
-
-    check_stop
+    echo "[RESET] Pressing R..."
 
     xdotool key r
 
-    sleep 1
+    sleep 0.5
 
     check_stop
 
-    xdotool key Return
+    echo "[RESET] Pressing Enter..."
 
-    sleep 1
+    xdotool key Return
 }
 
 # ------------------------------------------------------------
@@ -551,9 +547,15 @@ wait_for_result() {
 press_continue() {
     check_stop
 
-    echo "[CONTINUE]"
+    echo "[CONTINUE] Double-clicking..."
 
-    click_button "$CONTINUE_X" "$CONTINUE_Y"
+    xdotool mousemove "$CONTINUE_X" "$CONTINUE_Y"
+
+    sleep 0.2
+
+    check_stop
+
+    xdotool click --repeat 2 --delay 100 1
 
     sleep 1
 }
@@ -633,6 +635,23 @@ is_high_rarity() {
     fi
 
     return 1
+}
+
+# ------------------------------------------------------------
+# CHECK VALID ELEMENT
+# ------------------------------------------------------------
+
+is_valid_element() {
+    local OCR_TEXT="$1"
+
+    case "$OCR_TEXT" in
+        fire|water|earth|light|lightning|blood)
+            return 0
+            ;;
+        *)
+            return 1
+            ;;
+    esac
 }
 
 # ------------------------------------------------------------
@@ -729,6 +748,20 @@ recognize_final_result() {
     fi
 
     # --------------------------------------------------------
+    # VALID ELEMENT CHECK
+    # --------------------------------------------------------
+
+    if ! is_valid_element "$OCR_TEXT"; then
+
+        echo
+        echo "[OCR] UNRELIABLE RESULT"
+        echo "[OCR] OCR returned: $OCR_TEXT"
+        echo "[OCR] Waiting for a valid result..."
+
+        return 2
+    fi
+
+    # --------------------------------------------------------
     # TARGET ELEMENT CHECK
     # --------------------------------------------------------
 
@@ -753,17 +786,18 @@ recognize_final_result() {
 check_final_result() {
     local TEMP_RESULT
     local STATUS
-    local ATTEMPT
-    local MAX_ATTEMPTS=5
+    local ATTEMPT=0
 
     TEMP_RESULT=$(mktemp --suffix=.png)
 
-    for ((ATTEMPT=1; ATTEMPT<=MAX_ATTEMPTS; ATTEMPT++)); do
+    while true; do
 
         check_stop
 
+        ATTEMPT=$((ATTEMPT + 1))
+
         echo
-        echo "[OCR] Attempt $ATTEMPT/$MAX_ATTEMPTS..."
+        echo "[OCR] Attempt $ATTEMPT..."
 
         if ! capture_final_result "$TEMP_RESULT"; then
 
@@ -805,28 +839,19 @@ check_final_result() {
             fi
 
             # ------------------------------------------------
-            # OCR ERROR
+            # OCR ERROR / UNRELIABLE RESULT
             # ------------------------------------------------
 
             if (( STATUS == 2 )); then
                 echo
-                echo "[OCR] No readable result yet."
+                echo "[OCR] No reliable result yet."
             fi
         fi
 
-        if (( ATTEMPT < MAX_ATTEMPTS )); then
-            echo "[OCR] Waiting before retry..."
-            sleep 0.5
-        fi
+        echo "[OCR] Waiting before retry..."
 
+        sleep 0.5
     done
-
-    rm -f "$TEMP_RESULT"
-
-    echo
-    echo "[OCR] ERROR: No readable result after $MAX_ATTEMPTS attempts."
-
-    return 2
 }
 
 # ------------------------------------------------------------
@@ -978,6 +1003,10 @@ while true; do
     check_stop
 
     wait_for_result
+
+    check_stop
+
+    press_continue
 
     check_stop
 
