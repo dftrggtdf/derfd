@@ -12,7 +12,7 @@ mate-power-manager &
 xcape -e 'Super_L=Alt_L|F3' &
 copyq &
 xset r rate 200 50 &
-(sleep 3 && wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1.50) &
+(sleep 3 && wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1.0) & # microphone: 100%
 feh --bg-fill "$HOME/Pictures/Wallpapers/desktop_wallpaper.png" &
 package-update-indicator &
 
